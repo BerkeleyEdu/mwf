@@ -1,0 +1,73 @@
+/* ucb-default-basic
+ *
+ *
+ *
+ */
+#header {
+	background: #383a7a  url(img/berkeley_header-bg.png) repeat-x;
+	height: 35px;
+	border-bottom: 3px solid #ebb71b;
+} 
+
+body.front-page h1#header {
+	background: #383a7a  url(img/berkeley_header-front-page-bg.png) repeat-x;
+}
+
+a {
+    color: #292e74;
+}
+p a,
+p a:visited {
+    color: #292e74;
+    border-bottom: 1px solid #cccccc;
+}
+
+.menu-full a h4 {
+		color: #292e74;
+	}
+	
+.menu-button a {
+		color: #292e74;
+}
+
+li a {
+		color: #292e74;
+		border: none;
+}
+
+a.button-full,
+div.button-full a {
+	color: #292e74;
+} 
+
+a.button-full:hover,
+a.button-full:focus,
+a.button-full:active,
+div.button-full a:hover,
+div.button-full a:focus,
+div.button-full a:active{
+	color: #292e74;
+}
+
+form.form-full > input[type=submit]:active,
+form.form-full > input[type=reset]:active,
+form.form-full > input[type=submit]:focus,
+form.form-full > input[type=reset]:focus,
+form.form-full > input[type=submit]:hover,
+form.form-full > input[type=reset]:hover {
+    background-color: #f6f6f6;
+	color: #292e74;
+}
+
+.content-button a {
+	color: #292e74;
+	font-weight: bold;
+}
+
+#breadcrumbs a {
+	text-decoration: none;
+	color: #292e74;
+}
+
+
+

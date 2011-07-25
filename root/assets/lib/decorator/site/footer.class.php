@@ -25,9 +25,17 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator
     private $_copyright = false;
     private $_help_title = false;
     private $_help_url = '#';
-    private $_full_title = false;
+    private $_full_title = 'Full Site';
     private $_full_url = '#';
-    private $_powered_by = true;
+    private $_powered_by = false;
+	private $_search_url = 'search';
+	private $_search_title = 'Search';
+	private $_atoz_url = 'atoz';
+	private $_atoz_title = 'A-Z';
+	private $_about_url = 'about';
+	private $_about_title = 'About';
+	private $_contact_url = 'contact';
+	private $_contact_title = 'Contact';
 
     public function __construct()
     {
@@ -76,17 +84,27 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator
                 $p->add_inner_tag('br');
             if($this->_full_title)
                 $p->add_inner_tag('a', $this->_full_title, array('href'=>$this->_full_url));
-            if($this->_full_title && $this->_help_title)
+            if($this->_full_title && $this->_atoz_title)
                 $p->add_inner(' | ');
-            if($this->_help_title)
-                $p->add_inner_tag('a', $this->_help_title, array('href'=>$this->_help_url));
+            if($this->_atoz_title)
+                $p->add_inner_tag('a', $this->_atoz_title, array('href'=>$this->_atoz_url));
+            if($this->_atoz_title && $this->_about_title)
+                $p->add_inner(' | ');
+            if($this->_about_title)
+                $p->add_inner_tag('a', $this->_about_title, array('href'=>$this->_about_url));
+            if($this->_about_title && $this->_contact_title)
+                $p->add_inner(' | ');
+            if($this->_contact_title)
+                $p->add_inner_tag('a', $this->_contact_title, array('href'=>$this->_contact_url));
             $this->add_inner($p);
         }
 
-        if($this->_powered_by)
+        
+		if($this->_powered_by)
         {
             $this->add_inner_tag('p', 'Powered by the <br><a href="http://mwf.ucla.edu" target="_blank">UCLA Mobile Web Framework</a>', array('style'=>'font-weight:bold;font-style:italic'));
         }
+		
         
         return parent::render();
     }
