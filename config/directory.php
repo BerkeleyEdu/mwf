@@ -14,7 +14,7 @@
 
 require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
-Config::set('directory', 'title_text', Config::get('global', 'title_text') . 'Directory');
+Config::set('directory', 'title_text', Config::get('global', 'title_text') . ' Directory');
 
 Config::set('directory', 'header_image_sub', '../assets/img/berkeley-logo.png');
 

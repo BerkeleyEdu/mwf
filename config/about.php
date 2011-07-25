@@ -14,7 +14,7 @@
 
 require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php'); 
 
-Config::set('about', 'title_text', Config::get('global', 'title_text') . 'About');
+Config::set('about', 'title_text', Config::get('global', 'title_text') . ' About');
 
 Config::set('about', 'header_image_sub', '../assets/img/berkeley-logo.png');
 

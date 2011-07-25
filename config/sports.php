@@ -14,7 +14,7 @@
 
 require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
-Config::set('sports', 'title_text', Config::get('global', 'title_text') . 'Athletics');
+Config::set('sports', 'title_text', Config::get('global', 'title_text') . ' Athletics');
 
 Config::set('sports', 'header_image_sub', '../assets/img/berkeley-logo.png');
 

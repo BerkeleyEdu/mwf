@@ -14,7 +14,7 @@
 
 require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
-Config::set('atoz', 'title_text', Config::get('global', 'title_text') . 'Websites A-Z');
+Config::set('atoz', 'title_text', Config::get('global', 'title_text') . ' Websites A-Z');
 
 Config::set('atoz', 'header_image_sub', '../assets/img/berkeley-logo.png');
 

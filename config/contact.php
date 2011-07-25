@@ -14,7 +14,7 @@
 
 require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
-Config::set('contact', 'title_text', Config::get('global', 'title_text') . 'Contact');
+Config::set('contact', 'title_text', Config::get('global', 'title_text') . ' Contact');
 
 Config::set('contact', 'header_image_sub', '../assets/img/berkeley-logo.png');
 
