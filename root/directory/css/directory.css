@@ -1,0 +1,23 @@
+/* Filename: directory.css
+ *
+ * Description: Additional custom styles for Directory
+ *
+ *
+ */
+ 
+.directory-entry span.label {
+	/*color: #2685bb;
+	font-weight: bold;*/
+    color: #777;
+    font-weight: bold;
+	display: block;
+}
+
+
+li#phone a {
+    background:url(http://m.ucla.edu/directory/img/icon-phone.png) no-repeat 95% center; /* Controls menu items */
+}
+
+li#emergency a {
+    background:url((http://m.ucla.edu/directory/img/icon-emergency.png) no-repeat 95% center; /* Controls menu items */
+}

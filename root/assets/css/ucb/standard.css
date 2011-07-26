@@ -1,0 +1,136 @@
+/* ucb-default-touch
+ *
+ *
+ *
+ */
+
+a.button-full,
+div.button-full a {
+	background-color: #383A7A ;
+	color: #fff;
+	font-size: .9em;
+	font-weight: bold;
+	border: none;
+}
+
+a.button-full:hover,
+a.button-full:focus,
+a.button-full:active,
+div.button-full a:hover,
+div.button-full a:focus,
+div.button-full a:active,
+a.button-full.button-light:hover,
+a.button-full.button-light:focus,
+a.button-full.button-light:active,
+div.button-full a.button-light:hover,
+div.button-full a.button-light:focus,
+div.button-full a.button-light:active {
+	background-color: #1F2252  !important;
+	color: #fff;
+}
+
+#submit-button {
+        background: url(img/button-submit.png) no-repeat;
+        width: 60px;
+        height: 25px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        text-indent:-9999px;
+}
+
+.front-page #news {
+	background: #fff url(img/icon-news.png) no-repeat 16px center;
+}
+
+.front-page #happenings {
+	background: #fff url(img/icon-events.png) no-repeat 16px center;
+}
+
+.front-page #directory {
+	background: #fff url(img/icon-directory.png) no-repeat 16px center;
+}
+.front-page #campus-map {
+	background: #fff url(img/icon-campus-map.png) no-repeat 16px center;
+}
+
+.front-page #library {
+	background: #fff url(img/icon-library.png) no-repeat 16px center;
+}
+
+.front-page #sports { 
+	background:#fff url(img/icon-athletics.png) no-repeat 16px center;
+}
+	
+.front-page #social { 
+	background:#fff url(img/icon-social-media.png) no-repeat 16px center; 
+}
+
+.front-page .menu-front li a{
+    padding: 1.2em 1em 1.2em 4em;
+}
+
+.front-page #news a:hover,
+.front-page #news a:focus {
+	background: #eaf2fa url(img/icon-news.png) no-repeat 16px center;
+}
+
+.front-page #happenings a:hover,
+.front-page #happenings a:focus{
+	background: #eaf2fa url(img/icon-events.png) no-repeat 16px center;
+}
+
+.front-page #directory a:hover,
+.front-page #directory a:focus{
+	background: #eaf2fa url(img/icon-directory.png) no-repeat 16px center;
+}
+
+.front-page #campus-map a:hover,
+.front-page #campus-map a:focus{
+	background: #eaf2fa url(img/icon-campus-map.png) no-repeat 16px center;
+}
+
+.front-page #library a:hover,
+.front-page #library a:focus{
+	background: #eaf2fa url(img/icon-library.png) no-repeat 16px center;
+}
+
+.front-page #sports a:hover,
+.front-page #sports a:focus{ 
+	background:#eaf2fa url(img/icon-athletics.png) no-repeat 16px center;
+}
+	
+.front-page #social a:hover,
+.front-page #social a:focus{ 
+	background:#eaf2fa url(img/icon-social-media.png) no-repeat 16px center; 
+}
+
+.front-page .menu-front li a{
+    padding: 1.2em 1em 1.2em 4em;
+}
+
+
+
+#header {
+	border-bottom: 3px solid #ebb71b;
+} 
+
+/*-------------------------------------------------
+  Headings
+  ------------------------------------------------
+.menu-full > h2 {
+        padding: .4em;
+}
+
+.menu-full > h2 {
+	 border: 1px #dddddd;
+	 border-style: solid none none none;
+}
+
+*/
+
+
+
+
+
+
