@@ -115,7 +115,19 @@ div.button-full a.button-light:active {
 	border-bottom: 3px solid #ebb71b;
 } 
 
+/*-------------------------------------------------
+  Headings
+  ------------------------------------------------
+.menu-full > h2 {
+        padding: .4em;
+}
 
+.menu-full > h2 {
+	 border: 1px #dddddd;
+	 border-style: solid none none none;
+}
+
+*/
 
 
 

@@ -69,5 +69,31 @@ form.form-full > input[type=reset]:hover {
 	color: #292e74;
 }
 
+.footer-item-divider:after
+{
+	content:" | ";
+}
 
+/*-------------------------------------------------
+  Headings
+  ------------------------------------------------
 
+.menu-full > h2 {
+    background: #efefef;
+    color: #000;
+    margin: 0;
+    padding: .4em 0 .4em 0;
+    text-align: center;
+}
+
+.menu-full > h2.light {
+    background-color: #f6f6f6;
+    color: #555;
+}
+
+.menu-full > h2.blue {
+    background-color: #809FE2;
+    color: #fff;
+}
+
+h2 { font-size: 1.2em; font-weight: bold; } */

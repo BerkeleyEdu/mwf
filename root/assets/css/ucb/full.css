@@ -32,3 +32,24 @@ div.button-full a.button-light:active{
     -webkit-background-origin: padding-box;
     -webkit-background-clip: padding-box;
 }
+
+/*-------------------------------------------------
+  Headings
+  ------------------------------------------------
+
+.menu-full > h2 {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5), color-stop(1, #fff));
+        -webkit-background-origin: padding-box;
+        -webkit-background-clip: padding-box;
+}
+
+.menu-full > h2.light {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5), color-stop(1, #fff));
+        -webkit-background-origin: padding-box;
+        -webkit-background-clip: padding-box;
+}
+
+.menu-full > h2.blue {
+    background: -webkit-gradient(linear, left top, left bottom, from(#809FE2), to(#637CB0), color-stop(1, #fff));
+}
+*/

@@ -11,7 +11,7 @@ include(dirname(__FILE__).'/header.php');
     			<li><a href="http://m.youtube.com/ucberkeley">Courses</a></li>
 				<li><a href="http://m.youtube.com/ucberkeleyevents">Events</a></li>
 				<li><a href="http://m.youtube.com/calathletics">Athletics</a></li>
-				<li><a href="http://m.youtube.com/ucberkeleycampuslife">Campuslife</a></li>
+				<li class="menu-last"><a href="http://m.youtube.com/ucberkeleycampuslife">Campuslife</a></li>
             </ol>
         </div>
 

@@ -9,7 +9,7 @@ $feed_items = $feed->get_items();
 
 include(dirname(__FILE__).'/header.php');
 
-$salt = Config::get('news', 'salt');
+$salt = Config::get('sports', 'salt');
 
 ?>
 
