@@ -31,11 +31,11 @@ Config::set('frontpage', 'help_site_url', Config::get('global', 'help_site_url')
  * header_main_text
  */
 
-Config::set('frontpage', 'header_image_main', Config::get('global', 'site_assets_url').'/img/mwf-header-front.gif');
-Config::set('frontpage', 'header_image_main_alt', 'MWF');
-Config::set('frontpage', 'header_image_sub_alt', 'MWF');
-Config::set('frontpage', 'header_image_sub', Config::get('global', 'site_assets_url').'/img/mwf-header.gif');
-Config::set('frontpage', 'header_main_text', 'UCLA Mobile Web Framework');
+Config::set('frontpage', 'header_image_main', Config::get('global', 'site_assets_url').'/img/berkeley-mobile-logo.png');
+Config::set('frontpage', 'header_image_main_alt', 'UCB Mobile');
+Config::set('frontpage', 'header_image_sub_alt', 'UCB Mobile');
+Config::set('frontpage', 'header_image_sub', Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');
+Config::set('frontpage', 'header_main_text', 'UCB Mobile');
 
 
 /**
@@ -66,6 +66,29 @@ Config::set('frontpage', 'header_main_text', 'UCLA Mobile Web Framework');
 Config::set('frontpage', 'menu',  
    array(
    'default'=>array(
+   		 array('name'=>'News',
+              'id'=>'news',
+              'url'=>'news'),
+		array('name'=>'Events',
+              'id'=>'happenings',
+              'url'=>'http://events.berkeley.edu/mobile'),    			   
+        array('name'=>'Directory',
+              'id'=>'directory',
+              'url'=>'directory'),
+		array('name'=>'Maps &amp; Tour',
+              'id'=>'campus-map',
+              'url'=>'map'), 
+		array('name'=>'Library',
+              'id'=>'library',
+              'url'=>'http://mobile.lib.berkeley.edu/'), 	  	  	 
+        array('name'=>'Athletics',
+              'id'=>'sports',
+              'url'=>'sports'),
+		array('name'=>'Social Media',
+              'id'=>'social',
+              'url'=>'social')
+   
+   /*
         array('name'=>'About',
               'id'=>'about',
               'url'=>'mwf/about.php')
@@ -90,6 +113,7 @@ Config::set('frontpage', 'menu',
               'url'=>'http://mwf.ucla.edu/forum'),
         array('name'=>'Issue Tracker',
               'url'=>'https://jira.ats.ucla.edu:8443/')
+			  */
         )
     )
 );

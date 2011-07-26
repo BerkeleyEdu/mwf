@@ -17,4 +17,4 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 /**
  * account  Account identifier for Google code (UA-######-##) or FALSE for no GA.
  */
-Config::set('analytics', 'account', false);
+Config::set('analytics', 'account', 'UA-1506086-13');

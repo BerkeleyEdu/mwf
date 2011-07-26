@@ -56,6 +56,7 @@ if(!Config::get('global', 'site_url') || !Config::get('global', 'site_assets_url
  * {'global':'site_nonmobile_url'} is true.
  */
 
+
 if(isset($_GET['ovrcls']))
 {
     User_Agent::set_override($_GET['ovrcls']);
@@ -68,8 +69,10 @@ else if(isset($_GET['unovrcls']))
 }
 else if(!User_Agent::is_mobile() && $nonmobile_url = Config::get('global', 'site_nonmobile_url'))
 {
-    header('Location: '.$nonmobile_url);
+   header('Location: '.$nonmobile_url);
 }
+
+
 
 /**
  * Get the menu from {'frontpage':'menu'} defined in config/frontpage.php.
@@ -113,6 +116,41 @@ else
     echo Site_Decorator::header()->set_title(ucwords(str_replace('_', ' ', $_GET['s'])))->render();
 
 /*
+ * Search
+ */
+echo '<p></p><div class="center">';
+$pos = strpos(User_Agent::get(),'BlackBerry'); 
+	if ($pos !== false)
+	{
+	?>      
+<form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
+		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' />
+          <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>
+          <input type="hidden" name="display_type" value="mobile" />
+           <input type="hidden" name="noscript" value="yes" />
+      </form>
+
+
+<?php
+}
+else
+{
+?> 
+    <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
+		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' />
+          <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>
+          <input type="hidden" name="display_type" value="mobile" />
+<noscript>
+ <input type="hidden" name="noscript" value="yes" />
+</noscript>
+      </form>
+      
+<?php 
+}
+echo '</div>';
+
+
+/*
  * Menu
  */
 
@@ -120,6 +158,7 @@ $menu = Site_Decorator::menu_full()->set_padded()->set_detailed();
 
 if($main_menu)
     $menu->add_class('menu-front');
+		
 
 for($i = 0; $i < count($menu_items); $i++)
 {

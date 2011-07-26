@@ -38,7 +38,7 @@ Config::set('global', 'help_site_url', false);
  * - cookie_prefix :: The prefix attached to all cookies that the framework writes.
  */
 
-Config::set('global', 'cookie_prefix', 'mwf_');
+Config::set('global', 'cookie_prefix', 'ucbmob_');
 
 /**
  * TEXT AND IMAGES
@@ -53,11 +53,11 @@ Config::set('global', 'cookie_prefix', 'mwf_');
 Config::set('global', 'appicon_img',                Config::get('global', 'site_assets_url').'/img/mwf-appicon.png');
 Config::set('global', 'appicon_img_precomposed',    Config::get('global', 'site_assets_url').'/img/mwf-appicon-precomposed.png');
 Config::set('global', 'appicon_allow_disable_flag', true);
-Config::set('global', 'back_to_home_text',          'Go Back to Home');
-Config::set('global', 'copyright_text',             'University of California &copy; 2010 UC Regents');
-Config::set('global', 'header_home_button',         Config::get('global', 'site_assets_url').'/img/mwf-header.gif');
-Config::set('global', 'header_home_button_alt',     'MWF');
-Config::set('global', 'title_text',                 'UCLA MWF');
+Config::set('global', 'back_to_home_text',          'Go Back to UCB Mobile');
+Config::set('global', 'copyright_text',             'University of California &copy; ' . date('Y') . ' UC Regents');
+Config::set('global', 'header_home_button',         Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');
+Config::set('global', 'header_home_button_alt',     'UCB Mobile');
+Config::set('global', 'title_text',                 'UC Berkeley Mobile');
 
 /******************************************************************
  *
@@ -69,5 +69,5 @@ Config::set('global', 'title_text',                 'UCLA MWF');
  *
  */
 
-Config::set('global', 'header_image_sub_alt', 'MWF');
-Config::set('global', 'header_image_sub', Config::get('global', 'site_assets_url').'/img/mwf-header.gif');
+Config::set('global', 'header_image_sub_alt', 'UCB Mobile');
+Config::set('global', 'header_image_sub', Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');
