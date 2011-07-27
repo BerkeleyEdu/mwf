@@ -1,3 +1,11 @@
+# This installation script from RHEL, CentOS and Fedora configures default
+# location files and directories for the MWF. It also fetches the latest copy
+# of the WURFL metadata file. This should be run first when installing the MWF
+# on a new server.
+#
+# Please note that this file does not include the WURFL PHP API. Please see
+# install-wurfl-api.sh for more information about it.
+
 script_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
 install_dir="/var/mobile"
 
