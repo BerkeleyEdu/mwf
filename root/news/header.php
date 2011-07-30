@@ -1,4 +1,9 @@
-<?php require_once('../assets/config.php'); ?><!DOCTYPE html>
+<?php 
+require_once(dirname(dirname(__FILE__)).'/assets/lib/decorator.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/config.php'); 
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
     <title><?php echo Config::get('news', 'title_text'); ?></title>

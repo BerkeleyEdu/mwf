@@ -192,11 +192,7 @@ if(!$main_menu)
 
 $footer = Site_Decorator::footer();
 
-if($full_site_url = Config::get('frontpage', 'full_site_url'))
-    $footer->set_full_site('Full Site', Config::get('frontpage', 'full_site_url'));
-
-if($help_site_url = Config::get('frontpage', 'help_site_url'))
-    $footer->set_help_site('Help', Config::get('frontpage', 'help_site_url'));
+$footer->show_powered_by(true);
 
 echo $footer->render();
 

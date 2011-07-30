@@ -1,4 +1,7 @@
-<?php require_once('../assets/config.php'); ?><!DOCTYPE html>
+<?php
+require_once(dirname(dirname(__FILE__)).'/assets/lib/decorator.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/config.php');
+?>
 
 <html>
 <head>

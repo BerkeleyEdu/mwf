@@ -1,5 +1,5 @@
 <?php
-
+require_once(dirname(dirname(__FILE__)).'/assets/lib/decorator.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 include(dirname(__FILE__).'/header.php');
 require_once(dirname(__FILE__).'/util.php');
@@ -123,19 +123,16 @@ require_once(dirname(__FILE__).'/util.php');
             
     <a class="button-full button-padded" href="..">Go to UCB Mobile</a>
 
-<div id="footer">
-        <p><?php echo Config::get('global', 'copyright_text') ?><br />
-        <a href="<?php echo Config::get('frontpage', 'full_site_url') ?>" >Full Site</a>
-        <span class="footer-item-divider"></span>
-		 <a href="/search">Search</a>
-          <span class="footer-item-divider"></span>
-        <a href="/atoz">A-Z</a>
-         <span class="footer-item-divider"></span>
-         <a href="/about">About</a>
-          <span class="footer-item-divider"></span>
-        Contact
-           </p>
-    </div>
+<?php
+/**
+ * Footer
+ */
+$footer = Site_Decorator::footer();
+
+$footer->set_contact('', '');
+
+echo $footer->render();
+?>
     
     </body>
 
