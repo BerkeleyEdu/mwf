@@ -1,16 +1,15 @@
-	<div id="footer">
-        <p><?php echo Config::get('global', 'copyright_text') ?><br />
-         <a href="<?php echo Config::get('frontpage', 'full_site_url') ?>">Full Site</a>
-         <span class="footer-item-divider"></span>
-		 <a href="../search">Search</a>
-         <span class="footer-item-divider"></span>
-        <a href="../atoz">A-Z</a>
-        <span class="footer-item-divider"></span>
-         About
-         <span class="footer-item-divider"></span>
-        <a href="../contact">Contact</a>
-           </p>
-    </div>
+<?php
+/**
+ * Footer
+ */
+$footer = Site_Decorator::footer();
+
+$footer->set_about('', '');
+
+$footer->show_powered_by(true);
+
+echo $footer->render();
+?>
 
 </body>
 

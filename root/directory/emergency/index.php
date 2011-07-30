@@ -1,3 +1,7 @@
+<?php
+require_once(dirname(dirname(dirname(__FILE__))).'/assets/lib/decorator.class.php');
+?>
+
 <!DOCTYPE html>
 
 <html>

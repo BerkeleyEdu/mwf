@@ -48,7 +48,7 @@ else
 
 </p>
 </div>
-
+</div>
     <a class="button-full button-padded" href="..">Go to UCB Mobile</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>

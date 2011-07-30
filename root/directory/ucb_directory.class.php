@@ -1,5 +1,5 @@
 <?php
-
+require_once(dirname(dirname(__FILE__)).'/assets/lib/decorator.class.php');
 require_once('ldap_directory.class.php');
 
 class UCLA_Directory extends LDAP_Directory
