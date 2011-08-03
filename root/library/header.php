@@ -26,8 +26,8 @@ require_once('../assets/config.php');
         <a href="../">
         <img src="../assets/img/berkeley-logo.png" alt="UC Berkeley" width="119" height="35" />        
         </a>
-		<img src="../assets/img/l2-library.png" alt="" width="45" height="35"/>
-		<a href="http://mobile.lib.berkeley.edu/">
+        <a href="http://mobile.lib.berkeley.edu/">
+		<img src="../assets/img/l2-library.png" alt="" width="45" height="35"/>		
 		<span>Library</span>
 		</a>
     </h1>
