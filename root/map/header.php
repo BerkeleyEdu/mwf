@@ -26,6 +26,9 @@ require_once(dirname(dirname(__FILE__)).'/assets/config.php');
         <h1 id="header">
             <a href="../">
             <img src="../assets/img/berkeley-logo.png" alt="UC Berkeley" width="119" height="35" />
+            </a>
+            <a href="index.php">
             <img src="../assets/img/l2-map.png" alt="" width="45" height="35"/>
-            </a><span><a href="index.php">Maps &amp; Tour</a></span>
+            <span>Maps &amp; Tour</span>
+            </a>
         </h1>
