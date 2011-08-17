@@ -67,7 +67,7 @@ else if(isset($_GET['unovrcls']))
     User_Agent::unset_override();
     header('Location: '.Config::get('global', 'site_url'));
 }
-else if(!User_Agent::is_mobile() && $nonmobile_url = Config::get('global', 'site_nonmobile_url'))
+else if(!User_Agent::is_mobile() && $nonmobile_url = Config::get('global', 'site_nonmobile_url') && $_SERVER['SERVER_NAME'] != 'mobile-qa.berkeley.edu'  && $_SERVER['SERVER_NAME'] != 'm-qa.berkeley.edu')
 {
    header('Location: '.$nonmobile_url);
 }
@@ -105,7 +105,7 @@ echo HTML_Decorator::html_start()->render();
 echo Site_Decorator::head()->set_title(Config::get('global', 'title_text'))->render();
 
 echo HTML_Decorator::body_start($main_menu ? array('class'=>'front-page') : array())->render();
-
+          
 /*
  * Header
  */
@@ -114,11 +114,25 @@ if($main_menu)
     echo '<h1 id="header"><img src="'.Config::get('frontpage', 'header_image_main').'" alt="'.Config::get('frontpage', 'header_image_main_alt').'"><span>'.Config::get('frontpage', 'header_main_text').'</span></h1>';
 else
     echo Site_Decorator::header()->set_title(ucwords(str_replace('_', ' ', $_GET['s'])))->render();
+	
+/*
+*  campus photo
+*/
+if(User_Agent::is_full())
+{
+	$photo = rand(1, 9);
+	echo '<img src="/assets/min/img.php?img=http%3A%2F%2F'. $_SERVER['SERVER_NAME'] . '%2Fassets%2Fimg%2Fcampusphotos%2F'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
+}	
+else
+{
+	echo '<p></p>';
+}
+	
 
 /*
  * Search
  */
-echo '<p></p><div class="center">';
+echo '<div class="center">';
 $pos = strpos(User_Agent::get(),'BlackBerry'); 
 	if ($pos !== false)
 	{
