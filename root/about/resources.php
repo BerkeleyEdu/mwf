@@ -5,7 +5,13 @@ include(dirname(__FILE__).'/header.php');
 ?>
 
 		<div class="content-full content-padded">
-        <h2 class="content-first">Mobile Web Framework Quick Start Guide</h2>
+        
+       <h2 class="content-first"><strong>Mobile Design</strong></h2>
+        <div class="content-last">
+      <p>Join the <a href="mailto: ucd-request@lists.berkeley.edu?subject=subscribe">User-Centered Design</a> discussion mailing list.</p>
+       </div>
+  
+        <h2 class="content-first">Mobile Web Framework (MWF) Quick Start Guide</h2>
         <div class="content-last">       
           <p>Read <a href="https://github.com/ucla/mwf/wiki/API%3A-Getting-Started%3A-Module-Development">How to Implement the framework</a></p>
           <div class="menu-full menu-detailed menu-padded">Download sample html code                    
@@ -19,17 +25,25 @@ include(dirname(__FILE__).'/header.php');
            </div>
           </div>
 
-        <h2 class="content-first">Documentation</h2>
+        <h2 class="content-first">MWF Documentation</h2>
         <div class="content-last"><p><a href="http://mwf.ucla.edu">UCLA Mobile Framework documentation site</a>.</p>
         <p><a href="http://inews.berkeley.edu/articles/Apr-May2011/UCBMobileApp"><em>UC Berkeley in the palm of your hand</em></a>, iNews April 19, 2011</p>
         </div>
        
-        <h2 class="content-first">Training</h2>
+        <h2 class="content-first">MWF Training</h2>
 		<div class="content-last">
         <p>Workshop with Eric Bollens 6-10-2011: <a href="http://berkeley.edu/mobile/workshops/slides20110610.pdf"><br />
           download slides</a> (747KB pdf)<br />
           <a href="http://berkeley.edu/mobile/workshops/handout20110610.pdf">download handout</a> (72KB pdf)</p>
  </div>
+    
+    	<h2 class="content-first">Testing Tools</h2>
+        <div class="content-last">        
+          <p><a href="http://chrispederick.com/work/user-agent-switcher/">Firefox User Agent Switcher</a> and <a href="http://techpatterns.com/downloads/firefox/useragentswitcher.xml">user agents for import</a>
+          </p>
+          <p><a href="http://www.mobilexweb.com/emulators">Mobile device emulators</a>
+        </p>
+     </div>
     
         <h2 class="content-first">Support</h2>
 		<div class="content-last">

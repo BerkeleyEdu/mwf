@@ -28,7 +28,7 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
 Config::set('global', 'site_url', 'http://' . $_SERVER['SERVER_NAME'] );
 Config::set('global', 'site_assets_url', 'http://' . $_SERVER['SERVER_NAME'] . '/assets');
-Config::set('global', 'site_nonmobile_url', false);
+Config::set('global', 'site_nonmobile_url', 'http://www.berkeley.edu/mobile/');
 Config::set('global', 'full_site_url', false);
 Config::set('global', 'help_site_url', false);
 
