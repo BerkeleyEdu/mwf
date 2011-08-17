@@ -56,7 +56,6 @@ if(!Config::get('global', 'site_url') || !Config::get('global', 'site_assets_url
  * {'global':'site_nonmobile_url'} is true.
  */
 
-
 if(isset($_GET['ovrcls']))
 {
     User_Agent::set_override($_GET['ovrcls']);
@@ -69,7 +68,8 @@ else if(isset($_GET['unovrcls']))
 }
 else if(!User_Agent::is_mobile() && $nonmobile_url = Config::get('global', 'site_nonmobile_url') && $_SERVER['SERVER_NAME'] != 'mobile-qa.berkeley.edu'  && $_SERVER['SERVER_NAME'] != 'm-qa.berkeley.edu')
 {
-   header('Location: '.$nonmobile_url);
+   $nonmobile_url = Config::get('global', 'site_nonmobile_url');
+   header('Location: '. $nonmobile_url);
 }
 
 
