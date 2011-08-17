@@ -54,6 +54,10 @@ div.button-full a.button-light:active {
 	background: #fff url(img/icon-campus-map.png) no-repeat 16px center;
 }
 
+.front-page #courses {
+	background: #fff url(img/icon-courses.png) no-repeat 16px center;
+}
+
 .front-page #library {
 	background: #fff url(img/icon-library.png) no-repeat 16px center;
 }
@@ -88,6 +92,11 @@ div.button-full a.button-light:active {
 .front-page #campus-map a:hover,
 .front-page #campus-map a:focus{
 	background: #eaf2fa url(img/icon-campus-map.png) no-repeat 16px center;
+}
+
+.front-page #courses a:hover,
+.front-page #courses a:focus{
+	background: #eaf2fa url(img/icon-courses.png) no-repeat 16px center;
 }
 
 .front-page #library a:hover,
