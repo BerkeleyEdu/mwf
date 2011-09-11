@@ -106,10 +106,10 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator
         if($this->_copyright || $this->_full_title || $this->_help_title)
         {
             $p = HTML_Decorator::tag('p');
-            if($this->_copyright)
-                $p->add_inner($this->_copyright);
-            if($this->_copyright && ($this->_full_title || $this->_help_title))
-               $p->add_inner('<br/>');
+            //if($this->_copyright)
+            //    $p->add_inner($this->_copyright);
+           // if($this->_copyright && ($this->_full_title || $this->_help_title))
+           //    $p->add_inner('<br/>');
             if($this->_full_title)
                 $p->add_inner_tag('a', $this->_full_title, array('href'=>$this->_full_url));
             if($this->_full_title && $this->_atoz_title || $this->_search_title)
@@ -136,14 +136,15 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator
                 $p->add_inner_tag('a', $this->_contact_title, array('href'=>$this->_contact_url));
 				else
 				$p->add_inner('<span class="footer-item-divider"></span>Contact');
-            $this->add_inner($p);
+			$this->add_inner($p);	           
         }
 
-        
-		if($this->_powered_by)
+		if($this->_powered_by && $this->_copyright)
         {
-            $this->add_inner_tag('p', 'Powered by the <br/><a href="http://mwf.ucla.edu" target="_blank">UCLA Mobile Web Framework</a>', array('style'=>'font-style:italic'));
+            $this->add_inner_tag('p', $this->_copyright . '<br />' .'<em>Powered by the <a href="http://mwf.ucla.edu" target="_blank">UCLA Mobile Web Framework</a></em>');
         }
+		elseif ($this->_copyright)
+			 $this->add_inner_tag('p', $this->_copyright);
 		
         
         return parent::render();
