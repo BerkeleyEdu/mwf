@@ -72,6 +72,7 @@ form.form-full > input[type=reset]:hover {
 .footer-item-divider:after
 {
 	content:" | ";
+	padding: 0% 1.5% 0% 1.5%;
 }
 
 /*-------------------------------------------------
