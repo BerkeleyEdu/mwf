@@ -153,7 +153,7 @@ div.button-full a.button-light:active{
 
 .front-page #sports a:hover,
 .front-page #sports a:focus{ 
-	background: url(img/icon-athletics-full.png) no-repeat 50% 15%;
+	background: url(img/icon-athletics-full.png) no-repeat 50% 15px;
 }
 	
 .front-page #social a:hover,
