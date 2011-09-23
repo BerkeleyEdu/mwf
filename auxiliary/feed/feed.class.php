@@ -62,10 +62,11 @@ class Feed
 
     public function build_item_from_request()
     {
-        if(!isset($_GET['article']))
+		if(!isset($_GET['article']))
             return false;
-
-        return $this->get_item(urldecode($_GET['article']));
+			
+		return $this->get_item($_GET['article']);
+        //return $this->get_item(urldecode($_GET['article']));
     }
 
     public function get_page($salt = false)
@@ -76,7 +77,7 @@ class Feed
 
     public function verify_page($signature, $salt)
     {
-        return $signature == md5($salt.$this->get_name().$this->get_path());
+		return $signature == md5($salt.$this->get_name().$this->get_path());
     }
 
     public static function build_page_from_request()
