@@ -17,6 +17,13 @@ include(dirname(__FILE__).'/header.php');
 $salt = Config::get('sports', 'salt');
 
 ?>
+		 <div class="menu-full menu-detailed menu-padded">
+        <div class="content-last">
+		  <ol>
+    	<li><a href="http://m.calbears.com/">CalBears.com Mobile</a></li>
+		</ol>  
+    	</div>
+    	</div>
 
     <?php if(isset($fetch_error) && $fetch_error === true){ ?>
 
@@ -28,7 +35,7 @@ $salt = Config::get('sports', 'salt');
     <?php } else { ?>
 
         <div class="menu-full menu-detailed menu-padded">
-             <h1 class="light menu-first">Categories</h1>
+             
              <ol>
 				<li><a href="http://m.youtube.com/calathletics">YouTube</a></li>
                 <?php 
