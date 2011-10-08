@@ -10,7 +10,8 @@ include(dirname(__FILE__).'/header.php');
     <div class="menu-full menu-detailed menu-padded">
          <h1 class="light menu-first">Locations</h1>
          <ol>
-             <li class=only-webkit><a href="map.php">All Libraries</a></li>
+             
+			 <li class=only-webkit><a href="map.php">All Libraries</a></li>
 			 <?php
              foreach($locations as $location)
              {
@@ -19,6 +20,15 @@ include(dirname(__FILE__).'/header.php');
              ?>
         </ol>
     </div>
+	
+	 <div class="menu-full menu-detailed menu-padded">
+        <div class="content-last">
+		  <ol>
+    	<li><a href="http://berkeley.edu/mobile/tour/view.php?l=2">Library Tour</a></li>
+		</ol>  
+    	</div>
+    	</div>
+
 
     <a class="button-full button-padded" href="http://mobile.lib.berkeley.edu/">Go to Library</a>
 
