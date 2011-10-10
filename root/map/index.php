@@ -13,11 +13,10 @@ include(dirname(__FILE__).'/header.php');
              <li><a href="museums.php">Museums</a></li>
              <li><a href="nearby.php">Near By</a></li>
              <li><a href="food.php">On-Campus Dining</a></li>
-             <?php
-			 	// To do:  check with PTO re map
-			 	//echo '<span class=only-webkit><li><a href="parking.php">Parking</a></li></span>';
-			 ?>
              <li><a href="outdoor.php">Outdoor</a></li>
+             <?php
+			 	echo '<li class="only-full"><a href="parking.php">Parking</a></li>';
+			 ?>
              <li><a href="sports_fac.php">Sports Facilities</a></li>
              <li class="menu-last"><a href="housing.php">Student Housing</a></li>             
         </ol>
