@@ -258,7 +258,7 @@ div.button-full.button-light a {
     padding: 12px 10px 15px 10px;
 }
 
-#search-button {
+#search-button, #search-button-by-date {
         background: url(img/button-search.png) no-repeat;
         width: 60px;
         height: 25px;
