@@ -7,15 +7,15 @@ $searcher = new UCLA_Directory();
 
 $search_results = array();
 
-if(isset($_POST['string'])){
-    $search_query_result = $searcher->search($_POST['string']);
+if(isset($_POST['search'])){
+    $search_query_result = $searcher->search($_POST['search']);
     foreach($search_query_result as $result)
     {
             $search_results[$result['uid'][0]] = $result['cn'][0];
     }
     natcasesort($search_results);
 
-	$_SESSION['lastsearch'] = $_POST['string'];
+	$_SESSION['lastsearch'] = $_POST['search'];
 }else if(isset($_SESSION['lastsearch'])){
     $search_query_result = $searcher->search($_SESSION['lastsearch']);
     foreach($search_query_result as $result)
