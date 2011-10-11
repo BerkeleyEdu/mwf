@@ -161,13 +161,13 @@ div.button-full a.button-light:active{
 	background: url(img/icon-social-media-full.png) no-repeat 50% 15px; 
 }
 
-#search_text, #menu-filter, #search-box{
+#search_text, #menu-filter, #search-box {
 	-webkit-border-radius: 12px;
 	font: 0.95em/1.25 Arial,Helvetica,sans-serif;
 }
 
 
-#search-button {
+#search-button, #search-button-by-date {
 background-image: url(img/search.png);
    background-position: right;
    background-repeat: no-repeat;
