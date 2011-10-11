@@ -161,3 +161,22 @@ div.button-full a.button-light:active{
 	background: url(img/icon-social-media-full.png) no-repeat 50% 15px; 
 }
 
+#search_text, #menu-filter, #search-box{
+	-webkit-border-radius: 12px;
+	font: 0.95em/1.25 Arial,Helvetica,sans-serif;
+}
+
+
+#search-button {
+background-image: url(img/search.png);
+   background-position: right;
+   background-repeat: no-repeat;
+   width: 24px;
+   height: 24px;
+   border: 0;
+   padding: 0;
+   margin: 0 10px 0 0;
+   display: inline;
+   vertical-align: middle;
+}
+

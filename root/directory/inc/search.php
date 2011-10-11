@@ -16,6 +16,6 @@ if(isset($_POST['string'])){
     <h1 class="content-first">Search Directory</h1>
     
     <form id="search-form" action="results.php" method="post">
-        <input type="text" name="string" id="search-box" value="<?php echo $value; ?>"  style='width:73%; max-width:300px'/> <input id="search-button" type="submit" name="submit" value="Search" class="form-last" />
+        <input type="text" name="string" id="search-box" value="<?php echo $value; ?>"  style='width:73%; max-width:300px' placeholder="By name, phone, or email"/> <input id="search-button" type="submit" name="submit" value="Search" class="form-last" />
     </form>
 </div>

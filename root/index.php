@@ -151,7 +151,7 @@ else
 {
 ?> 
     <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
-		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' />
+		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' placeholder="Search the UC Berkeley Web"/>
           <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>
           <input type="hidden" name="display_type" value="mobile" />
 <noscript>
@@ -206,7 +206,7 @@ if(!$main_menu)
 
 $footer = Site_Decorator::footer();
 
-$footer->show_powered_by(true);
+$footer->show_powered_by(false);
 
 echo $footer->render();
 
