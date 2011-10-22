@@ -180,3 +180,20 @@ background-image: url(img/search.png);
    vertical-align: middle;
 }
 
+/********************************************************
+ * CHOICE PAGE
+ *******************************************************/
+body.choice-page h1#header {
+	background: #383a7a url(img/header-front-page-bg.png) repeat-x;
+	height: 50px;
+}
+body.choice-page h1#header {
+    background: url("img/berkeley_header-front-page-bg.png") repeat-x scroll 0 0 #383A7A;
+}
+body.choice-page h1#header img {
+	float: none;
+}
+body.choice-page h1#header span {
+	display: none;
+}
+
