@@ -22,6 +22,8 @@ $salt = Config::get('news', 'salt');
 
         <div class="content-full content-padded">
             <h1 class="light content-first">News Feeds</h1>
+            <li><a href="http://m.youtube.com/view_playlist?gl=US&hl=en&client=mv-google&p=4DD1399BBF93AFBC">YouTube videos</a></li>
+
             <p class="content-last"><em><strong>Error encountered while fetching data.</strong> Please try again later.</em></p>
         </div>
 
@@ -30,7 +32,7 @@ $salt = Config::get('news', 'salt');
         <div class="menu-full menu-detailed menu-padded">
              <h1 class="light menu-first">Categories</h1>
              <ol>
-
+<li><a href="http://m.youtube.com/view_playlist?gl=US&hl=en&client=mv-google&p=4DD1399BBF93AFBC">YouTube videos</a></li>
                 <?php 
                 foreach($feed_set as $feed)
                     echo '<li><a href="'.$feed->get_page($salt).'">'.$feed->get_name().'</a></li>';
