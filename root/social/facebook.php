@@ -9,8 +9,8 @@ include(dirname(__FILE__).'/header.php');
             <h1 class="light menu-first">Facebook</h1>
              <ol>
 				<li><a href="http://m.facebook.com/UCBerkeley">UC Berkeley</a></li>
-                <li><a href=" http://m.facebook.com/pages/pages/ASUC/154833764534200">ASUC</a></li>
-				<li><a href="http://m.facebook.com/CalAlumni">California Alumni Association</a></li>
+                <li><a href="http://m.facebook.com/pages/ASUC/154833764534200">ASUC</a></li>
+				<li><a href="http://m.facebook.com/CalAlumni">Cal Alumni Association</a></li>
 				<li><a href="http://m.facebook.com/CalAthletics">Cal Athletics</a></li>
                 <li><a href="http://m.facebook.com/calparentsberkeley">Cal Parents</a></li>
 				 <li><a href="http://m.facebook.com/CalCareerCenter">Career Center</a></li>
