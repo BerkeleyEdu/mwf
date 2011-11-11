@@ -13,10 +13,9 @@
  * @author ebollens
  * @copyright Copyright (c) 2010-11 UC Regents
  * @license http://mwf.ucla.edu/license
- * @version 20110620
+ * @version 20110901
  *
  * @uses Config
- * @uses User_Agent
  * @uses JS
  * @uses Site_Decorator
  * @uses HTML_Decorator
@@ -39,9 +38,9 @@
  */
 
 require_once(dirname(__FILE__).'/assets/config.php');
-require_once(dirname(__FILE__).'/assets/lib/user_agent.class.php');
 require_once(dirname(__FILE__).'/assets/lib/decorator.class.php');
 require_once(dirname(__FILE__).'/assets/redirect/unset_override.php');
+require_once(dirname(__FILE__).'/assets/lib/classification.class.php');
 
 /**
  * Ensure that site_url and site_asset_url have been set.
@@ -49,30 +48,6 @@ require_once(dirname(__FILE__).'/assets/redirect/unset_override.php');
 
 if(!Config::get('global', 'site_url') || !Config::get('global', 'site_assets_url'))
 	die('<h1>Fatal Error</h1><p>The configuration settings {global::site_url} and {global::site_asset_url} must be defined in '.dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'global.php</p>');
-
-/**
- * Set an override for the classification if $_GET['ovrcls'] is defined, unset
- * it if $_GET['unovrcls'] is defined (unary), or redirect if non-mobile and
- * {'global':'site_nonmobile_url'} is true.
- */
-
-if(isset($_GET['ovrcls']))
-{
-    User_Agent::set_override($_GET['ovrcls']);
-    header('Location: '.Config::get('global', 'site_url'));
-}
-else if(isset($_GET['unovrcls']))
-{
-    User_Agent::unset_override();
-    header('Location: '.Config::get('global', 'site_url'));
-}
-else if(!User_Agent::is_mobile() && $nonmobile_url = Config::get('global', 'site_nonmobile_url') && $_SERVER['SERVER_NAME'] != 'mobile-qa.berkeley.edu'  && $_SERVER['SERVER_NAME'] != 'm-qa.berkeley.edu')
-{
-   $nonmobile_url = Config::get('global', 'site_nonmobile_url');
-   header('Location: '. $nonmobile_url);
-}
-
-
 
 /**
  * Get the menu from {'frontpage':'menu'} defined in config/frontpage.php.
@@ -118,10 +93,13 @@ else
 /*
 *  campus photo
 */
-if(User_Agent::is_full())
+if(Classification::is_full())
 {
 	$photo = rand(1, 9);
-	echo '<img src="/assets/min/img.php?img=http%3A%2F%2F'. $_SERVER['SERVER_NAME'] . '%2Fassets%2Fimg%2Fcampusphotos%2F'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
+	//echo '<img src="/assets/min/img.php?img=http%3A%2F%2F'. $_SERVER['SERVER_NAME'] . '%2Fassets%2Fimg%2Fcampusphotos%2F'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
+	//echo '<img src="/assets/min/img.php?img=http://'. $_SERVER['SERVER_NAME'] . '/assets/img/campusphotos/'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
+	
+		echo '<img src="/assets/min/img.php?img=http://'. $_SERVER['SERVER_NAME'] . '/assets/img/campusphotos/'. $photo . '.jpg" alt="the many faces of Berkeley"/>';
 }	
 else
 {
@@ -133,7 +111,7 @@ else
  * Search
  */
 echo '<div class="center">';
-$pos = strpos(User_Agent::get(),'BlackBerry'); 
+$pos = strpos(Classification::get(),'BlackBerry'); 
 	if ($pos !== false)
 	{
 	?>      
@@ -181,7 +159,7 @@ for($i = 0; $i < count($menu_items); $i++)
     if(isset($menu_item['restriction']))
     {
         $function = $menu_item['restriction'];
-        if(!User_Agent::$function())
+        if(!Classification::$function())
             continue;
     }
 
@@ -206,7 +184,7 @@ if(!$main_menu)
 
 $footer = Site_Decorator::footer();
 
-$footer->show_powered_by(true);
+$footer->show_powered_by(false);
 
 echo $footer->render();
 

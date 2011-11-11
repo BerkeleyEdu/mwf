@@ -18,6 +18,6 @@
 
 </head>
 
-<body class="front-page">
+<body class="choice-page">
 
 <h1 id="header"><img src="../assets/img/berkeley-mobile-logo.png" alt="UCB Mobile" width="267" height="50" /><span>UCB Mobile</span></h1>

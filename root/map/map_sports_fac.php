@@ -1,7 +1,6 @@
 <?php
 
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_agent.class.php');
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_browser.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.php');
 $locations = new Locations('http://www.berkeley.edu/data/ucb_sports_fac_map_coordinates.xml');
@@ -12,7 +11,7 @@ include(dirname(__FILE__).'/map_header.php');
 
           <div id="map_canvas"><?php
 
-          if(!User_Agent::is_full())
+          if(!Classification::is_full())
           {
               echo '<noscript>';
 			  if(!isset($_GET['loc']))
@@ -47,7 +46,7 @@ include(dirname(__FILE__).'/map_header.php');
          }
 		 ?>
 
-        <?php if(User_Agent::is_full()){ ?>
+        <?php if(Classification::is_full()){ ?>
         <script type="text/javascript">
             var map = mwf.ext.touch.location.buildMap("map_canvas");
             <?php

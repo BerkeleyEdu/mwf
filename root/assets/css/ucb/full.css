@@ -12,6 +12,9 @@
 a.button-full,
 div.button-full a {
     background: -webkit-gradient(linear, left top, left bottom, from(#4c4e9a), to(#383a7a), color-stop(1, #fff));
+	background: -moz-linear-gradient(#4c4e9a, #383a7a);
+    background: -o-linear-gradient(top, #4c4e9a, #383a7a);
+    background: linear-gradient(#4c4e9a, #383a7a);
     -webkit-background-origin: padding-box;
     -webkit-background-clip: padding-box;
 }
@@ -29,6 +32,9 @@ div.button-full a.button-light:hover,
 div.button-full a.button-light:focus,
 div.button-full a.button-light:active{
     background: -webkit-gradient(linear, left top, left bottom, from(#1c2773), to(#0f184e), color-stop(1, #fff));
+	background: -moz-linear-gradient(#4c4e9a, #383a7a);
+    background: -o-linear-gradient(top, #4c4e9a, #383a7a);
+    background: linear-gradient(#4c4e9a, #383a7a);
     -webkit-background-origin: padding-box;
     -webkit-background-clip: padding-box;
 }
@@ -53,3 +59,146 @@ div.button-full a.button-light:active{
     background: -webkit-gradient(linear, left top, left bottom, from(#809FE2), to(#637CB0), color-stop(1, #fff));
 }
 */
+
+
+/********************************************************
+ * FRONT PAGE MENU - ICON STYLE FOR FULL
+ *******************************************************/
+
+.front-page .menu-full ol {
+	margin: 0px auto !important;
+	overflow: hidden;
+}
+
+.front-page .menu-full .menu-first {
+	margin-top: 0 !important;	
+}
+
+.front-page .menu-full ol {
+	background: none;
+	padding: 5px 5px 0px 5px;;
+	text-align: center;
+}
+
+.front-page .menu-full li {
+	background-color: transparent;
+	border-top: none;
+	float: left;
+	list-style: none;
+	width: 25%;
+}
+
+.front-page .menu-full li a {
+	background: none;
+	font-weight: normal;
+	padding: 75px 0px 0px 0px;
+	text-align: center;
+}
+ 
+ .front-page #news {
+	background:  url(img/icon-news-full.png) no-repeat  50% 15px;
+}
+
+.front-page #happenings {
+	background:  url(img/icon-events-full.png) no-repeat 50% 15px;
+}
+
+.front-page #directory {
+	background:  url(img/icon-directory-full.png) no-repeat 50% 15px;
+}
+.front-page #campus-map {
+	background:  url(img/icon-campus-map-full.png) no-repeat 50% 15px;
+}
+
+.front-page #courses {
+	background:  url(img/icon-courses-full.png) no-repeat 50% 15px;
+}
+
+.front-page #library {
+	background:  url(img/icon-library-full.png) no-repeat 50% 15px;
+}
+
+.front-page #sports { 
+	background: url(img/icon-athletics-full.png) no-repeat 50% 15px;
+}
+	
+.front-page #social { 
+	background: url(img/icon-social-media-full.png) no-repeat 50% 15px; 
+}
+
+
+.front-page #news a:hover,
+.front-page #news a:focus {
+	background: url(img/icon-news-full.png) no-repeat 50% 15px;
+}
+
+.front-page #happenings a:hover,
+.front-page #happenings a:focus{
+	background: url(img/icon-events-full.png) no-repeat 50% 15px;
+}
+
+.front-page #directory a:hover,
+.front-page #directory a:focus{
+	background: url(img/icon-directory-full.png) no-repeat 50% 15px;
+}
+
+.front-page #campus-map a:hover,
+.front-page #campus-map a:focus{
+	background: url(img/icon-campus-map-full.png) no-repeat 50% 15px;
+}
+
+.front-page #courses a:hover,
+.front-page #courses a:focus{
+	background: url(img/icon-courses-full.png) no-repeat 50% 15px;
+}
+
+.front-page #library a:hover,
+.front-page #library a:focus{
+	background: url(img/icon-library-full.png) no-repeat 50% 15px;
+}
+
+.front-page #sports a:hover,
+.front-page #sports a:focus{ 
+	background: url(img/icon-athletics-full.png) no-repeat 50% 15px;
+}
+	
+.front-page #social a:hover,
+.front-page #social a:focus{ 
+	background: url(img/icon-social-media-full.png) no-repeat 50% 15px; 
+}
+
+#search_text, #menu-filter, #search-box {
+	-webkit-border-radius: 12px;
+	font: 0.95em/1.25 Arial,Helvetica,sans-serif;
+}
+
+
+#search-button, #search-button-by-date {
+background-image: url(img/search.png);
+   background-position: right;
+   background-repeat: no-repeat;
+   width: 24px;
+   height: 24px;
+   border: 0;
+   padding: 0;
+   margin: 0 10px 0 0;
+   display: inline;
+   vertical-align: middle;
+}
+
+/********************************************************
+ * CHOICE PAGE
+ *******************************************************/
+body.choice-page h1#header {
+	background: #383a7a url(img/header-front-page-bg.png) repeat-x;
+	height: 50px;
+}
+body.choice-page h1#header {
+    background: url("img/berkeley_header-front-page-bg.png") repeat-x scroll 0 0 #383A7A;
+}
+body.choice-page h1#header img {
+	float: none;
+}
+body.choice-page h1#header span {
+	display: none;
+}
