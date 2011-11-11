@@ -38,17 +38,10 @@ class Remote_Image extends Image {
         if (!file_exists($path)) {
             $path = tempnam(sys_get_temp_dir(), 'mwf');
             // Encode the URL
-            /*
 			$image_url = preg_replace_callback('#://([^/]+)/([^?]+)#', function ($match) {
                         return '://' . $match[1] . '/' . join('/', array_map('rawurlencode', explode('/', $match[2])));
                     }, $image_path);
-					
-			$image_url = preg_replace_callback('#://([^/]+)/([^?]+)#', create_function('$match', 
-                    'return "://" . $match[1] . "/" . join("/", array_map("rawurlencode", explode("/", $match[2])))'),
-                    $image_path);
-			*/		
-			$image_url = preg_replace_callback('#://([^/]+)/([^?]+)#', array($this, '_get_gd_image_match'), $image_path);
-					
+		
             if (ini_get('allow_url_fopen')) {
                 file_put_contents($path, file_get_contents($image_url, FALSE, NULL, -1, 9999999));
             } else {
@@ -102,11 +95,6 @@ class Remote_Image extends Image {
     protected function get_gd_extension() {
         $this->get_gd_image();
         return $this->_image_ext;
-    }
-	
-	private function _get_gd_image_match($match)
-    {
-        return "://" . $match[1] . "/" . join("/", array_map("rawurlencode", explode("/", $match[2])));
     }
 
 }

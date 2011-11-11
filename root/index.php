@@ -96,10 +96,7 @@ else
 if(Classification::is_full())
 {
 	$photo = rand(1, 9);
-	//echo '<img src="/assets/min/img.php?img=http%3A%2F%2F'. $_SERVER['SERVER_NAME'] . '%2Fassets%2Fimg%2Fcampusphotos%2F'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
-	//echo '<img src="/assets/min/img.php?img=http://'. $_SERVER['SERVER_NAME'] . '/assets/img/campusphotos/'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
-	
-		echo '<img src="/assets/min/img.php?img=http://'. $_SERVER['SERVER_NAME'] . '/assets/img/campusphotos/'. $photo . '.jpg" alt="the many faces of Berkeley"/>';
+	echo '<img src="/assets/min/img.php?img=http%3A%2F%2F'. $_SERVER['SERVER_NAME'] . '%2Fassets%2Fimg%2Fcampusphotos%2F'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
 }	
 else
 {
