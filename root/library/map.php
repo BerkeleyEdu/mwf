@@ -1,7 +1,5 @@
 <?php
-
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_agent.class.php');
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_browser.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.php');
 
@@ -27,7 +25,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_library_map_coordin
             a.button-full#button-bottom { position: absolute !important; bottom: 0px; left: 0px; right: 0px; width: 100%; z-index: 2; }
         </style>
     <?php	
-          if(!User_Agent::is_webkit())
+          if(!Classification::is_webkit())
           { 
 			  if(!isset($_GET['loc']))
 			  {
@@ -74,7 +72,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_library_map_coordin
     </head>
     
      <?php 
-   	if(!User_Agent::is_webkit())
+   	if(!Classification::is_webkit())
   	{ 
    		 echo '<body onload="initialize()">';
     }
@@ -94,7 +92,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_library_map_coordin
 
           <div id="map_canvas"><?php
 
-          if(!User_Agent::is_webkit())
+          if(!Classification::is_webkit())
           {
               echo '<noscript>';
 			  if(!isset($_GET['loc']))
@@ -121,7 +119,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_library_map_coordin
 
           <a class="button-full" id="button-bottom" href="locations.php">Go to Locations</a>
 
-        <?php if(User_Agent::is_webkit()){ ?>
+        <?php if(Classification::is_webkit()){ ?>
         <script type="text/javascript">
             var map = mwf.ext.touch.location.buildMap("map_canvas");
             <?php

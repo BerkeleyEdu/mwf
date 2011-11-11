@@ -16,6 +16,7 @@ include(dirname(__FILE__).'/header.php');
                  	<a href="http://mobile.twitter.com/UCBerkeleyEvent">UC Berkeley Events</a>
                  </li>
                   <li class="menu-first">
+<<<<<<< HEAD
                   	<a href="http://mobile.twitter.com/BAMPFA">Berkeley Art Museum </a></li>
                 <li><a href="http://mobile.twitter.com/Cal">Cal Berkeley</a></li>
                 <li><a href="http://mobile.twitter.com/CalAthletics">Cal Bears</a></li> 
@@ -23,6 +24,17 @@ include(dirname(__FILE__).'/header.php');
                 <li><a href="http://mobile.twitter.com/berkeleyscience">Lawrence Hall of Science</a></li>  
                 <li class="menu-last">
                 	<a href="http://mobile.twitter.com/ucgarden">UC Botanical Garden</a></li>                 
+=======
+                  	<a href="http://twitter.com/#!/BAMPFA">Berkeley Art Museum </a></li>
+                <li><a href="http://mobile.twitter.com/#!/Cal">Cal Berkeley</a></li>
+                <li><a href="http://mobile.twitter.com/#!/CalAthletics">Cal Bears</a></li> 
+                <li><a href="http://mobile.twitter.com/#!/calperformances">Cal Performances</a></li> 
+                <li><a href="http://mobile.twitter.com/#!/berkeleyscience">Lawrence Hall of Science</a></li> 
+                <li><a href="http://mobile.twitter.com/#!/Berkeley_Summer">Summer Sessions</a>
+                <li><a href="http://mobile.twitter.com/UCBerkeley_Jobs">UC Berkeley Jobs</a></li> 
+                <li class="menu-last">
+                	<a href="http://mobile.twitter.com/#!/ucgarden">UC Botanical Garden</a></li>                 
+>>>>>>> BerkeleyEdu/maint
                 
 
            </ol>      

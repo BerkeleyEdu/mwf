@@ -20,7 +20,7 @@
 		
     <?php	
 
-          if(!User_Agent::is_full())
+          if(!Classification::is_full())
           { 
 			  if(!isset($_GET['loc']))
 			  {
@@ -67,7 +67,7 @@
     </head>
     
      <?php 
-   	if(!User_Agent::is_full())
+   	if(!Classification::is_full())
   	{ 
    		 echo '<body onload="initialize()">';
     }

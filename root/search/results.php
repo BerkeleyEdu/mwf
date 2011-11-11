@@ -1,6 +1,5 @@
 <?php
-require_once('../assets/lib/user_agent.class.php');
-require_once('../assets/lib/user_browser.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
 require_once('../assets/config.php');
 include(dirname(__FILE__).'/header.php');
 ?>
