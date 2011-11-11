@@ -136,16 +136,8 @@ class Feed
     {
 		if(!isset($_GET['article']))
             return false;
-<<<<<<< HEAD
-			
-		return $this->get_item($_GET['article']);
-        //return $this->get_item(urldecode($_GET['article']));
-=======
-
         return $this->get_item($_GET['article']);
->>>>>>> BerkeleyEdu/maint
-    }
-
+	}
     /**
      * Produces a URL that will build a page around the Feed object.
      * 
