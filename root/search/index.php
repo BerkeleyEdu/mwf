@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/user_agent.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 include(dirname(__FILE__).'/header.php');
 ?>
@@ -10,7 +10,7 @@ include(dirname(__FILE__).'/header.php');
 <p>
      
 <?php 
-	$pos = strpos(Classification::get(),'BlackBerry'); 
+	$pos = strpos(User_Agent::get_user_agent(),'BlackBerry'); 
 	if ($pos !== false)
 	{
 	?>      

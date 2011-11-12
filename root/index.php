@@ -41,6 +41,7 @@ require_once(dirname(__FILE__).'/assets/config.php');
 require_once(dirname(__FILE__).'/assets/lib/decorator.class.php');
 require_once(dirname(__FILE__).'/assets/redirect/unset_override.php');
 require_once(dirname(__FILE__).'/assets/lib/classification.class.php');
+require_once(dirname(__FILE__).'/assets/lib/user_agent.class.php');
 
 /**
  * Ensure that site_url and site_asset_url have been set.
@@ -110,7 +111,7 @@ else
  * Search
  */
 echo '<div class="center">';
-$pos = strpos(Classification::get(),'BlackBerry'); 
+$pos = strpos(User_Agent::get_user_agent(),'BlackBerry'); 
 	if ($pos !== false)
 	{
 	?>      
