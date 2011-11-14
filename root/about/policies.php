@@ -6,8 +6,9 @@ include(dirname(__FILE__).'/header.php');
 
 		<div class="content-full content-padded">
         <h2 class="content-first">Developing Mobile Web Sites at Berkeley</h2>
-        <div class="content-last"><p>The campus has adopted the <a href="http://mwf.ucla.edu">Mobile Web Framework</a> as the de facto standard for mobile  development here at Berkeley. This framework, originally developed at UCLA, meets the requirements specified in the <a href="https://wikihub.berkeley.edu/display/itac/UC+Berkeley+Campus+Mobile+Strategy">UC Berkeley Campus Mobile Computing Strategy</a>.</p><p> To use the framework in your project (whether or not it is linked from the mobile web home page) see the <a href="resources.php">Mobile Web Development Resources</a>.</p></div>
-       
+        <div class="content-last"><p>The campus has adopted the <a href="http://mwf.ucla.edu">Mobile Web Framework</a> as the de facto standard for mobile  development here at Berkeley. This framework, originally developed at UCLA, meets the requirements specified in the <a href="https://wikihub.berkeley.edu/display/itac/UC+Berkeley+Campus+Mobile+Strategy">UC Berkeley Campus Mobile Computing Strategy</a>.</p><p> To use the framework in your project (whether or not it is linked from the mobile web home page) see the <a href="resources.php">Mobile Web Development Resources</a>.</p></div></div>
+        
+       <div class="content-full content-padded">
         <h2 class="content-first">Joining the UC Berkeley Mobile Web</h2>
         <div class="content-last">
         <p>The links and information included on the <a href="http://m.berkeley.edu">campus mobile web home page</a> and  second-level         pages have been designed to provide mobile access to sites of widespread interest to the campus community. Sites linked from the UC Berkeley Mobile Web must have the following characteristics:</p>
