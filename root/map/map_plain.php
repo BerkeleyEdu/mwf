@@ -1,6 +1,7 @@
 <?php
 
 require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/screen.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.php');
 
@@ -74,7 +75,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.ph
           if(!Classification::is_full())
           {
               echo '<noscript>';
-			  echo '<img src="http://maps.google.com/maps/api/staticmap?center=37.872439999999997%2C-122.25955999999999&zoom=15&size='.User_Browser::width().'x'.User_Browser::height().'&sensor=false"></img>';
+			  echo '<img src="http://maps.google.com/maps/api/staticmap?center=37.872439999999997%2C-122.25955999999999&zoom=15&size='.Screen::get_width().'x'.Screen::get_height().'&sensor=false"></img>';
 			   echo '</noscript>';
           }
 

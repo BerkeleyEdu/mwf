@@ -1,6 +1,7 @@
 <?php
 
 require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/screen.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.php');
 $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml');
@@ -111,7 +112,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml
               }
 
 
-              echo '<img src="http://maps.google.com/maps/api/staticmap?center='.$location['lat'].'%2C'.$location['lon'].'&amp;zoom=15&size='.User_Browser::width().'x'.User_Browser::height().$marker.'&amp;sensor=false"></img>';
+              echo '<img src="http://maps.google.com/maps/api/staticmap?center='.$location['lat'].'%2C'.$location['lon'].'&amp;zoom=15&size='.Screen::get_width().'x'.Screen::get_height().$marker.'&amp;sensor=false"></img>';
 			  echo '</noscript>';
           }
 
