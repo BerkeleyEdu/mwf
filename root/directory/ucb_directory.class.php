@@ -32,7 +32,7 @@ class UCLA_Directory extends LDAP_Directory
 		{
 			// Search for email
 			$email = $name;
-			$primaryfilter .= "(&(mail=$email)$departmental$expiredPeopleFilter$test)";
+			$primaryfilter = "(&(mail=$email)$departmental$expiredPeopleFilter$test)";
 		} 
 		elseif (is_numeric(str_replace('-', '', $name)))
 		{
@@ -50,7 +50,7 @@ class UCLA_Directory extends LDAP_Directory
 		else
 		{
 			// Search for name
-			$primaryfilter .= "(&(cn=$name)$departmental$expiredPeopleFilter$test)";
+			$primaryfilter = "(&(cn=$name)$departmental$expiredPeopleFilter$test)";
 		}
 		
 		$array = parent::raw_search('ou=people, dc=berkeley, dc=edu', $primaryfilter);

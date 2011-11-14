@@ -13,10 +13,14 @@ body.front-page h1#header {
 	background: #383a7a  url(img/berkeley_header-front-page-bg.png) repeat-x;
 }
 
-a 
-a:visited {
+a {
     color: #292e74;
 }
+
+a:visited {
+    color: #292e74;
+} 
+
 p a,
 p a:visited {
     color: #292e74;
@@ -31,7 +35,8 @@ p a:visited {
 		color: #292e74;
 }
 
-li a {
+li a, 
+li a:visited {
 		color: #292e74;
 		border: none;
 }
