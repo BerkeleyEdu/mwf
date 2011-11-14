@@ -39,11 +39,11 @@ $valid_results = (count($search_results) < 249 && count($search_results) > 0);
 	<?php
 	if ($_SERVER['SERVER_NAME'] == 'mobile-qa.berkeley.edu')  // development environment
 	{
-		print '<script type="application/javascript" src="../assets/js.php?no_ga&webkit_libs=transitions"></script>';
+		print '<script type="application/javascript" src="../assets/js.php?no_ga"></script>';
 	}
 	else
 	{
-		print '<script type="application/javascript" src="../assets/js.php&webkit_libs=transitions"></script>';	
+		print '<script type="application/javascript" src="../assets/js.php"></script>';	
 	}
 	?>
     <meta name="viewport" content="height=device-height,width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />

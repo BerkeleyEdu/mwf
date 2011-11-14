@@ -8,13 +8,16 @@ $atoz_link = 'http://berkeley.edu/a-z/' . $_GET['atoz'] .'.txt';
 
 
         <div class="content-elements content-padded">
-        <div class="content-last">  
-		Please note that most sites in this <a href="index.php">A-Z index</a> are not optimized for viewing on a mobile device.
+            <p class="content-last">  
+            Please note that most sites in this <a href="index.php">A-Z index</a> are not optimized for viewing on a mobile device.
+            </p>
         </div>
-		<h1 class="content-first"><?php echo $letter ?></h1>
-		<div class="content-last">
-			<?php include ($atoz_link);?>
-		 </div>
+        
+        <div class="content-elements content-padded">
+            <h1 class="content-first"><?php echo $letter ?></h1>
+            <div class="content-last">
+                <?php include ($atoz_link);?>
+             </div>
     	</div>
 
 

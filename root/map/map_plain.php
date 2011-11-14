@@ -1,7 +1,7 @@
 <?php
 
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_agent.class.php');
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_browser.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/screen.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.php');
 
@@ -27,7 +27,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.ph
         </style>
         
         <?php	
-          if(!User_Agent::is_full())
+          if(!Classification::is_full())
           { ?>
           
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -50,7 +50,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.ph
             
     </head>
    <?php 
-   	if(!User_Agent::is_full())
+   	if(!Classification::is_full())
   	{ 
    		 echo '<body onload="initialize()">';
     }
@@ -72,10 +72,10 @@ require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.ph
 
           <div id="map_canvas"><?php
 	
-          if(!User_Agent::is_full())
+          if(!Classification::is_full())
           {
               echo '<noscript>';
-			  echo '<img src="http://maps.google.com/maps/api/staticmap?center=37.872439999999997%2C-122.25955999999999&zoom=15&size='.User_Browser::width().'x'.User_Browser::height().'&sensor=false"></img>';
+			  echo '<img src="http://maps.google.com/maps/api/staticmap?center=37.872439999999997%2C-122.25955999999999&zoom=15&size='.Screen::get_width().'x'.Screen::get_height().'&sensor=false"></img>';
 			   echo '</noscript>';
           }
 
@@ -85,7 +85,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.ph
 
           <a class="button-full" id="button-bottom" href="<?php echo isset($_GET['loc']) ? 'locations.php' : 'index.php'; ?>">Go to Maps &amp; Tour</a>
 
-        <?php if(User_Agent::is_full()){  ?>
+        <?php if(Classification::is_full()){  ?>
         <script type="text/javascript">		
             var map = mwf.ext.touch.location.buildMap("map_canvas");
             <?php

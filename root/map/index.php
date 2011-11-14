@@ -7,6 +7,10 @@ include(dirname(__FILE__).'/header.php');
     <div class="menu-full menu-detailed menu-padded" >
          <ol>
              <li class="menu-first menu-last"><a href="http://berkeley.edu/mobile/tour/">Campus Tour</a></li>
+            </ol>
+            </div>
+          <div class="menu-full menu-detailed menu-padded" >  
+           <ol> 
              <li class="menu-first"><a href="map_plain.php">Campus Map</a></li>            
              <li><a href="locations.php">Buildings</a></li>            
              <li><a href="libraries.php">Libraries</a></li>

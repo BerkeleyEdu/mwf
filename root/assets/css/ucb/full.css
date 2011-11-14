@@ -12,6 +12,9 @@
 a.button-full,
 div.button-full a {
     background: -webkit-gradient(linear, left top, left bottom, from(#4c4e9a), to(#383a7a), color-stop(1, #fff));
+	background: -moz-linear-gradient(#4c4e9a, #383a7a);
+    background: -o-linear-gradient(top, #4c4e9a, #383a7a);
+    background: linear-gradient(#4c4e9a, #383a7a);
     -webkit-background-origin: padding-box;
     -webkit-background-clip: padding-box;
 }
@@ -29,6 +32,9 @@ div.button-full a.button-light:hover,
 div.button-full a.button-light:focus,
 div.button-full a.button-light:active{
     background: -webkit-gradient(linear, left top, left bottom, from(#1c2773), to(#0f184e), color-stop(1, #fff));
+	background: -moz-linear-gradient(#4c4e9a, #383a7a);
+    background: -o-linear-gradient(top, #4c4e9a, #383a7a);
+    background: linear-gradient(#4c4e9a, #383a7a);
     -webkit-background-origin: padding-box;
     -webkit-background-clip: padding-box;
 }
@@ -195,5 +201,3 @@ body.choice-page h1#header img {
 }
 body.choice-page h1#header span {
 	display: none;
-}
-

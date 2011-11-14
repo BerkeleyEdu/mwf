@@ -1,15 +1,16 @@
 <?php
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_agent.class.php');
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_browser.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/screen.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.php');
+
 $locations = new Locations('http://www.berkeley.edu/data/ucb_housing_map_coordinates.xml');
 include(dirname(__FILE__).'/map_header.php');
 ?>
 
-          <div id="map_canvas"><?php
-
-          if(!User_Agent::is_full())
+          <div id="map_canvas">
+		  <?php
+          if(!Classification::is_full())
           {
               echo '<noscript>';
 			  if(!isset($_GET['loc']))
@@ -26,9 +27,9 @@ include(dirname(__FILE__).'/map_header.php');
                   $location = array('lat'=>'37.872439999999997', 'lon'=>'-122.25955999999999');
                   $marker = '';
               }
+			 
+			 echo '<img src="http://maps.google.com/maps/api/staticmap?center='.$location['lat'].'%2C'.$location['lon'].'&zoom=16&size='.Screen::get_width().'x'.Screen::get_height().$marker.'&sensor=false"></img>';	
 
-
-              echo '<img src="http://maps.google.com/maps/api/staticmap?center='.$location['lat'].'%2C'.$location['lon'].'&zoom=16&size='.User_Browser::width().'x'.User_Browser::height().$marker.'&sensor=false"></img>';
 			  echo '</noscript>';
           }
 
@@ -36,7 +37,7 @@ include(dirname(__FILE__).'/map_header.php');
 
           <a class="button-full" id="button-bottom" href="housing.php">Go to Student Housing</a>
 
-        <?php if(User_Agent::is_full()){ ?>
+        <?php if(Classification::is_full()){ ?>
         <script type="text/javascript">
             var map = mwf.ext.touch.location.buildMap("map_canvas");
             <?php
@@ -45,6 +46,7 @@ include(dirname(__FILE__).'/map_header.php');
                 foreach($locations as $location)
                     echo 'map.addLocation("'.$location['name'].'", '.$location['lat'].', '.$location['lon'].'); ';
             } else {
+
                 $loc = urldecode($_GET['loc']);
                 if($location = $locations->find($loc)){
                     echo 'map.addLocation("'.$location['name'].'", '.$location['lat'].', '.$location['lon'].'); ';

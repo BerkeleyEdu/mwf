@@ -16,6 +16,11 @@ body.front-page h1#header {
 a {
     color: #292e74;
 }
+
+a:visited {
+    color: #292e74;
+} 
+
 p a,
 p a:visited {
     color: #292e74;
@@ -30,11 +35,12 @@ p a:visited {
 		color: #292e74;
 }
 
-li a {
+li a, 
+li a:visited {
 		color: #292e74;
 		border: none;
 }
-
+/*
 a.button-full,
 div.button-full a {
 	color: #292e74;
@@ -48,7 +54,31 @@ div.button-full a:focus,
 div.button-full a:active{
 	color: #292e74;
 }
+*/
+a.button-full,
+div.button-full a {
+	background-color: #383A7A ;
+	color: #fff;
+	font-size: .9em;
+	font-weight: bold;
+	border: none;
+}
 
+a.button-full:hover,
+a.button-full:focus,
+a.button-full:active,
+div.button-full a:hover,
+div.button-full a:focus,
+div.button-full a:active,
+a.button-full.button-light:hover,
+a.button-full.button-light:focus,
+a.button-full.button-light:active,
+div.button-full a.button-light:hover,
+div.button-full a.button-light:focus,
+div.button-full a.button-light:active {
+	background-color: #1F2252  !important;
+	color: #fff;
+}
 form.form-full > input[type=submit]:active,
 form.form-full > input[type=reset]:active,
 form.form-full > input[type=submit]:focus,

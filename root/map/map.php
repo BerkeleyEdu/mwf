@@ -1,7 +1,7 @@
 <?php
 
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_agent.class.php');
-require_once(dirname(dirname(__FILE__)).'/assets/lib/user_browser.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/classification.class.php');
+require_once(dirname(dirname(__FILE__)).'/assets/lib/screen.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.php');
 $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml');
@@ -27,7 +27,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml
             a.button-full#button-bottom { position: absolute !important; bottom: 0px; left: 0px; right: 0px; width: 100%; z-index: 2; }
         </style>
         <?php	
-          if(!User_Agent::is_full())
+          if(!Classification::is_full())
           { 
 			  if(!isset($_GET['loc']))
 			  {
@@ -74,7 +74,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml
     </head>
     
      <?php 
-   	if(!User_Agent::is_full())
+   	if(!Classification::is_full())
   	{ 
    		 echo '<body onload="initialize()">';
     }
@@ -93,7 +93,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml
 
           <div id="map_canvas"><?php
 
-          if(!User_Agent::is_full())
+          if(!Classification::is_full())
           {
               echo '<noscript>';
 			  if(!isset($_GET['loc']))
@@ -112,7 +112,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml
               }
 
 
-              echo '<img src="http://maps.google.com/maps/api/staticmap?center='.$location['lat'].'%2C'.$location['lon'].'&amp;zoom=15&size='.User_Browser::width().'x'.User_Browser::height().$marker.'&amp;sensor=false"></img>';
+              echo '<img src="http://maps.google.com/maps/api/staticmap?center='.$location['lat'].'%2C'.$location['lon'].'&amp;zoom=15&size='.Screen::get_width().'x'.Screen::get_height().$marker.'&amp;sensor=false"></img>';
 			  echo '</noscript>';
           }
 
@@ -129,7 +129,7 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_map_coordinates.xml
          }
 		 ?>
 
-        <?php if(User_Agent::is_full()){ ?>
+        <?php if(Classification::is_full()){ ?>
         <script type="text/javascript">
             var map = mwf.ext.touch.location.buildMap("map_canvas");
             <?php

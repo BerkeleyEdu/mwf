@@ -12,7 +12,11 @@ include(dirname(__FILE__).'/header.php');
                 <li><a href="http://m.facebook.com/pages/College-Of-Chemistry-UC-Berkeley/26126261974">College of Chemistry</a></li>
                 <li><a href="http://m.facebook.com/berkeleyengineering">College of Engineering</a></li>
                 <li><a href="http://m.facebook.com/group.php?gid=59611725522">College of Environmental Design</a></li> 
+<<<<<<< HEAD
                 <li><a href="facebookls.php">College of Letters & Science</a></li> 
+=======
+                <li><a href="http://m.facebook.com/pages/University-of-California-Berkeley-College-of-Letters-and-Science/103987989638140">College of Letters & Science</a></li> 
+>>>>>>> BerkeleyEdu/maint
                 <li><a href="http://m.facebook.com/cnrberkeley">College of Natural Resources</a></li> 
                 <li><a href="http://m.facebook.com/GoldmanSchool">Goldman School of Public Policy</a></li> 
                 <li ><a href="http://m.facebook.com/ucberkeleygse">Graduate School of Education</a></li>
