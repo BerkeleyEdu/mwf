@@ -15,6 +15,10 @@ include(dirname(__FILE__).'/header.php');
                  <li class="menu-last">
                  	<a href="http://mobile.twitter.com/UCBerkeleyEvent">UC Berkeley Events</a>
                  </li>
+                 </ol>      
+        </div>
+           <div class="menu-full menu-detailed menu-padded"> 
+           <ol>     
                   <li class="menu-first">
                   	<a href="http://mobile.twitter.com/BAMPFA">Berkeley Art Museum </a></li>
                 <li><a href="http://mobile.twitter.com/Cal">Cal Berkeley</a></li>
