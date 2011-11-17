@@ -124,6 +124,16 @@ div.button-full a.button-light:active {
 	border-bottom: 3px solid #ebb71b;
 } 
 
+#search-button-by-date {
+        background: url(img/button-search.png) no-repeat;
+        width: 60px;
+        height: 25px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        text-indent:-9999px;
+}
+
 /*-------------------------------------------------
   Headings
   ------------------------------------------------
