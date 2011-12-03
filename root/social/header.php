@@ -25,9 +25,9 @@ require_once('../assets/config.php');
 
 	<h1 id="header">
         <a href="../">
-        <img src="<?php echo Config::get('social', 'header_image_sub'); ?>" alt="<?php echo Config::get('social', 'header_image_sub_alt'); ?>" width="119" height="35" /> </a>
+        <img src="<?php echo Config::get('social', 'header_image_sub'); ?>" alt="<?php echo Config::get('social', 'header_image_sub_alt'); ?>" width="88" height="35" /> </a>
 		<a href="index.php">
-        <img src="../assets/img/l2-social-media.png" alt="" width="45" height="35"/>		
+        <!--<img src="../assets/img/l2-social-media.png" alt="" width="45" height="35"/>-->		
 		<span>Social Media</span>
 		</a>
     </h1>

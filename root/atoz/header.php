@@ -24,7 +24,7 @@ require_once('../assets/config.php'); ?><!DOCTYPE html>
 
 	<h1 id="header">
         <a href="../">
-        <img src="../assets/img/berkeley-logo.png" alt="UC Berkeley" width="119" height="35" />        
+       <img src="../assets/img/berkeley-home.png" alt="Berkeley" width="88" height="35" />       
         </a>
 		<a href="index.php">
 		<span>Websites A-Z</span>

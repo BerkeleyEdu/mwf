@@ -32,7 +32,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/config.php');
     
     <?php include('inc/useful.php'); ?>
     
-    <a class="button-full button-padded" href="..">Go to UCB Mobile</a>
+    <a class="button-full button-padded" href="..">Go to Berkeley Mobile</a>
     
     <?php include('inc/footer.php'); ?>
 

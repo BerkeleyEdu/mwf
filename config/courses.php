@@ -16,8 +16,8 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
 Config::set('courses', 'title_text', Config::get('global', 'title_text') . ' Courses');
 
-Config::set('courses', 'header_image_sub', '../assets/img/berkeley-logo.png');
+Config::set('courses', 'header_image_sub', '../assets/img/berkeley-home.png');
 
-Config::set('courses', 'header_image_sub_alt', 'UC Berkeley');
+Config::set('courses', 'header_image_sub_alt', ' Berkeley');
 
 ?>

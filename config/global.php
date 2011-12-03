@@ -62,13 +62,13 @@ Config::set('global', 'cookie_prefix', 'ucbmob_');
 Config::set('global', 'appicon_img',                Config::get('global', 'site_assets_url').'/img/mwf-appicon.png');
 Config::set('global', 'appicon_img_precomposed',    Config::get('global', 'site_assets_url').'/img/mwf-appicon-precomposed.png');
 Config::set('global', 'appicon_allow_disable_flag', true);
-Config::set('global', 'back_to_home_text',          'Go Back to UCB Mobile');
+Config::set('global', 'back_to_home_text',          'Go Back to Berkeley Mobile');
 Config::set('global', 'charset',                    false);
 Config::set('global', 'copyright_text',            'University of California &copy; ' . date('Y') . ' UC Regents');
 Config::set('global', 'header_home_button',         Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');
-Config::set('global', 'header_home_button_alt',     'UCB Mobile');
+Config::set('global', 'header_home_button_alt',     'Berkeley Mobile');
 Config::set('global', 'language',                   false);
-Config::set('global', 'title_text',                 'UC Berkeley Mobile');
+Config::set('global', 'title_text',                 'Berkeley Mobile');
 
 
 /******************************************************************
@@ -81,5 +81,5 @@ Config::set('global', 'title_text',                 'UC Berkeley Mobile');
  *
  */
 
-Config::set('global', 'header_image_sub_alt', 'UCB Mobile');
+Config::set('global', 'header_image_sub_alt', 'Berkeley Mobile');
 Config::set('global', 'header_image_sub', Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');

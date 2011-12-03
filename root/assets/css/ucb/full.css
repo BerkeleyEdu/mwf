@@ -64,7 +64,8 @@ div.button-full a.button-light:active{
 /********************************************************
  * FRONT PAGE MENU - ICON STYLE FOR FULL
  *******************************************************/
-
+ 
+/*
 .front-page .menu-full ol {
 	margin: 0px auto !important;
 	overflow: hidden;
@@ -166,6 +167,31 @@ div.button-full a.button-light:active{
 .front-page #social a:focus{ 
 	background: url(img/icon-social-media-full.png) no-repeat 50% 15px; 
 }
+*/
+
+
+.front-page #news .feed_title,
+.front-page #happenings .feed_title,
+.front-page #sports .feed_title{
+	font-weight: normal;
+	font: 0.95em/0.95em Arial,Helvetica,sans-serif;
+}
+
+
+
+.front-page #alert {
+	font-weight: bold;
+	background: #FFFF99;
+}
+
+
+
+.front-page .menu-front li a {
+    padding-top: .85em;
+	padding-bottom: .85em;
+}
+
+
 
 #search_text, #menu-filter, #search-box {
 	-webkit-border-radius: 12px;

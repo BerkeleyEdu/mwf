@@ -38,7 +38,7 @@ $searcher = new UCLA_Directory();
         
     <div class="clear"></div>
 
-    <a class="button-full button-padded" href="results.php">Go Back to Results</a>
+    <a class="button-full button-padded" href="results.php">Go to Results</a>
 
     <?php include('inc/footer.php'); ?>
 

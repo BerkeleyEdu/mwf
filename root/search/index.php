@@ -5,7 +5,7 @@ include(dirname(__FILE__).'/header.php');
 ?>
 
 		<div class="content-full content-padded">
-        <h2 class="content-first>">Search the UC Berkeley Web</h2>
+        <h2 class="content-first>">Search the Berkeley Web</h2>
 <div class="content-last">
 <p>
      
@@ -49,7 +49,7 @@ else
 </p>
 </div>
 </div>
-    <a class="button-full button-padded" href="..">Go to UCB Mobile</a>
+    <a class="button-full button-padded" href="..">Go to Berkeley Mobile</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>
 
