@@ -32,10 +32,10 @@ Config::set('frontpage', 'help_site_url', Config::get('global', '/about'));
  */
 
 Config::set('frontpage', 'header_image_main', Config::get('global', 'site_assets_url').'/img/berkeley-mobile-logo.png');
-Config::set('frontpage', 'header_image_main_alt', 'UCB Mobile');
-Config::set('frontpage', 'header_image_sub_alt', 'UCB Mobile');
+Config::set('frontpage', 'header_image_main_alt', 'Berkeley Mobile');
+Config::set('frontpage', 'header_image_sub_alt', 'Berkeley Mobile');
 Config::set('frontpage', 'header_image_sub', Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');
-Config::set('frontpage', 'header_main_text', 'UCB Mobile');
+Config::set('frontpage', 'header_main_text', 'Berkeley Mobile');
 
 
 /**
@@ -71,21 +71,22 @@ Config::set('frontpage', 'menu',
               'url'=>'news'),
 		array('name'=>'Events',
               'id'=>'happenings',
-              'url'=>'http://events.berkeley.edu/mobile'),    			   
-        array('name'=>'Directory',
-              'id'=>'directory',
-              'url'=>'directory'),		
+              'url'=>'http://events.berkeley.edu/mobile'), 		
 		array('name'=>'Courses',
               'id'=>'courses',
-              'url'=>'courses'), 
+              'url'=>'courses'), 	     			   		
 		array('name'=>'Maps &amp; Tour',
               'id'=>'campus-map',
-              'url'=>'map'),array('name'=>'Library',
+              'url'=>'map'),
+		array('name'=>'Directory',
+              'id'=>'directory',
+              'url'=>'directory'),	
+		array('name'=>'Library',
               'id'=>'library',
-              'url'=>'http://mobile.lib.berkeley.edu/'), 	  	  	 
-        array('name'=>'Athletics',
+              'url'=>'http://mobile.lib.berkeley.edu/'), 	  	  	 		
+		array('name'=>'Athletics',
               'id'=>'sports',
-              'url'=>'sports'),
+              'url'=>'http://m.calbears.com/'),
 		array('name'=>'Social Media',
               'id'=>'social',
               'url'=>'social')

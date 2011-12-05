@@ -32,16 +32,17 @@ $salt = Config::get('news', 'salt');
         <div class="menu-full menu-detailed menu-padded">
              <h1 class="light menu-first">Categories</h1>
              <ol>
-<li><a href="http://m.youtube.com/view_playlist?gl=US&hl=en&client=mv-google&p=4DD1399BBF93AFBC">YouTube videos</a></li>
                 <?php 
                 foreach($feed_set as $feed)
                     echo '<li><a href="'.$feed->get_page($salt).'">'.$feed->get_name().'</a></li>';
                 ?>
+				<li><a href="http://m.youtube.com/view_playlist?gl=US&hl=en&client=mv-google&p=4DD1399BBF93AFBC">YouTube videos</a></li>
+
             </ol>
         </div>
 
     <?php } ?>
 
-    <a class="button-full button-padded" href="..">Go to UCB Mobile</a>
+    <a class="button-full button-padded" href="..">Go to Berkeley Mobile</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>

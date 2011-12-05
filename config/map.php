@@ -16,8 +16,8 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
 Config::set('map', 'title_text', Config::get('global', 'title_text') . ' Maps &amp; Tour');
 
-Config::set('map', 'header_image_sub', '../assets/img/berkeley-logo.png');
+Config::set('map', 'header_image_sub', '../assets/img/berkeley-home.png');
 
-Config::set('map', 'header_image_sub_alt', 'UC Berkeley');
+Config::set('map', 'header_image_sub_alt', ' Berkeley');
 
 ?>

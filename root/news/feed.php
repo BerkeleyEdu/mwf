@@ -22,20 +22,27 @@ $salt = Config::get('news', 'salt');
         </div>
 
     <?php } else { ?>
-
+	
         <div class="menu-full menu-detailed menu-padded">
             <h1 class="light menu-first"><?php echo $feed->get_name(); ?></h1>
              <ol>
 
                 <?php
+				
                 foreach($feed_items as $feed)
-                    echo '<li><a href="'.$feed->get_page($salt).'">'.$feed->get_title().'</a></li>';
+				{
+                  	preg_match_all('/<img[^>]+>/i',$feed->get_description(), $result); 
+					echo '<li><a class=image-wrapper href="'.$feed->get_page($salt).'">'. $result[0][0].$feed->get_title().'</a>';
+					echo '</li>';
+					$i++;
+				}
+					
                 ?>
             </ol>
         </div>
 
-    <?php } ?>
+    <?php  } ?>
 
-    <a class="button-full button-padded" href="index.php">Go to Categories</a>
+    <a class="button-full button-padded" href="index.php">Go to News Categories</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>

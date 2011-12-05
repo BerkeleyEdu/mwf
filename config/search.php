@@ -16,8 +16,8 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
 Config::set('search', 'title_text', Config::get('global', 'title_text') . ' Search');
 
-Config::set('search', 'header_image_sub', '../assets/img/berkeley-logo.png');
+Config::set('search', 'header_image_sub', '../assets/img/berkeley-home.png');
 
-Config::set('search', 'header_image_sub_alt', 'UC Berkeley');
+Config::set('search', 'header_image_sub_alt', ' Berkeley');
 
 ?>
