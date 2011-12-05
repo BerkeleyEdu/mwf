@@ -16,9 +16,9 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
 Config::set('news', 'title_text', Config::get('global', 'title_text') . ' News');
 
-Config::set('news', 'header_image_sub', '../assets/img/berkeley-logo.png');
+Config::set('news', 'header_image_sub', '../assets/img/berkeley-home.png');
 
-Config::set('news', 'header_image_sub_alt', 'UC Berkeley');
+Config::set('news', 'header_image_sub_alt', ' Berkeley');
 
 require_once('/var/mobile/salt');
 Config::set('news', 'salt', $salt);

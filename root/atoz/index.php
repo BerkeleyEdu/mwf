@@ -24,7 +24,7 @@ include(dirname(__FILE__).'/header.php');
 		  
 
 
-    <a class="button-full button-padded" href="..">Go to UCB Mobile</a>
+    <a class="button-full button-padded" href="..">Go to Berkeley Mobile</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>
 

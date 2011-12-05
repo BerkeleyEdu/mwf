@@ -43,6 +43,11 @@ require_once(dirname(__FILE__).'/assets/redirect/unset_override.php');
 require_once(dirname(__FILE__).'/assets/lib/classification.class.php');
 require_once(dirname(__FILE__).'/assets/lib/user_agent.class.php');
 
+// Feeds
+require_once(dirname(dirname(dirname(__FILE__))).'/mwf/auxiliary/feed/feed_set.class.php');
+require_once(dirname(dirname(dirname(__FILE__))).'/mwf/auxiliary/feed/feed.class.php');
+$salt = Config::get('news', 'salt');
+
 /**
  * Ensure that site_url and site_asset_url have been set.
  */
@@ -94,6 +99,7 @@ else
 /*
 *  campus photo
 */
+/*
 if(Classification::is_full())
 {
 	$photo = rand(1, 9);
@@ -103,8 +109,9 @@ if(Classification::is_full())
 }	
 else
 {
+*/
 	echo '<p></p>';
-}
+//}
 	
 
 /*
@@ -129,7 +136,7 @@ else
 {
 ?> 
     <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
-		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' placeholder="Search the UC Berkeley Web"/>
+		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' placeholder="Search the Berkeley Web"/>
           <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>
           <input type="hidden" name="display_type" value="mobile" />
 <noscript>
@@ -150,6 +157,32 @@ $menu = Site_Decorator::menu_full()->set_padded()->set_detailed();
 
 if($main_menu)
     $menu->add_class('menu-front');
+
+if (Classification::is_full() )
+{						
+	// Get news 			
+	$feed_set = new Feed_Set('http://www.berkeley.edu/data/ucb_news_feeds.xml');	
+	foreach ($feed_set as $feed)
+	{
+		$news_link= 'news/' . $feed->get_page($salt) . '" class="image-wrapper';
+		break;
+	}	
+	$_GET['name'] = 'Top News';
+	$_GET['path'] =	'http://newscenter.berkeley.edu/category/news/feed/';				
+	$feed = Feed::build_page_from_request();
+	$feed_items = $feed->get_items();
+	preg_match_all('/<img[^>]+>/i',$feed_items[0]->get_description(), $result); 	
+	$news_title= $result[0][0].$feed_items[0]->get_title();	
+	
+	// Get event
+	$today = date('Y-m-d');
+	$xml_file = file_get_contents('http://events.berkeley.edu/index.php/mobile/sn/pubaff/type/range/tab/critics_choice.html?startdate='.$today.'&enddate='.$today);
+	$simple_xml = simplexml_load_string($xml_file);
+	$image = '<img class="thumbnail" alt="" src="http://m.berkeley.edu/assets/min/img.php?img=http://events.berkeley.edu'. $simple_xml->Events->Event->Images->Image->URL . '&max_height=60&max_width=60" /> ';
+	$events_title = $image . $simple_xml->Events->Event->EventTitle;	
+	$events_link = 'http://events.berkeley.edu/mobile/" class="image-wrapper';
+			
+}
 		
 
 for($i = 0; $i < count($menu_items); $i++)
@@ -163,8 +196,38 @@ for($i = 0; $i < count($menu_items); $i++)
             continue;
     }
 
-    $menu->add_item($menu_item['name'],$menu_item['url'],isset($menu_item['id'])?array('id'=>$menu_item['id']):array());
+	if (Classification::is_full() )
+	{
+		if ($menu_item['name'] == 'News' && $news_title != '')
+		{
+			$menu_item['name'] = 'News<br/> <span class="feed_title">' . $news_title . '</span>';
+			$menu_item['url'] = $news_link;
+		
+		}
+		elseif ($menu_item['name'] == 'Events'  && $events_title != '')
+		{
+			$menu_item['name'] = 'Events<br/> <span class="feed_title">' . $events_title . '</span>';
+			$menu_item['url'] = $events_link;
+		}
+	}
+
+	
+	$menu->add_item($menu_item['name'],$menu_item['url'],isset($menu_item['id'])?array('id'=>$menu_item['id']):array());
+
+	
 }
+
+// Get news alert	
+/*		
+$xml_file = file_get_contents('http://ucbnews-sandbox.org/newsalert/?feedpage');
+$simple_xml = simplexml_load_string($xml_file);
+$alert_message = $simple_xml->channel->item->description;
+
+if ($alert_message != '')
+{
+	 echo  '<div class="content-full content-padded" id="alert">' . $alert_message . '</div>';
+}
+*/		
 
 echo $menu->render();
 

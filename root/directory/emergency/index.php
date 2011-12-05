@@ -6,7 +6,7 @@ require_once(dirname(dirname(dirname(__FILE__))).'/assets/lib/decorator.class.ph
 
 <html>
 <head>
-    <title>UCB Mobile | Directory - Emergency Info</title>
+    <title>Berkeley Mobile | Directory - Emergency Info</title>
     <link rel="stylesheet" href="../../assets/css.php" type="text/css" media="screen" /> 
 	<?php
 	if ($_SERVER['SERVER_NAME'] == 'mobile-qa.berkeley.edu')  // development environment

@@ -16,8 +16,8 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
 
 Config::set('video', 'title_text', Config::get('global', 'title_text') . ' Video');
 
-Config::set('video', 'header_image_sub', '../assets/img/berkeley-logo.png');
+Config::set('video', 'header_image_sub', '../assets/img/berkeley-home.png');
 
-Config::set('video', 'header_image_sub_alt', 'UC Berkeley');
+Config::set('video', 'header_image_sub_alt', ' Berkeley');
 
 ?>

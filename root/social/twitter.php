@@ -4,7 +4,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 
 include(dirname(__FILE__).'/header.php');
 
-?><title>UCB Mobile | Social Media | Twitter</title>
+?><title>Berkeley Mobile | Social Media | Twitter</title>
 		<div class="menu-full menu-detailed menu-padded">
             <h1 class="light menu-first, menu-last">Twitter</h1>
              <ol>

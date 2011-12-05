@@ -105,6 +105,21 @@ form.form-full > input[type=reset]:hover {
 	padding: 0% 1.5% 0% 1.5%;
 }
 
+.thumbnail {
+    border: medium none;
+    float: right;
+    margin-left: 0.6em;
+	max-height: 60px;
+}
+
+li .thumbnail {
+    margin-right: 5%;
+}
+
+.image-wrapper {
+    overflow: auto;
+}
+
 /*-------------------------------------------------
   Headings
   ------------------------------------------------

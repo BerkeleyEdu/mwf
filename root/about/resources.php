@@ -60,7 +60,7 @@ include(dirname(__FILE__).'/header.php');
 </div>
 		 </div>
 
-    <a class="button-full button-padded" href="index.php">Go Back to About</a>
+    <a class="button-full button-padded" href="index.php">Go to About</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>
 

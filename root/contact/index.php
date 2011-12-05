@@ -55,7 +55,7 @@ require_once(dirname(__FILE__).'/util.php');
 			//DEBUG MODE
 			//$rec_email = "saral@berkeley.edu";
 	
-			$subject = "Comment from UC Berkeley Mobile";
+			$subject = "Comment from Berkeley Mobile";
 			
 			$body = "The following person has submitted an inquiry:\n";
 			$body .= "\nName: ".$_POST['full_name']."\nEmail: ".$_POST['email']."\n\nQuestion/Comment: ".$_POST['question'];	
@@ -121,7 +121,7 @@ require_once(dirname(__FILE__).'/util.php');
     </div>
 
             
-    <a class="button-full button-padded" href="..">Go to UCB Mobile</a>
+    <a class="button-full button-padded" href="..">Go to Berkeley Mobile</a>
 
 <?php
 /**

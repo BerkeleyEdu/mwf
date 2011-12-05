@@ -21,7 +21,7 @@ $atoz_link = 'http://berkeley.edu/a-z/' . $_GET['atoz'] .'.txt';
     	</div>
 
 
-    <a class="button-full button-padded" href="index.php">Go Back to A-Z Index</a>
+    <a class="button-full button-padded" href="index.php">Go to A-Z Index</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>
 

@@ -42,6 +42,6 @@ $salt = Config::get('news', 'salt');
 
     <?php } ?>
 
-<a class="button-full button-padded" href="<?php echo $feed->get_page($salt); ?>">Go to Articles</a>
+<a class="button-full button-padded" href="<?php echo $feed->get_page($salt); ?>">Go to News Stories</a>
 
 <?php include(dirname(__FILE__).'/footer.php'); ?>
