@@ -1,0 +1,14 @@
+#Fri Nov 04 17:15:47 PDT 2011
+eclipse.preferences.version=1
+provisioning_profiles/development/0ED56A30-CC19-4217-9618-080241B0F8B5/appid=edu.berkeley.icampus
+provisioning_profiles/development/0ED56A30-CC19-4217-9618-080241B0F8B5/filepath=/Users/lclusr/Desktop/Public_Affairs_Provisioning_Profile.mobileprovision
+provisioning_profiles/development/0ED56A30-CC19-4217-9618-080241B0F8B5/name=Public Affairs Provisioning Profile
+provisioning_profiles/development/0ED56A30-CC19-4217-9618-080241B0F8B5/uuid=0ED56A30-CC19-4217-9618-080241B0F8B5
+provisioning_profiles/development/AEFBB900-63D0-4C25-BB96-192EE9991821/appid=edu.berkeley.icampus
+provisioning_profiles/development/AEFBB900-63D0-4C25-BB96-192EE9991821/filepath=/Users/lclusr/Desktop/Public_Affairs_Provisioning_Profile_2.mobileprovision
+provisioning_profiles/development/AEFBB900-63D0-4C25-BB96-192EE9991821/name=Public Affairs Provisioning Profile 2
+provisioning_profiles/development/AEFBB900-63D0-4C25-BB96-192EE9991821/uuid=AEFBB900-63D0-4C25-BB96-192EE9991821
+provisioning_profiles/distribution/4AC32D25-D18C-4FEF-B424-CA8B6EE1D554/appid=edu.berkeley.icampus
+provisioning_profiles/distribution/4AC32D25-D18C-4FEF-B424-CA8B6EE1D554/filepath=/Users/lclusr/Desktop/Berkeley_Mobile_Distribution.mobileprovision
+provisioning_profiles/distribution/4AC32D25-D18C-4FEF-B424-CA8B6EE1D554/name=Berkeley Mobile Distribution
+provisioning_profiles/distribution/4AC32D25-D18C-4FEF-B424-CA8B6EE1D554/uuid=4AC32D25-D18C-4FEF-B424-CA8B6EE1D554
