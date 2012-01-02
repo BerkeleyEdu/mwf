@@ -178,7 +178,14 @@ if (Classification::is_full() )
 	$today = date('Y-m-d');
 	$xml_file = file_get_contents('http://events.berkeley.edu/index.php/mobile/sn/pubaff/type/range/tab/critics_choice.html?startdate='.$today.'&enddate='.$today);
 	$simple_xml = simplexml_load_string($xml_file);
-	$image = '<img class="thumbnail" alt="" src="http://m.berkeley.edu/assets/min/img.php?img=http://events.berkeley.edu'. $simple_xml->Events->Event->Images->Image->URL . '&max_height=60&max_width=60" /> ';
+	if ($simple_xml->Events->Event->Images->Image->URL != '')
+	{
+		$image = '<img class="thumbnail" alt="" src="http://m.berkeley.edu/assets/min/img.php?img=http://events.berkeley.edu'. $simple_xml->Events->Event->Images->Image->URL . '&max_height=60&max_width=60" /> ';
+	}
+	else
+	{
+		$image = '';
+	}
 	$events_title = $image . $simple_xml->Events->Event->EventTitle;	
 	$events_link = 'http://events.berkeley.edu/mobile/" class="image-wrapper';
 			
