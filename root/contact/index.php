@@ -101,7 +101,7 @@ require_once(dirname(__FILE__).'/util.php');
             <div class="field">
                 <label for="email">Your Email</label>
                 <br />
-                <input name="email" type="text" id="email" class="input_text" size="30" value="<?php echo $_POST["email"]; ?>"/>
+                <input name="email" type="email" id="email" class="input_text" size="30" value="<?php echo $_POST["email"]; ?>"/>
             </div>
             
             <div class="field">

@@ -1,7 +1,34 @@
-CACHE MANIFEST
+CACHE MANIFEST 
+#version 1.0 1-4-2012 
 
-CACHE:
-# insert URLs to elements to be cached for offline use here
+CACHE: 
+#images 
+/assets/img/berkeley-mobile-logo.png
+/assets/img/berkeley-home.png 
 
-NETWORK:
+#internal HTML documents 
+
+#style sheets 
+/assets/css.php 
+
+#style sheet images 
+/assets/img/berkeley_header-bg.png 
+/assets/img/berkeley_header-front-page-bg.png 
+/assets/img/button-go.png 
+/assets/img/button-next.png 
+/assets/img/button-previous.png 
+/assets/img/button-search.png 
+/assets/img/button-submit.png 
+/assets/img/header-bg.png 
+/assets/img/header-front-page-bg.png 
+/assets/img/list-arrow.png 
+/assets/img/search.png 
+/assets/img/select-options-bg.png
+
+#javascript files 
+http://www.google-analytics.com/ga.js 
+/assets/js.php 
+/assets/redirect/js_unset_override.php 
+
+NETWORK: 
 *

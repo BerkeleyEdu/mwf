@@ -1,5 +1,5 @@
 <?php require_once('../assets/config.php'); ?><!DOCTYPE html>
-<html>
+<html manifest="../assets/appcache.php">
 
 <head>
     <title><?php echo Config::get('contact', 'title_text'); ?></title>

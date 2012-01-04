@@ -3,7 +3,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/lib/decorator.class.php');
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 ?>
 
-<html>
+<html manifest="../assets/appcache.php">
 <head>
      <title><?php echo Config::get('directory', 'title_text'); ?></title>
     <link rel="stylesheet" href="../assets/css.php" type="text/css" media="screen" />
