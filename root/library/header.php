@@ -1,7 +1,7 @@
 <?php 
 require_once('../assets/config.php'); 
 ?><!DOCTYPE html>
-<html>
+<html manifest="../assets/appcache.php">
 
 <head>
     <title><?php echo Config::get('library', 'title_text'); ?></title>

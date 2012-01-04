@@ -4,7 +4,7 @@ require_once(dirname(dirname(dirname(__FILE__))).'/assets/lib/decorator.class.ph
 
 <!DOCTYPE html>
 
-<html>
+<html manifest="../assets/appcache.php">
 <head>
     <title>Berkeley Mobile | Directory - Emergency Info</title>
     <link rel="stylesheet" href="../../assets/css.php" type="text/css" media="screen" /> 
