@@ -32,7 +32,7 @@ $salt = Config::get('news', 'salt');
                 foreach($feed_items as $feed)
 				{
                   	preg_match_all('/<img[^>]+>/i',$feed->get_description(), $result); 
-					echo '<li><a class=image-wrapper href="'.$feed->get_page($salt).'">'. $result[0][0].$feed->get_title().'</a>';
+					echo '<li><a class=image-wrapper href="'.$feed->get_page($salt).'">'. str_replace('%20"', '"', $result[0][0]).$feed->get_title().'</a>';
 					echo '</li>';
 					$i++;
 				}
