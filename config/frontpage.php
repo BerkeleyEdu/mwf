@@ -86,12 +86,12 @@ Config::set('frontpage', 'menu',
               'url'=>'http://mobile.lib.berkeley.edu/'), 	  	  	 		
 		array('name'=>'Athletics',
               'id'=>'sports',
-              'url'=>'http://m.calbears.com/'),
-		array('name'=>'Social Media',
+              'url'=>'http://m.calbears.com/')
+		  /* array('name'=>'Social Media',
               'id'=>'social',
               'url'=>'social')
    
-   /*
+
         array('name'=>'About',
               'id'=>'about',
               'url'=>'mwf/about.php')

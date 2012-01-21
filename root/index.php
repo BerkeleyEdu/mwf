@@ -171,8 +171,9 @@ if (Classification::is_full() )
 	$_GET['path'] =	'http://newscenter.berkeley.edu/category/news/feed/';				
 	$feed = Feed::build_page_from_request();
 	$feed_items = $feed->get_items();
-	preg_match_all('/<img[^>]+>/i',$feed_items[0]->get_description(), $result); 	
-	$news_title= $result[0][0].$feed_items[0]->get_title();	
+	preg_match_all('/<img[^>]+>/i',$feed_items[0]->get_description(), $result); 
+	// remove extra space at end of image file path
+	$news_title= str_replace('%20"', '"', $result[0][0]).$feed_items[0]->get_title();	
 	
 	// Get event
 	$today = date('Y-m-d');
