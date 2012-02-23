@@ -56,12 +56,12 @@ include(dirname(__FILE__).'/map_header.php');
             ?>
 			if (mwf.touch.geolocation.isSupported() )
 			 {
-				mwf.touch.geolocation.getPosition(
+				mwf.touch.geolocation.getCurrentPosition(
 						function(pos)
 						{  						
 						map.addLocation('Your current location', pos['latitude'], pos['longitude'], "http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png"); 
 						},
-						function(err){ /*alert("Err:"+err);*/ }
+						function(err){if (err.code!=err.PERMISSION_DENIED) alert("Err: "+err.message);}
 					)
 			 }
         </script>
