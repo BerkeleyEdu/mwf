@@ -93,12 +93,12 @@ require_once(dirname(dirname(__FILE__)).'/assets/lib/location/locations.class.ph
             ?>
 			if (mwf.touch.geolocation.isSupported() )
 			 {
-				mwf.touch.geolocation.getPosition(
+				mwf.touch.geolocation.getCurrentPosition(
 						function(pos)
 						{  						
 						map.addLocation('Your current location', pos['latitude'], pos['longitude'], "http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png"); 
 						},
-						function(err){ /*alert("Err:"+err);*/ }
+						function(err){if (err.code!=err.PERMISSION_DENIED) alert("Err: "+err.message);}
 					)
 			 }
         </script>
