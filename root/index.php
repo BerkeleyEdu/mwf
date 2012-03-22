@@ -189,7 +189,15 @@ if (Classification::is_full() )
 	}
 	$events_title = $image . $simple_xml->Events->Event->EventTitle;	
 	$events_link = 'http://events.berkeley.edu/mobile/" class="image-wrapper';
-			
+	
+	/*
+	// Get Cal Day
+	$photo = rand(1, 2);
+	$calday_image_URL = "http://calday-dev.berkeley.edu/calday/img/mobile/". $photo . ".jpg";
+	$image = '<img class="thumbnail" alt="" src="'. $calday_image_URL . '" /> ';
+	$calday_title = $image . "Saturday, April 21<br/>300 unforgettable events!";	
+	$calday_link = 'http://calday.berkeley.edu" class="image-wrapper';	
+	*/		
 }
 		
 
@@ -212,11 +220,19 @@ for($i = 0; $i < count($menu_items); $i++)
 			$menu_item['url'] = $news_link;
 		
 		}
+	
 		elseif ($menu_item['name'] == 'Events'  && $events_title != '')
 		{
 			$menu_item['name'] = 'Events<br/> <span class="feed_title">' . $events_title . '</span>';
 			$menu_item['url'] = $events_link;
 		}
+		/*
+		elseif ($menu_item['name'] == 'Cal Day')
+		{
+			$menu_item['name'] = 'Cal Day<br/> <span class="feed_title">' . $calday_title . '</span>';
+			$menu_item['url'] = $calday_link;
+		}
+		*/
 	}
 
 	

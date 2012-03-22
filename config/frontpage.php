@@ -66,7 +66,10 @@ Config::set('frontpage', 'header_main_text', 'Berkeley Mobile');
 Config::set('frontpage', 'menu',  
    array(
    'default'=>array(
-   		 array('name'=>'News',
+   		//  array('name'=>'Cal Day',
+        //      'id'=>'calday',
+        //      'url'=>'http://calday.berkeley.edu/'),
+		 array('name'=>'News',
               'id'=>'news',
               'url'=>'news'),
 		array('name'=>'Events',
