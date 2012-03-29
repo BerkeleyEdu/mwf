@@ -176,6 +176,7 @@ if (Classification::is_full() )
 	$news_title= str_replace('%20"', '"', $result[0][0]).$feed_items[0]->get_title();	
 	
 	// Get event
+	/*
 	$today = date('Y-m-d');
 	$xml_file = file_get_contents('http://events.berkeley.edu/index.php/mobile/sn/pubaff/type/range/tab/critics_choice.html?startdate='.$today.'&enddate='.$today);
 	$simple_xml = simplexml_load_string($xml_file);
@@ -189,15 +190,14 @@ if (Classification::is_full() )
 	}
 	$events_title = $image . $simple_xml->Events->Event->EventTitle;	
 	$events_link = 'http://events.berkeley.edu/mobile/" class="image-wrapper';
+	*/
 	
-	/*
 	// Get Cal Day
 	$photo = rand(1, 2);
-	$calday_image_URL = "http://calday-dev.berkeley.edu/calday/img/mobile/". $photo . ".jpg";
+	$calday_image_URL = "http://calday.berkeley.edu/calday/img/mobile/". $photo . ".jpg";
 	$image = '<img class="thumbnail" alt="" src="'. $calday_image_URL . '" /> ';
 	$calday_title = $image . "Saturday, April 21<br/>300 unforgettable events!";	
-	$calday_link = 'http://calday.berkeley.edu" class="image-wrapper';	
-	*/		
+	$calday_link = 'http://calday.berkeley.edu" class="image-wrapper';			
 }
 		
 
@@ -220,19 +220,18 @@ for($i = 0; $i < count($menu_items); $i++)
 			$menu_item['url'] = $news_link;
 		
 		}
-	
+		/*
 		elseif ($menu_item['name'] == 'Events'  && $events_title != '')
 		{
 			$menu_item['name'] = 'Events<br/> <span class="feed_title">' . $events_title . '</span>';
 			$menu_item['url'] = $events_link;
 		}
-		/*
+		*/
 		elseif ($menu_item['name'] == 'Cal Day')
 		{
 			$menu_item['name'] = 'Cal Day<br/> <span class="feed_title">' . $calday_title . '</span>';
 			$menu_item['url'] = $calday_link;
 		}
-		*/
 	}
 
 	
