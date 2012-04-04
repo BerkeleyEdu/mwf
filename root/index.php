@@ -193,7 +193,7 @@ if (Classification::is_full() )
 	*/
 	
 	// Get Cal Day
-	$photo = rand(1, 2);
+	$photo = rand(1, 11);
 	$calday_image_URL = "http://calday.berkeley.edu/calday/img/mobile/". $photo . ".jpg";
 	$image = '<img class="thumbnail" alt="" src="'. $calday_image_URL . '" /> ';
 	$calday_title = $image . "Saturday, April 21<br/>300 unforgettable events!";	
