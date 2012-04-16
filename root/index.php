@@ -164,7 +164,8 @@ if (Classification::is_full() )
 	$feed_set = new Feed_Set('http://www.berkeley.edu/data/ucb_news_feeds.xml');	
 	foreach ($feed_set as $feed)
 	{
-		$news_link= 'news/' . $feed->get_page($salt) . '" class="image-wrapper';
+		$news_link = 'news/' . $feed->get_page($salt);
+   		$image_wrapper = true;
 		break;
 	}	
 	$_GET['name'] = 'Top News';
@@ -189,7 +190,8 @@ if (Classification::is_full() )
 		$image = '';
 	}
 	$events_title = $image . $simple_xml->Events->Event->EventTitle;	
-	$events_link = 'http://events.berkeley.edu/mobile/" class="image-wrapper';
+	$events_link = 'http://events.berkeley.edu/mobile/"';
+	$image_wrapper = true;	
 	*/
 	
 	// Get Cal Day
@@ -197,7 +199,8 @@ if (Classification::is_full() )
 	$calday_image_URL = "http://calday.berkeley.edu/calday/img/mobile/". $photo . ".jpg";
 	$image = '<img class="thumbnail" alt="" src="'. $calday_image_URL . '" /> ';
 	$calday_title = $image . "Saturday, April 21<br/>300 unforgettable events!";	
-	$calday_link = 'http://calday.berkeley.edu" class="image-wrapper';			
+	$calday_link = 'http://calday.berkeley.edu"';	
+	$image_wrapper = true;		
 }
 		
 
@@ -234,10 +237,9 @@ for($i = 0; $i < count($menu_items); $i++)
 		}
 	}
 
-	
-	$menu->add_item($menu_item['name'],$menu_item['url'],isset($menu_item['id'])?array('id'=>$menu_item['id']):array());
-
-	
+	$item_attributes = isset($menu_item['id']) ? array('id'=>$menu_item['id']) : array();
+    $link_attributes = isset($image_wrapper) ? array('class'=>'image-wrapper') : array(); 
+    $menu->add_item($menu_item['name'], $menu_item['url'], $item_attributes, $link_attributes);	
 }
 
 // Get news alert	
