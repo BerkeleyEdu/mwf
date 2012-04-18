@@ -98,7 +98,6 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator {
 
         if ($this->_copyright || $this->_full_title || $this->_help_title) {
             $p = HTML_Decorator::tag('p');
-<<<<<<< HEAD
 
             //if($this->_copyright)
             //    $p->add_inner($this->_copyright);
