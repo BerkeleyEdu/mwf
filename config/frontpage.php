@@ -37,7 +37,6 @@ Config::set('frontpage', 'header_image_sub_alt', 'Berkeley Mobile');
 Config::set('frontpage', 'header_image_sub', Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');
 Config::set('frontpage', 'header_main_text', 'Berkeley Mobile');
 
-
 /**
  * menu
  *
