@@ -15,13 +15,12 @@
  * @uses Tag_HTML_Decorator
  * @uses Config
  */
+require_once(dirname(dirname(dirname(__FILE__))) . '/decorator.class.php');
+require_once(dirname(dirname(dirname(__FILE__))) . '/config.class.php');
+require_once(dirname(dirname(__FILE__)) . '/html/tag.class.php');
 
-require_once(dirname(dirname(dirname(__FILE__))).'/decorator.class.php');
-require_once(dirname(dirname(dirname(__FILE__))).'/config.class.php');
-require_once(dirname(dirname(__FILE__)).'/html/tag.class.php');
+class Footer_Site_Decorator extends Tag_HTML_Decorator {
 
-class Footer_Site_Decorator extends Tag_HTML_Decorator
-{
     private $_copyright = false;
     private $_help_title = false;
     private $_help_url = '#';
@@ -37,29 +36,25 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator
 	private $_contact_url = '/contact';
 	private $_contact_title = 'Contact';
 
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct('div');
-        
-        if($copyright = Config::get('global', 'copyright_text'))
+
+        if ($copyright = Config::get('global', 'copyright_text'))
             $this->set_copyright_text($copyright);
     }
 
-    public function &set_copyright_text($text)
-    {
+    public function &set_copyright_text($text) {
         $this->_copyright = $text;
         return $this;
     }
 
-    public function &set_help_site($title, $url = '#')
-    {
+    public function &set_help_site($title, $url = '#') {
         $this->_help_title = $title;
         $this->_help_url = $url;
         return $this;
     }
 
-    public function &set_full_site($title, $url = '#')
-    {
+    public function &set_full_site($title, $url = '#') {
         $this->_full_title = $title;
         $this->_full_url = $url;
         return $this;
@@ -93,19 +88,17 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator
         return $this;
     }
 
-    public function &show_powered_by($val = true)
-    {
+    public function &show_powered_by($val = true) {
         $this->_powered_by = $val ? true : false;
         return $this;
     }
 
-    public function render()
-    {
+    public function render() {
         $this->set_param('id', 'footer');
 
-        if($this->_copyright || $this->_full_title || $this->_help_title)
-        {
+        if ($this->_copyright || $this->_full_title || $this->_help_title) {
             $p = HTML_Decorator::tag('p');
+<<<<<<< HEAD
 
             //if($this->_copyright)
             //    $p->add_inner($this->_copyright);
@@ -147,8 +140,7 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator
         }
 		elseif ($this->_copyright)
 			 $this->add_inner_tag('p', $this->_copyright);
-		
-        
         return parent::render();
     }
+
 }
