@@ -17,7 +17,16 @@ $atoz_link = 'http://berkeley.edu/academics/dept/' . $_GET['atoz'] .'.txt';
         <div class="content-elements content-padded">
             <h1 class="content-first"><?php echo $letter ?></h1>
             <div class="content-last"> 
-                <?php include ($atoz_link);?>
+                <?php 
+				//include ($atoz_link);
+				{
+					$ch = curl_init();
+					curl_setopt($ch, CURLOPT_URL, $atoz_link); 
+					curl_setopt($ch, CURLOPT_HEADER, 0);
+					curl_exec($ch);
+					curl_close($ch);
+				}
+				?>
             </div>
     	</div>
 
