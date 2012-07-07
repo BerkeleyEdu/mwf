@@ -64,8 +64,6 @@ Config::set('global', 'appicon_img_precomposed',    Config::get('global', 'site_
 Config::set('global', 'appicon_allow_disable_flag', true);
 Config::set('global', 'back_to_home_text',          'Go Back to Berkeley Mobile');
 Config::set('global', 'charset',                    false);
-// To prevent timezone errors from filling up error log
-date_default_timezone_set('America/Los_Angeles');
 Config::set('global', 'copyright_text',            'University of California &copy; ' . date('Y') . ' UC Regents');
 Config::set('global', 'header_home_button',         Config::get('global', 'site_assets_url').'/img/berkeley-logo.png');
 Config::set('global', 'header_home_button_alt',     'Berkeley Mobile');
