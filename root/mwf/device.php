@@ -44,7 +44,7 @@ function js2bool2text($function) {
 }
 
 function js2text($function) {
-    return HTML_Decorator::tag('script', 'var t;
+    return HTML_Decorator::tag('script', 'var t; 
 if(t = ' . $function . '())
     document.write(t);
 else
@@ -53,7 +53,7 @@ else
 
 echo HTML_Decorator::html_start()->render();
 
-echo Site_Decorator::head()->set_title('MWF About')->render();
+echo Site_Decorator::head()->set_title('MWF Device Telemetry')->render();
 
 echo HTML_Decorator::body_start()->render();
 
@@ -61,7 +61,7 @@ echo Site_Decorator::header()
         ->set_title('MWF Device')
         ->render();
 
-echo Site_Decorator::content_full()
+echo Site_Decorator::content()
         ->set_padded()
         ->add_header('The Framework')
         ->add_subheader('Server Info')
@@ -103,7 +103,7 @@ echo Site_Decorator::content_full()
         ->add_section(array(label('Screen::get_pixel_ratio()'), text2text(Screen::get_pixel_ratio())))
         ->render();
 
-echo Site_Decorator::button_full()
+echo Site_Decorator::button()
         ->set_padded()
         ->add_option(Config::get('global', 'back_to_home_text'), Config::get('global', 'site_url'))
         ->render();
@@ -113,3 +113,5 @@ echo Site_Decorator::default_footer()->render();
 echo HTML_Decorator::body_end()->render();
 
 echo HTML_Decorator::html_end()->render();
+
+
