@@ -8,22 +8,22 @@
  * @subpackage path
  *
  * @author trott
- * @copyright Copyright (c) 2010-11 UC Regents
+ * @copyright Copyright (c) 2010-12 UC Regents
  * @license http://mwf.ucla.edu/license
- * @version 20111110
+ * @version 20120312
  *
  * @uses Image
  *
  * @todo Comments
  * @todo Refactor
  */
-require_once(dirname(dirname(__FILE__)) . '/image.class.php');
+require_once(dirname(__DIR__) . '/image.class.php');
 
 class Remote_Image extends Image {
 
     private $_image_gd = null;
 
-    protected function &get_gd_image() {
+    protected function get_gd_image() {
         if ($this->_image_gd !== null)
             return $this->_image_gd;
 
@@ -34,7 +34,7 @@ class Remote_Image extends Image {
         }
 
         $unlink_path = FALSE;
-        $path = $this->get_cache_filename();
+        $path = $this->_cache->get_cache_path($this->get_cache_key());
         if (!file_exists($path)) {
             /**
              * @compat 5.1
@@ -70,7 +70,7 @@ class Remote_Image extends Image {
         }
 
         if ($this->check_memory($path)) {
-            error_log('MWF Notice: Image too large to process: ' . $image_path);
+            trigger_error('Image too large to process: ' . $image_path, E_USER_NOTICE);
             $this->_image_gd = false;
             $this->_image_ext = false;
         } else {
@@ -129,5 +129,5 @@ class Remote_Image extends Image {
     }
 
 }
-
 ?>
+

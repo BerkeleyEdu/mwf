@@ -41,12 +41,12 @@ $terms = array(
         Framework itself) with the Licensor at UCLA\'s Office of Information 
         Technology\'s Education and Collaboration Technology Group so that others
         who are using the Software can benefit from improvements.',
-'        That you will include the phrase “Powered by: “ + the MOBILE WEB 
-        FRAMEWORK logo or the text “The Mobile Web Framework” somewhere on your 
+'        That you will include the phrase "Powered by: " + the MOBILE WEB 
+        FRAMEWORK logo or the text "The Mobile Web Framework" somewhere on your 
         application or website  The aforementioned logo or text (which can be 
         found at this webpage:  http://mwf.ucla.edu/attribution) should be an 
         image or textual active hyperlink to this web address:  
-        http://mwf.ucla.edu and maybe placed on an \'about\' page or other 
+        http://mwf.ucla.edu and may be placed on an \'about\' page or other 
         central, descriptive page.',
 '        Not remove any copyright or other notices from the Software.',
 '        That you will not distribute this software or any Derivative Works of 
@@ -68,7 +68,7 @@ $terms = array(
 '        That if you sue anyone over patents that you think may apply to the 
         Software or anyone\'s use of the Software, your license to the Software 
         ends automatically.',
-'        That your rights under the License end automatically if you breach it in
+'        That your rights under thhe License end automatically if you breach it in
         any way.',
 '        UCLA and the Regents of the University of California reserves all rights
         not expressly granted to you in this license.'
@@ -78,7 +78,7 @@ $ol = HTML_Decorator::tag('ol');
 foreach($terms as $term)
     $ol->add_inner(HTML_Decorator::tag('li')->add_inner($term));
 
-echo Site_Decorator::content_full()
+echo Site_Decorator::content()
             ->set_padded()
             ->add_header('License')
             ->add_paragraph('
@@ -127,16 +127,16 @@ subsidiaries and directly affiliated companies or entities would be covered.')
             ->add_section(HTML_Decorator::tag('p', array('You agree:', $ol)))
             ->render();
 
-echo Site_Decorator::content_full()
+echo Site_Decorator::content()
         ->set_padded()
         ->add_header('Disclaimer')
         ->add_paragraph('UCLA reserves the right to modify this license at any
 time. Therefore, although this represents a working copy of the Mobile
 Web Framework license, the latest version exists on the MWF site.')
-        ->add_paragraph(HTML_Decorator::tag('a', 'http://mwf.ucla.edu/license', array('href'=>'http://mwf.ucla.edu/license')), array('style'=>'text-align:center;'))
+        ->add_paragraph(HTML_Decorator::tag('a', 'http://mwf.ucla.edu/license', array('href'=>'http://mwf.ucla.edu/license', 'rel'=>'external')), array('style'=>'text-align:center;'))
         ->render();
 
-echo Site_Decorator::button_full()
+echo Site_Decorator::button()
                 ->set_padded()
                 ->add_option(Config::get('global', 'back_to_home_text'), Config::get('global', 'site_url'))
                 ->render();

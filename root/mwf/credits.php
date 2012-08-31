@@ -52,37 +52,39 @@ echo Site_Decorator::header()
         ->set_title('MWF Credits')
         ->render();
 
-echo Site_Decorator::content_full()
+$line_break = HTML_Decorator::tag('br', false);
+
+echo Site_Decorator::content()
         ->set_padded()
         ->add_header('Project')
-        ->add_paragraph(array(HTML_Decorator::tag('strong', 'Project Lead'),
-            HTML_Decorator::tag_open('br'), 'Rose Rocchio (UCLA)',
-            HTML_Decorator::tag_open('br'),
-            HTML_Decorator::tag('a', 'rrocchio@oit.ucla.edu', array('href' => 'mailto:rrocchio@oit.ucla.edu'))), array('style' => 'text-align:center;'))
-        ->add_paragraph(array(HTML_Decorator::tag('strong', 'Technical Lead'),
-            HTML_Decorator::tag_open('br'), 'Eric Bollens (UCLA)',
-            HTML_Decorator::tag_open('br'),
-            HTML_Decorator::tag('a', 'ebollens@oit.ucla.edu', array('href' => 'mailto:ebollens@oit.ucla.edu'))), array('style' => 'text-align:center;'))
-        ->add_paragraph(array(HTML_Decorator::tag('strong', 'Systems Lead'),
-            HTML_Decorator::tag_open('br'), 'Ed Sakabu (UCLA)',
-            HTML_Decorator::tag_open('br'),
-            HTML_Decorator::tag('a', 'sakabu@ats.ucla.edu', array('href' => 'mailto:sakabu@ats.ucla.edu'))), array('style' => 'text-align:center;'))
+        ->add_paragraph(
+                array(HTML_Decorator::tag('strong', 'Project Lead'), $line_break, 
+                      'Rose Rocchio (UCLA)', $line_break,
+                      HTML_Decorator::tag('a', 'rrocchio@oit.ucla.edu', array('href' => 'mailto:rrocchio@oit.ucla.edu'))), 
+                array('style' => 'text-align:center;'))
+        ->add_paragraph(
+                array(HTML_Decorator::tag('strong', 'Technical Lead'), $line_break, 
+                      'Eric Bollens (UCLA)', $line_break,
+                      HTML_Decorator::tag('a', 'ebollens@oit.ucla.edu', array('href' => 'mailto:ebollens@oit.ucla.edu'))), 
+                array('style' => 'text-align:center;'))
+        ->add_paragraph(
+                array(HTML_Decorator::tag('strong', 'Systems Lead'), $line_break,
+                      'Ed Sakabu (UCLA)', $line_break,
+                      HTML_Decorator::tag('a', 'sakabu@ats.ucla.edu', array('href' => 'mailto:sakabu@ats.ucla.edu'))), 
+                array('style' => 'text-align:center;'))
         ->render();
 
-$contributions = Site_Decorator::content_full()
+$contributions = Site_Decorator::content()
         ->set_padded()
         ->add_header('Contributors')
         ->add_paragraph('In addition to their own mobile applications, a number of participants have contributed code directly to the Mobile Web Framework.', array('style' => 'font-style:italic;'));
 
 foreach ($contributors as $campus => $people) {
-    $campus_contributors = array();
-    $campus_contributors[] = HTML_Decorator::tag('strong', $campus);
-    $campus_contributors[] = HTML_Decorator::tag_open('br');
+    $campus_contributors = array(HTML_Decorator::tag('strong', $campus), $line_break);
     foreach ($people as $person) {
         $campus_contributors[] = $person;
-        $campus_contributors[] = HTML_Decorator::tag_open('br');
+        $campus_contributors[] = $line_break;
     }
-    array_pop($campus_contributors);
     $contributions->add_paragraph($campus_contributors, array('style' => 'text-align:center;'));
 }
 
@@ -90,7 +92,7 @@ $contributions->add_paragraph('Beyond direct contributions, the input and sugges
 
 echo $contributions->render();
 
-echo Site_Decorator::button_full()
+echo Site_Decorator::button()
         ->set_padded()
         ->add_option(Config::get('global', 'back_to_home_text'), Config::get('global', 'site_url'))
         ->render();

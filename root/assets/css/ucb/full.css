@@ -169,37 +169,37 @@ div.button-full a.button-light:active{
 }
 */
 
-.front-page #calday .feed_title,
-.front-page #news .feed_title,
-.front-page #happenings .feed_title,
-.front-page #sports .feed_title{
+.front #calday .feed_title,
+.front #news .feed_title,
+.front #happenings .feed_title,
+.front #sports .feed_title{
 	font-weight: normal;
 	font: 0.95em/0.95em Arial,Helvetica,sans-serif;
 }
 
 
 
-.front-page #alert {
+.front #alert {
 	font-weight: bold;
 	background: #FFFF99;
 }
 
 
 
-.front-page .menu-front li a {
+.front .menu-front li a {
     padding-top: .85em;
 	padding-bottom: .85em;
 }
 
 
 
-#search_text, #menu-filter, #search-box {
+#search_text, #menu-filter, #search-box, #ucbsearchtext {
 	-webkit-border-radius: 12px;
 	font: 0.95em/1.25 Arial,Helvetica,sans-serif;
 }
 
 
-#search-button, #search-button-by-date {
+#search-button-by-date, #ucbsearchbutton {
 background-image: url(img/search.png);
    background-position: right;
    background-repeat: no-repeat;
@@ -209,8 +209,10 @@ background-image: url(img/search.png);
    padding: 0;
    margin: 0 10px 0 0;
    display: inline;
-   vertical-align: middle;
+   vertical-align: middle;   
+   box-shadow:none;   /* undo MWF 1.3 css */
 }
+
 
 /********************************************************
  * CHOICE PAGE

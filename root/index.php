@@ -1,118 +1,90 @@
 <?php
-
 /**
- * The front page when the user arrives at the mobile site on a mobile device.
- * If the user is on a non-mobile device and {'global':'site_nonmobile_url'} is
- * set in config/global.php, then they will be redirected.
- *
- * This page throws a fatal error if either {'global':'site_url'} or
- * {'global':'site_assets_url'} are not set in /config/global.php.
- *
- * @package frontpage
- *
- * @author ebollens
- * @copyright Copyright (c) 2010-11 UC Regents
- * @license http://mwf.ucla.edu/license
- * @version 20110901
- *
- * @uses Config
- * @uses JS
- * @uses Site_Decorator
- * @uses HTML_Decorator
- * @uses HTML_Start_HTML_Decorator
- * @uses Head_Site_Decorator
- * @uses Body_Start_HTML_Decorator
- * @uses Header_Site_Decorator
- * @uses Menu_Full_Site_Decorator
- * @uses Button_Full_Site_Decorator
- * @uses Footer_Site_Decorator
- * @uses Body_End_HTML_Decorator
- * @uses HTML_End_HTML_Decorator
- * 
- * @link /config/global.php
- * @link assets/redirect/unset_override.php
- */
-
-/**
- * Require necessary libraries.
- */
-
-require_once(dirname(__FILE__).'/assets/config.php');
-require_once(dirname(__FILE__).'/assets/lib/decorator.class.php');
-require_once(dirname(__FILE__).'/assets/redirect/unset_override.php');
-require_once(dirname(__FILE__).'/assets/lib/classification.class.php');
-require_once(dirname(__FILE__).'/assets/lib/user_agent.class.php');
+* The front page when the user arrives at the mobile site on a mobile device.
+* If the user is on a non-mobile device and
+* Config::get('global','site_nonmobile_url') is set, then they will be
+* redirected.
+*
+* @package frontpage
+*
+* @author ebollens
+* @author trott
+* @copyright Copyright (c) 2010-12 UC Regents
+* @license http://mwf.ucla.edu/license
+* @version 20120312
+*
+* @uses Config
+* @uses Decorator
+* @uses Site_Decorator
+* @uses HTML_Decorator
+* @uses HTML_Start_HTML_Decorator
+* @uses Head_Site_Decorator
+* @uses Body_Start_HTML_Decorator
+* @uses Header_Site_Decorator
+* @uses Menu_Full_Site_Decorator
+* @uses Button_Full_Site_Decorator
+* @uses Footer_Site_Decorator
+* @uses Body_End_HTML_Decorator
+* @uses HTML_End_HTML_Decorator
+* @uses User_Agent
+* @uses Classification
+*
+* @link assets/redirect/unset_override.php
+*/
+require_once(dirname(__FILE__) . '/assets/config.php');
+require_once(dirname(__FILE__) . '/assets/lib/decorator.class.php');
+require_once(dirname(__FILE__) . '/assets/redirect/unset_override.php');
+require_once(dirname(__FILE__) . '/assets/lib/user_agent.class.php');
+require_once(dirname(__FILE__) . '/assets/lib/classification.class.php');
 
 // Feeds
 require_once(dirname(dirname(dirname(__FILE__))).'/mwf/auxiliary/feed/feed_set.class.php');
 require_once(dirname(dirname(dirname(__FILE__))).'/mwf/auxiliary/feed/feed.class.php');
-$salt = Config::get('news', 'salt');
+require_once('/var/mobile/salt');
+
 
 /**
- * Ensure that site_url and site_asset_url have been set.
- */
+* Handle differences between a subsection and the top-level menu, using key
+* 'default' if on the front page or otherwise the $_GET['s'] parameter.
+*/
+$menu_section = isset($_GET['s']) ? $_GET['s'] : 'default';
 
-if(!Config::get('global', 'site_url') || !Config::get('global', 'site_assets_url'))
-	die('<h1>Fatal Error</h1><p>The configuration settings {global::site_url} and {global::site_asset_url} must be defined in '.dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'global.php</p>');
+$menu_names = Config::get('frontpage', 'menu.name.' . $menu_section);
 
-/**
- * Get the menu from {'frontpage':'menu'} defined in config/frontpage.php.
- */
-
-$menu = Config::get('frontpage', 'menu');
-
-/**
- * Handle differences between a subsection and the top-level menu, using key
- * 'default' if on the front page or otherwise the $_GET['s'] parameter.
- */
-
-if(isset($_GET['s']) && isset($menu[$_GET['s']]))
-{
-    $menu_items = $menu[$_GET['s']];
-    $main_menu = false;
-}
-else
-{
-    $menu_items = $menu['default'];
-    $main_menu = true;
+if (!isset($menu_names)) {
+    $menu_section = 'default';
+    $menu_names = Config::get('frontpage', 'menu.name.' . $menu_section);
 }
 
-/**
- * Start page
- */
+$menu_ids = Config::get('frontpage', 'menu.id.' . $menu_section);
+$menu_urls = Config::get('frontpage', 'menu.url.' . $menu_section);
+$menu_classes = Config::get('frontpage', 'menu.class.' . $menu_section);
+$menu_externals = Config::get('frontpage', 'menu.external.' . $menu_section);
 
+$main_menu = ($menu_section == 'default');
+
+/**
+* Start page
+*/
 echo HTML_Decorator::html_start()->render();
 
-echo Site_Decorator::head()->set_title(Config::get('global', 'title_text'))->render();
+$head = Site_Decorator::head()->set_title(Config::get('global', 'title_text'));
+if ($main_menu && Config::get('frontpage', 'customizable_home_screen'))
+    $head->add_js_handler_library('full_libs', 'customizableMenu');
+echo $head->render();
 
-echo HTML_Decorator::body_start($main_menu ? array('class'=>'front-page') : array())->render();
-          
+echo HTML_Decorator::body_start($main_menu ? array('class' => 'front') : array())->render();
+
 /*
- * Header
- */
+* Header
+*/
 
-if($main_menu)
-    echo '<h1 id="header"><img src="'.Config::get('frontpage', 'header_image_main').'" alt="'.Config::get('frontpage', 'header_image_main_alt').'"><span>'.Config::get('frontpage', 'header_main_text').'</span></h1>';
+//TODO: Use decorators rather than HTML
+if ($main_menu)
+    echo '<h1 id="header"><img src="' . Config::get('frontpage', 'header_image_main') . '" alt="' . Config::get('frontpage', 'header_image_main_alt') . '"><span>' . Config::get('frontpage', 'header_main_text') . '</span></h1>';
 else
     echo Site_Decorator::header()->set_title(ucwords(str_replace('_', ' ', $_GET['s'])))->render();
-	
-/*
-*  campus photo
-*/
-/*
-if(Classification::is_full())
-{
-	$photo = rand(1, 9);
-	//echo '<img src="/assets/min/img.php?img=http%3A%2F%2F'. $_SERVER['SERVER_NAME'] . '%2Fassets%2Fimg%2Fcampusphotos%2F'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
-	
-	echo '<img src="/assets/min/img.php?img=http://'. $_SERVER['SERVER_NAME'] . '/assets/img/campusphotos/'. $photo . '.jpg&browser_width_percent=100&browser_height_percent=100" style="width: 100%;" alt="the many faces of Berkeley"/>';
-}	
-else
-{
-*/
 	echo '<p></p>';
-//}
-	
 
 /*
  * Search
@@ -122,9 +94,9 @@ $pos = strpos(User_Agent::get_user_agent(),'BlackBerry');
 	if ($pos !== false)
 	{
 	?>      
-<form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
-		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' />
-          <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>
+<form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" id="ucbsearchform">
+		<input type="text" id="ucbsearchtext" name="search_text" style='width:73%; max-width:300px' />
+          <input id="ucbsearchbutton" class="form-last" name="Submit" type="submit" value="Search"/>
           <input type="hidden" name="display_type" value="mobile" />
            <input type="hidden" name="noscript" value="yes" />
       </form>
@@ -135,9 +107,9 @@ $pos = strpos(User_Agent::get_user_agent(),'BlackBerry');
 else
 {
 ?> 
-    <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
-		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' placeholder="Search the Berkeley Web"/>
-          <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>
+    <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" id="ucbsearchform">
+		<input type="text" id="ucbsearchtext" name="search_text" style='width:73%; max-width:300px' placeholder="Search the Berkeley Web"/>
+        <input id="ucbsearchbutton" class="form-last" name="Submit" type="submit" value="Search"/>
           <input type="hidden" name="display_type" value="mobile" />
 <noscript>
  <input type="hidden" name="noscript" value="yes" />
@@ -148,16 +120,15 @@ else
 }
 echo '</div>';
 
-
 /*
- * Menu
- */
+* Menu
+*/
 
-$menu = Site_Decorator::menu_full()->set_padded()->set_detailed();
+$menu = Site_Decorator::menu()->set_padded()->set_detailed();
 
-if($main_menu)
-    $menu->add_class('menu-front');
-
+if ($main_menu)
+    $menu->set_home_screen();
+	
 if (Classification::is_full() )
 {						
 	// Get news 			
@@ -191,7 +162,7 @@ if (Classification::is_full() )
 	$events_title = $image . $simple_xml->Events->Event->EventTitle;	
 	$events_link = 'http://events.berkeley.edu/mobile/';
 	$image_wrapper = true;	
-	
+
 	// Get Cal Day
 	/*
 	$photo = rand(1, 11);
@@ -200,86 +171,73 @@ if (Classification::is_full() )
 	$calday_title = $image . "Saturday, April 21<br/>300 unforgettable events!";	
 	$calday_link = 'http://calday.berkeley.edu';	
 	$image_wrapper = true;	
-	*/	
-}
-		
+	*/
+}	
+	
 
-for($i = 0; $i < count($menu_items); $i++)
-{
-    $menu_item = $menu_items[$i];
-
-    if(isset($menu_item['restriction']))
-    {
-        $function = $menu_item['restriction'];
-        if(!Classification::$function())
-            continue;
+foreach ($menu_names as $key => $menu_name) {
+    $list_item_attributes = array();
+    if (isset($menu_classes[$key])) {
+        $list_item_attributes['class'] = $menu_classes[$key];
+    }
+    if (isset($menu_ids[$key])) {
+        $list_item_attributes['id'] = $menu_ids[$key];
     }
 
+    $link_attributes = array();
+    if (isset($menu_externals[$key])) {
+        if ($menu_externals[$key])
+            $link_attributes['rel'] = 'external';
+    }
+	
 	if (Classification::is_full() )
 	{
-		if ($menu_item['name'] == 'News' && $news_title != '')
+		if ($menu_name == 'News' && $news_title != '')
 		{
-			$menu_item['name'] = 'News<br/> <span class="feed_title">' . $news_title . '</span>';
-			$menu_item['url'] = $news_link;
-		
+			$menu_name = 'News<br/> <span class="feed_title">' . $news_title . '</span>';
+			$menu_urls[$key] = $news_link;
 		}
-		elseif ($menu_item['name'] == 'Events'  && $events_title != '')
+		elseif ($menu_name == 'Events'  && $events_title != '')
 		{
-			$menu_item['name'] = 'Events<br/> <span class="feed_title">' . $events_title . '</span>';
-			$menu_item['url'] = $events_link;
+			$menu_name = 'Events<br/> <span class="feed_title">' . $events_title . '</span>';
+			$menu_urls[$key] = $events_link;
 		}
 		/*
-		elseif ($menu_item['name'] == 'Cal Day')
+		elseif ($menu_name == 'Cal Day')
 		{
-			$menu_item['name'] = 'Cal Day<br/> <span class="feed_title">' . $calday_title . '</span>';
-			$menu_item['url'] = $calday_link;
+			$menu_name = 'Cal Day<br/> <span class="feed_title">' . $calday_title . '</span>';
+			$menu_urls[$key] = $calday_link;
 		}
 		*/
 	}
+	
 
-	$item_attributes = isset($menu_item['id']) ? array('id'=>$menu_item['id']) : array();
-    $link_attributes = isset($image_wrapper) ? array('class'=>'image-wrapper') : array(); 
-    $menu->add_item($menu_item['name'], $menu_item['url'], $item_attributes, $link_attributes);	
+    $menu->add_item($menu_name, $menu_urls[$key], $list_item_attributes, $link_attributes, $key);
 }
 
-// Get news alert	
-/*		
-$xml_file = file_get_contents('http://ucbnews-sandbox.org/newsalert/?feedpage');
-$simple_xml = simplexml_load_string($xml_file);
-$alert_message = $simple_xml->channel->item->description;
-
-if ($alert_message != '')
-{
-	 echo  '<div class="content-full content-padded" id="alert">' . $alert_message . '</div>';
-}
-*/		
-
-echo $menu->render();
+echo $menu->render(true);
 
 /**
- * Back button
- */
-
-if(!$main_menu)
-    echo Site_Decorator::button_full()
-                ->set_padded()
-                ->add_option(Config::get('global', 'back_to_home_text'), 'index.php')
-                ->render();
+* Back button
+*/
+if (!$main_menu)
+    echo Site_Decorator::button()
+            ->set_padded()
+            ->add_option(Config::get('global', 'back_to_home_text'), 'index.php')
+            ->render();
 
 /**
- * Footer
- */
-
-$footer = Site_Decorator::footer();
-
+* Footer
+*/
+$footer = Site_Decorator::default_footer();
 $footer->show_powered_by(false);
-
+if ($main_menu && Classification::is_full() && Config::get('frontpage','customizable_home_screen'))
+    $footer->add_footer_link('Customize Home Screen', "/customize_home_screen.php");
 echo $footer->render();
 
 /**
- * End page
- */
-
+* End page
+*/
 echo HTML_Decorator::body_end()->render();
 
 echo HTML_Decorator::html_end()->render();

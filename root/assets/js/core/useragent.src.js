@@ -8,22 +8,23 @@
  * @author ebollens
  * @copyright Copyright (c) 2010-11 UC Regents
  * @license http://mwf.ucla.edu/license
- * @version 20111213
+ * @version 20120411
  * 
  * @requires mwf.site
  * 
  * @uses nagivator.userAgent
  */
 
-mwf.userAgent = new function() {
+mwf.userAgent = new function(optionalUAString) {
     
     /**
      * Name of the user agent cookie that may be written to expose UA-based
      * telemetry to the server.
      */
-    this.cookieName = mwf.site.cookie.prefix+'user_agent';
+    this.cookieName = mwf.site.cookie.prefix + 'user_agent';
     
-    var userAgent = navigator.userAgent.toLowerCase();
+    var uaString = typeof optionalUAString === 'undefined' ? navigator.userAgent : optionalUAString;
+    var userAgent = uaString.toLowerCase();
     
     var userAgentSubstringExists = function(s){
         return userAgent.indexOf(s) != -1;
@@ -45,7 +46,7 @@ mwf.userAgent = new function() {
                     
         for(;i<osToTest.length;i++)
             if(userAgentSubstringExists(osToTest[i]))
-                return osToTest[i];
+                return osToTest[i].replace(/ /g,"_");
         
         return '';
     }
@@ -81,7 +82,7 @@ mwf.userAgent = new function() {
                     r = ua.substring(s, Math.min(ua.indexOf(' ', s), ua.indexOf(';', s), ua.indexOf('-', s)));
                 }
                 break;
-            case 'windows phone os':
+            case 'windows_phone_os':
                 if((s = ua.indexOf('windows phone os ')) != -1){
                     s += 17;
                     r = ua.substring(s, ua.indexOf(';', s));
@@ -112,12 +113,12 @@ mwf.userAgent = new function() {
         if(userAgentSubstringExists('safari'))
             return this.getOS() == 'android' ? 'android_webkit' : 'safari';
 
-        var i = 0,
+        var i,
         browsersToTest = ['chrome','iemobile','camino','seamonkey','firefox','opera mobi','opera mini'];
             
-        for(;i<browsersToTest.length;i++)
+        for(i=0;i<browsersToTest.length;i++)
             if(userAgentSubstringExists(browsersToTest[i]))
-                return browsersToTest[i];
+                return browsersToTest[i].replace(/ /g,"_");
         
         return '';
     }
@@ -156,14 +157,24 @@ mwf.userAgent = new function() {
     }
     
     /**
+     * Determine if the client is classified as a native container based on the 
+     * user agent string.
+     * 
+     * @return bool
+     */
+    this.isNative = function(){
+        return / mwf\-native\-[a-z]*\/[\d\.]*$/.test(userAgent);
+    }
+    
+    /**
      * Generate JSON content passed into the cookie written by mwf.server.
      * 
      * @return string
      */
     this.generateCookieContent = function(){
-        
+        var t;
         var cookie = '{';
-        cookie += '"s":"'+navigator.userAgent+'"';
+        cookie += '"s":"'+uaString+'"';
         if(t = this.getOS())
             cookie += ',"os":"'+t+'"';
         if(t = this.getOSVersion())
@@ -175,7 +186,7 @@ mwf.userAgent = new function() {
         if(t = this.getBrowserEngineVersion())
             cookie += ',"bev":"'+t+'"';
         cookie += '}';
-        
+
         return cookie;
         
     }

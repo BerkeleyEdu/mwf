@@ -18,7 +18,7 @@ include(dirname(__FILE__).'/header.php');
 
 	<div id="footer">
         <p><?php echo Config::get('global', 'copyright_text') ?><br />
-           <a href="<?php echo Config::get('frontpage', 'contact_url') ?>">Contact</a>&nbsp;|&nbsp;<a href="http://library.berkeley.edu?ovrrdr=1">View Full Site</a></p>
+           <a href="<?php echo Config::get('frontpage', 'contact_url') ?>">Contact</a>&nbsp;|&nbsp;<a href="http://calday.berkeley.edu?ovrrdr=1">View Full Site</a></p>
     </div>
 
 </body>

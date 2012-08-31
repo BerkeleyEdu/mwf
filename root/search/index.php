@@ -15,10 +15,10 @@ include(dirname(__FILE__).'/header.php');
 	{
 	?>      
 
-<form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
-		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' />
+<form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" id="ucbsearchform">
+		<input type="text" id="ucbsearchtext" name="search_text" style='width:73%; max-width:300px' />
 		
-          <input  id="search-button" class="form-last" name="Submit" type="submit" value="Search" />
+          <input  id="ucbsearchbutton" class="form-last" name="Submit" type="submit" value="Search" />
           <input type="hidden" name="display_type" value="mobile" />
            <input type="hidden" name="noscript" value="yes" />
       </form>
@@ -31,9 +31,9 @@ else
 ?> 
           
  
-    <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
-		<input type="text"  id="search_text" name="search_text" style="width:73%; max-width:300px;" />
-          <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>    
+    <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" id="ucbsearchform">
+		<input type="text"  id="ucbsearchtext" name="search_text" style="width:73%; max-width:300px;" />
+          <input id="ucbsearchbutton" class="form-last" name="Submit" type="submit" value="Search"/>    
           <input type="hidden" name="display_type" value="mobile" />
 <noscript>
  <input type="hidden" name="noscript" value="yes" />

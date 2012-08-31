@@ -129,8 +129,8 @@ require_once(dirname(__FILE__).'/util.php');
  */
 $footer = Site_Decorator::footer();
 
-$footer->set_contact('', '');
-
+$footer->set_contact('xxx', 'zzz');
+$footer->show_powered_by(false);
 echo $footer->render();
 ?>
     

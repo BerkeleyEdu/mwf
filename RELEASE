@@ -19,6 +19,9 @@ License:
 
 TABLE OF CONTENTS
 
+Version 1.3.02          July 12, 2012
+Version 1.3.01.rc       June 12, 2012
+Version 1.3.00.beta     April 15, 2012
 Version 1.2.14          April 14, 2012
 Version 1.2.13          February 29, 2012
 Version 1.2.12          February 6, 2012
@@ -45,10 +48,122 @@ Version 1.1.00.alpha    May 20, 2011
 
 ==============================================================================
 
+Version 1.3.02
+June 12, 2012
+
+* Modify CSS definitions to avoid inheritance to unintended children [#151]
+
+* Add support for ul-based menus (in addition to ol-based menus) [#146]
+
+* Fix :hover logic to only pertain to non-mobile devices [#152]
+
+* Fix menu item text overflow across arrow [#149]
+
+* Rename mwf.touch.geolocation to mwf.standard.geolocation [#145]
+
+==============================================================================
+
+Version 1.3.01
+June 12, 2012
+
+* Add documentation to the code base
+
+    * All documentation from GitHub copied to repository
+
+    * New documentation added for Messages, Forms and other 1.3 features
+
+* Add support for name anchors in no_server_init logic [#138]
+
+* Fix jSwipe issue with touch transitions library [#143]
+
+* Fix classification propagation bug [#141]
+
+* Tweaks to user customizable home screen
+
+* server.js refactored as an anonymous function
+
+==============================================================================
+
+Version 1.3.00
+April 15, 2012
+
+* Add lean CSS markup entities [Roadmap: Framework v1.3]
+
+    * Deprecate -full suffixing on entities
+
+    * Deprecate content-, menu- and button- prefixing on entities
+
+    * Add -compat.css libraries for old syntax
+
+* Add Forms API with entities and Javascript [Roadmap: Framework v1.3]
+
+    * See https://github.com/ucla/mwf/wiki/Roadmap%3A-Framework-v1.3%3A-Forms
+
+* Add Messages UI [Roadmap: Framework v1.3]
+
+    * See https://github.com/ucla/mwf/wiki/Roadmap-Framework-v1.3-Messages
+
+* Add Interactivity API [Roadmap: Framework 1.3]
+
+    * Add target-trigger engine for markup-driven effects [#116]
+
+    * Add expandable/collapsible library [#116]
+
+    * See https://github.com/ucla/mwf/wiki/Roadmap%3A-Framework-v1.3%3A-JS
+                -Interactivity
+
+* Add customizable home page [Roadmap: Framework v1.3]
+
+* Add Preferences API [Roadmap: Framework v1.3]
+
+* Add Javascript unit tests [Roadmap: Framework v1.3]
+
+* Modifications to existing entity styles:
+
+    * Padded made the default context and .padded deprecated [#102]
+
+    * Removing padding through new entity .not-padded [#102]
+
+    * Support for proper h accessibility in menu, content and form [#101]
+
+    * Fixed bug in menu hover [#97]
+
+    * Added explicit .center and .left for alignment on menu
+
+* Fixes to the device telemetry stack
+
+    * Fix to prevent infinite redirect loop with passthru.php [#122] [#133]
+
+    * Fix to prevent infinite refresh loop on same domain [#135]
+
+    * userAgent.getBrowserEngineVersion() fix for iOS [#114]
+
+    * userAgent.getOSVersion() fix for Symbian [#112]
+
+    * userAgent.getOSVersion() fix for Blackberry [#110]
+
+    * userAgent.getOSVersion() fix for iPad 5.1 [#130]
+
+    * Remove capability.flexbox() [#83]
+
+    * Updated Modernizr for improved capability detection [#76]
+
+* Fixes to Geolocation API
+
+    * Remove deprecated getPosition() [#87]
+
+    * Use error object rather than error message for errback [#86]
+
+* Refactor vars.php for testing and maintainability [#107]
+
+==============================================================================
+
 Version 1.2.14
 April 14, 2012
 
 * Fix to prevent infinite redirect loop with passthru.php [#122] [#133]
+
+* Fix to prevent infinite refresh loop on same domain [#134]
 
 * Fix to Tag_HTML_Decorator for "0" attribute [#120]
 

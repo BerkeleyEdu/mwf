@@ -150,6 +150,26 @@ div.button-full a.button-light:active {
 
 */
 
+/**
+ * Forms
+ * undo some of the MWF 1.3 css
+ */
+
+#ucbsearchform {
+	margin:0;
+	background-color: transparent;
+}
+
+#ucbsearchbutton {
+        background: url(img/button-search.png) no-repeat;
+        width: 60px;
+        height: 25px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        text-indent:-9999px;
+}
+
 
 
 

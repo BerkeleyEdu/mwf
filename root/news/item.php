@@ -10,7 +10,7 @@ if(!($feed_item = $feed->build_item_from_request()))
 
 include(dirname(__FILE__).'/header.php');
 
-$salt = Config::get('news', 'salt');
+require_once('/var/mobile/salt');
 
 ?>
 

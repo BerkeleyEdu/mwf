@@ -14,9 +14,9 @@ include(dirname(__FILE__).'/header_locations.php');
    <div class="content-full content-padded">
          <h1 class="light menu-first">Search Buildings</h1>
          <div>
-            <form action="locations.php" method="get" style="position: relative; height: 30px; ">
+            <form action="locations.php" method="get" style="position: relative; height: 30px; margin: 0px; padding: 0px;" >
             <input type="submit" value="Search" style="width:90px; font-size: 12px; float: right; height: 30px; padding: 0px; border: 0; background-color: #226; color: #fff;">
-            <input type="text" id="menu-filter" name="search" style="position: absolute; left: 0; right: 90px; height: 30px; font-size: 14px; padding: 0px 10px; border: 0; background-color: #eee; color: #555;">
+            <input type="text" id="menu-filter" name="search" style="position: absolute; left: -10px; right: 80px; height: 30px; font-size: 14px; padding: 0px 10px; border: 0; background-color: #eee; color: #555;">
             </form>
          </div>
         
