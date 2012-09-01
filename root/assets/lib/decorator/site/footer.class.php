@@ -95,15 +95,40 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator {
         $this->_powered_by = $val ? true : false;
         return $this;
     }
-
+	
+	public function &remove_link( $title ) {
+		$found = array_search($title, $this->_footer_link_titles);
+		if ($found !== FALSE) {
+			$this->_footer_link_urls[$found] = 'link_removed';
+		}		
+	   return $this;
+	}
+	
+	public function &change_link( $title, $url ) {
+		$found = array_search($title, $this->_footer_link_titles);
+		if ($found !== FALSE) {
+			$this->_footer_link_urls[$found] = $url;
+		}		
+	   return $this;
+	}
+	
+	
     public function render($raw = false) {
+
         $this->set_param('id', 'footer');
 
         if ($this->_copyright || $this->_footer_link_urls) {
             $p = HTML_Decorator::tag('p');
 
             for ($i = 0; $i < count($this->_footer_link_urls); $i++) {
-                $p->add_inner_tag('a', $this->_footer_link_titles[$i], array('href' => $this->_footer_link_urls[$i]));
+				if ($this->_footer_link_urls[$i] == 'link_removed')
+				{
+					$p->add_inner($this->_footer_link_titles[$i]);
+				}
+				else
+				{
+                	$p->add_inner_tag('a', $this->_footer_link_titles[$i], array('href' => $this->_footer_link_urls[$i]));
+				}
                 if ($i < (count($this->_footer_link_urls) - 1))
 					$p->add_inner(HTML_Decorator::tag('span', '', array('class' => 'footer-item-divider')));
 						

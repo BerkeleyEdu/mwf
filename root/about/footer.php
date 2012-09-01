@@ -2,9 +2,9 @@
 /**
  * Footer
  */
-$footer = Site_Decorator::footer();
+$footer = Site_Decorator::berkeley_footer();
 
-$footer->set_about('', '');
+$footer->remove_link('About');
 
 $footer->show_powered_by(true);
 

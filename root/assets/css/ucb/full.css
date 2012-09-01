@@ -193,7 +193,7 @@ div.button-full a.button-light:active{
 
 
 
-#search_text, #menu-filter, #search-box, #ucbsearchtext {
+#search_text, #menu-filter, #search-box, #ucbsearchtext, #full_name, #email, #question {
 	-webkit-border-radius: 12px;
 	font: 0.95em/1.25 Arial,Helvetica,sans-serif;
 }

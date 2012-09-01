@@ -22,7 +22,10 @@ include(dirname(__FILE__).'/header.php');
         </div>
 
 	<div id="footer">
-        <p><?php echo Config::get('global', 'copyright_text') ?></p>
+        <p><?php 
+		if ($copyright = Config::get('global', 'copyright_text'))
+           echo (str_replace('2012', date('Y'), $copyright));
+		?></p>
     </div>
 
 </body>

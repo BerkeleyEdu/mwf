@@ -94,18 +94,18 @@ require_once(dirname(__FILE__).'/util.php');
             
             <div class="field">
                 <label for="full_name">Your Name</label>
-                <br />		
+                	
                 <input name="full_name" type="text" id="full_name" class="input_text" size="30" value="<?php echo $_POST["full_name"]; ?>"/>
             </div>
             
             <div class="field">
                 <label for="email">Your Email</label>
-                <br />
+               
                 <input name="email" type="email" id="email" class="input_text" size="30" value="<?php echo $_POST["email"]; ?>"/>
             </div>
             
             <div class="field">
-                <label for="question">Comments</label><br />
+                <label for="question">Comments</label>
                 <textarea name="question" cols="30" rows="10" id="question" class="input_text"><?php echo $_POST["question"]; ?></textarea>
             </div>
             
@@ -127,9 +127,8 @@ require_once(dirname(__FILE__).'/util.php');
 /**
  * Footer
  */
-$footer = Site_Decorator::footer();
-
-$footer->set_contact('xxx', 'zzz');
+$footer = Site_Decorator::berkeley_footer();
+$footer->remove_link('Contact');
 $footer->show_powered_by(false);
 echo $footer->render();
 ?>

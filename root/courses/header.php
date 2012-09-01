@@ -23,8 +23,9 @@ require_once('../assets/config.php');
 <body>
 
 	<h1 id="header">
-        <a href="../">
-        <img src="<?php echo Config::get('courses', 'header_image_sub'); ?>" alt="<?php echo Config::get('courses', 'header_image_sub_alt'); ?>" width="88" height="35" /> </a>
+       <a href="../">
+       <img src="/assets/img/berkeley-home.png" alt="Berkeley" width="88" height="35" />       
+        </a>
 		<a href="index.php">
 		<!--<img src="../assets/img/l2-courses.png" alt="" width="45" height="35"/>	-->	
 		<span>Courses</span>

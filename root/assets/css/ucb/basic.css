@@ -150,15 +150,24 @@ h2 { font-size: 1.2em; font-weight: bold; } */
  * undo some of the MWF 1.3 css
  */
 
-#ucbsearchform {
+#ucbsearchform, #contactForm {
 	padding:0;
 }
-#ucbsearchbutton, #ucbsearchtext {
+
+.field {
+	padding:0;
+	margin:0;
+	border: none;
+	width:auto;
+}
+
+#ucbsearchbutton, #ucbsearchtext, #full_name, #email, #question {
     display: inline;
 	width: auto;
 	margin:0;
 	padding:4px;
 }
+
 
 .menu > ul > li, .menu > ol > li {
     text-align: left; /* undo MWF 1.3 css */

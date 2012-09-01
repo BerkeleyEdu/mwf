@@ -229,7 +229,7 @@ if (!$main_menu)
 /**
 * Footer
 */
-$footer = Site_Decorator::default_footer();
+$footer = Site_Decorator::berkeley_footer();
 $footer->show_powered_by(false);
 if ($main_menu && Classification::is_full() && Config::get('frontpage','customizable_home_screen'))
     $footer->add_footer_link('Customize Home Screen', "/customize_home_screen.php");

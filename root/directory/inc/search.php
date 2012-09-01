@@ -15,7 +15,7 @@ if(isset($_POST['search'])){
 <div class="content-full content-padded center">
     <h1 class="content-first">Search Directory</h1>
     
-    <form id="search-form" action="results.php" method="post">
-        <input type="text" name="search" id="search-box" value="<?php echo $value; ?>"  style='width:73%; max-width:300px' placeholder="By name, phone, or email"/> <input id="search-button" type="submit" name="submit" value="Search" class="form-last" />
+    <form id="ucbsearchform" action="results.php" method="post">
+        <input type="text" name="search" id="ucbsearchtext" value="<?php echo $value; ?>"  style='width:73%; max-width:300px' placeholder="By name, phone, or email"/> <input id="ucbsearchbutton" type="submit" name="submit" value="Search" class="form-last" />
     </form>
 </div>
