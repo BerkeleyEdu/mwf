@@ -8,7 +8,8 @@
 /********************************************************
  * BUTTONS
  *******************************************************/
-
+a.button,
+div.button a,
 a.button-full,
 div.button-full a {
     background: -webkit-gradient(linear, left top, left bottom, from(#4c4e9a), to(#383a7a), color-stop(1, #fff));
@@ -199,7 +200,7 @@ div.button-full a.button-light:active{
 }
 
 
-#search-button-by-date, #ucbsearchbutton {
+#search-button-by-date, #ucbsearchbutton, #search-button {
 background-image: url(img/search.png);
    background-position: right;
    background-repeat: no-repeat;

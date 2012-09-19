@@ -153,7 +153,7 @@ if (Classification::is_full() )
 	$simple_xml = simplexml_load_string($xml_file);
 	if ($simple_xml->Events->Event->Images->Image->URL != '')
 	{
-		$image = '<img class="thumbnail" alt="" src="http://m.berkeley.edu/assets/min/img.php?img=http://events.berkeley.edu'. $simple_xml->Events->Event->Images->Image->URL . '&max_height=60&max_width=60" /> ';
+		$image = '<img class="thumbnail" alt="" src="http://m-qa.berkeley.edu/assets/min/img.php?img=http://events.berkeley.edu'. $simple_xml->Events->Event->Images->Image->URL . '&max_height=60&max_width=60" /> ';
 	}
 	else
 	{

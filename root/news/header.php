@@ -6,7 +6,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo Config::get('news', 'title_text'); ?></title>
+    <title><?php echo Config::get('global', 'title_text') . Config::get('news', 'title_text'); ?></title>
     <link rel="stylesheet" href="../assets/css.php" type="text/css" media="screen" />
     <?php
 	if ($_SERVER['SERVER_NAME'] == 'mobile-qa.berkeley.edu'  || $_SERVER['SERVER_NAME'] == 'm-qa.berkeley.edu')  // development environment

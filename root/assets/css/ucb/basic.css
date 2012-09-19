@@ -55,6 +55,8 @@ div.button-full a:active{
 	color: #292e74;
 }
 */
+a.button,
+div.button a, 
 a.button-full,
 div.button-full a {
 	background-color: #383A7A ;
@@ -79,6 +81,7 @@ div.button-full a.button-light:active {
 	background-color: #1F2252  !important;
 	color: #fff;
 }
+
 form.form-full > input[type=submit]:active,
 form.form-full > input[type=reset]:active,
 form.form-full > input[type=submit]:focus,
@@ -158,14 +161,23 @@ h2 { font-size: 1.2em; font-weight: bold; } */
 	padding:0;
 	margin:0;
 	border: none;
-	width:auto;
 }
 
-#ucbsearchbutton, #ucbsearchtext, #full_name, #email, #question {
+#ucbsearchbutton, #ucbsearchtext, #full_name, #email, #question, #search-box, #search-button {
     display: inline;
 	width: auto;
 	margin:0;
 	padding:4px;
+}
+
+form#search-by-date-form select  {
+	display: inline;
+	width:25%;
+}
+
+form#search-form label, form#search-by-date-form label {
+	text-align:inherit;
+	display:inline;
 }
 
 

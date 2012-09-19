@@ -3,7 +3,6 @@
  *
  *
  */
-
 a.button-full,
 div.button-full a {
 	background-color: #383A7A ;
@@ -155,17 +154,12 @@ div.button-full a.button-light:active {
  * undo some of the MWF 1.3 css
  */
 
-#ucbsearchform, #contactForm {
+#ucbsearchform, #contactForm, #search-form {
 	margin:0;
 	background-color: transparent;
 }
 
-.field {
-	margin:0;
-	border: none;
-}
-
-#ucbsearchbutton {
+#ucbsearchbutton, #search-button {
         background: url(img/button-search.png) no-repeat;
         width: 60px;
         height: 25px;

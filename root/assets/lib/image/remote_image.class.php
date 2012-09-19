@@ -17,6 +17,7 @@
  * @todo Comments
  * @todo Refactor
  */
+ 
 require_once(dirname(__DIR__) . '/image.class.php');
 
 class Remote_Image extends Image {
@@ -52,7 +53,7 @@ class Remote_Image extends Image {
             // Encode the URL
             $image_url = preg_replace_callback('#://([^/]+)/([^?]+)#', 
                     create_function ('$match', 'return "://" . $match[1] . "/" . join("/", array_map("rawurlencode", explode("/", $match[2])));'),
-                    $image_path);
+                    $image_path);	
             if (ini_get('allow_url_fopen')) {
                 file_put_contents($path, file_get_contents($image_url, FALSE, NULL, -1, 9999999));
             } else {

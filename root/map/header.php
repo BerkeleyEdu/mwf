@@ -5,7 +5,7 @@ require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 <!DOCTYPE html>
 <html manifest="../assets/appcache.php">
     <head>
-        <title><?php echo Config::get('map', 'title_text'); ?></title>
+        <title><?php echo Config::get('global', 'title_text') . Config::get('map', 'title_text'); ?></title>
         <link rel="stylesheet" href="../assets/css.php" type="text/css" media="screen" />
         <?php echo $_SERVER['SERVER_NAME'] == 'mobile-qa.berkeley.edu' || $_SERVER['SERVER_NAME'] == 'm-qa.berkeley.edu'
               ? '<script type="application/javascript" src="../assets/js.php?no_ga"></script>'

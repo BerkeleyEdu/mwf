@@ -4,7 +4,7 @@ require_once('../assets/config.php');
 <html manifest="../assets/appcache.php">
 
 <head>
-    <title><?php echo Config::get('library', 'title_text'); ?></title>
+    <title><?php echo Config::get('global', 'title_text') . Config::get('library', 'title_text'); ?></title>
     <link rel="stylesheet" href="../assets/css.php" type="text/css" media="screen" />
     <?php
 	if ($_SERVER['SERVER_NAME'] == 'mobile-qa.berkeley.edu')  // development environment
