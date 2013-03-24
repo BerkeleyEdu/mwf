@@ -1,23 +1,23 @@
 <?php
 
 /**
- * An object that encapsulates an image, allows for transformations of extension
- * and dimensions, and handles caching.
- *
- * @package core
- * @subpackage path
- *
- * @author trott
- * @copyright Copyright (c) 2010-12 UC Regents
- * @license http://mwf.ucla.edu/license
- * @version 20120328
- *
- * @uses Config
- * @uses Disk_Cache
- * @uses Path_Validator
- *
- * @todo phpdoc
- */
+* An object that encapsulates an image, allows for transformations of extension
+* and dimensions, and handles caching.
+*
+* @package core
+* @subpackage path
+*
+* @author trott
+* @copyright Copyright (c) 2010-12 UC Regents
+* @license http://mwf.ucla.edu/license
+* @version 20120328
+*
+* @uses Config
+* @uses Disk_Cache
+* @uses Path_Validator
+*
+* @todo phpdoc
+*/
 require_once(dirname(__DIR__) . '/config.php');
 require_once(__DIR__ . '/disk_cache.class.php');
 require_once(__DIR__ . '/path_validator.class.php');
@@ -40,10 +40,10 @@ abstract class Image {
     abstract protected function get_gd_extension();
 
     /**
-     *
-     * @param string $image_path
-     * @return Image|null
-     */
+*
+* @param string $image_path
+* @return Image|null
+*/
     public static function factory($image_path) {
         if (!Path_Validator::is_safe($image_path))
             return null;
@@ -57,7 +57,7 @@ abstract class Image {
             require_once(dirname(__FILE__) . '/image/local_image.class.php');
             return new Local_Image($image_path);
         }
-    } 
+    }
 
     protected function __construct($imagepath) {
         $this->_image_path = $imagepath;
@@ -90,9 +90,9 @@ abstract class Image {
     }
 
     /**
-     *
-     * @return type string Returns image as a string. Returns an empty string on failure.
-     */
+*
+* @return type string Returns image as a string. Returns an empty string on failure.
+*/
     public function find_or_create_image_as_string() {
         if ($this->_image_path === false)
             return '';
@@ -181,7 +181,7 @@ abstract class Image {
 
     protected function check_memory($path) {
         // GD can consume a lot of memory. Check that the image will not likely
-        //  use more memory than we want.
+        // use more memory than we want.
         $imageinfo = getimagesize($path);
 
         if (isset($imageinfo[0]) && isset($imageinfo[1]) && isset($imageinfo['bits'])) {

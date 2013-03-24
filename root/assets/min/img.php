@@ -108,3 +108,4 @@ header("Content-type: " . $image->get_mimetype());
 
 /** Output the binary content of the image in its compressed state. */
 echo $image->find_or_create_image_as_string();
+		
