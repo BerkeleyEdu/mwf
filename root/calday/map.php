@@ -84,8 +84,12 @@ $locations = new Locations('http://www.berkeley.edu/data/ucb_calday_map_coordina
     }
 	?>
         
-<h1 id="header"><a href="http://calday.berkeley.edu"><img src="http://berkeley.edu/calday/img/calday-app-secondary-logo.jpg" alt="Cal Day Mobile"></a></h1>
-<div id="blubnr">Saturday, April 21</div>
+<h1 id="header">	
+    <a href="http://calday.berkeley.edu"><img id="hdr-rt" src="http://calday.berkeley.edu/calday/img/mobile/hdr-rt.png"  alt="Berkeley" width="195" height="50">
+	<img id="hdr-lft" src="http://calday.berkeley.edu/calday/img/mobile/hdr-lft.png"  alt="Cal Day Mobile" width="117" height="50">
+    </a>
+</h1>
+<div id="subbnr"><h3>SAVE THE DATE | SATURDAY, APRIL 20TH</h3></div>
 
           <div id="map_canvas"><?php
 
