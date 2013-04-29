@@ -6,7 +6,8 @@ class UCLA_Directory extends LDAP_Directory
 {
 	public function __construct()
 	{
-		parent::__construct('ldap.berkeley.edu');
+	//	parent::__construct('ldap.berkeley.edu');
+		parent::__construct('nds.berkeley.edu');
 	}
 	
 	public function __get($key)
@@ -20,10 +21,8 @@ class UCLA_Directory extends LDAP_Directory
 		$name = htmlspecialchars($string);
 		$name = str_replace('(', '\(', $name);
 		$name = str_replace(')', '\)', $name);
-
 		$string = str_replace(',', '', $string);
 		$words = explode(' ', $string);
-		
 		$departmental = "(!(berkeleyEduAffiliations=AFFILIATE-TYPE-DEPARTMENTAL))";	
 		$test = "(!(berkeleyEduTestIDFlag=true))";							
 		$expiredPeopleFilter = "(!(berkeleyEduExpDate=*))";
@@ -50,10 +49,11 @@ class UCLA_Directory extends LDAP_Directory
 		else
 		{
 			// Search for name
-			$primaryfilter = "(&(cn=$name)$departmental$expiredPeopleFilter$test)";
+			//$primaryfilter = "(&(cn=$name)$departmental$expiredPeopleFilter$test)";
+$primaryfilter = "(&(|(givenName=$name)(sn=$name))$departmental$expiredPeopleFilter$test)";
+			
 		}
-		
-		$array = parent::raw_search('ou=people, dc=berkeley, dc=edu', $primaryfilter);
+		$array = parent::raw_search('ou=people,dc=berkeley,dc=edu', $primaryfilter);
 		
 		
 		if(is_array($array) && count($array) > 1)
@@ -75,12 +75,12 @@ class UCLA_Directory extends LDAP_Directory
 			{
 				if($j != $i)
 				{
-					$filters .= '(givenName=' . $words[$j] . ')';
+			   	$filters .= '(givenName=' . $words[$j] . ')';
 				}
 			}
 			$filters .= ')';
 			$filters .= ')';
-			$lastfilters .= '(givenName='.$words[$i].')(sn='.$words[$i].')';
+		$lastfilters .= '(givenName='.$words[$i].')(sn='.$words[$i].')';
 		}
 		$filters .= ')';
 		$lastfilters .= '))';
@@ -91,7 +91,8 @@ class UCLA_Directory extends LDAP_Directory
 			$this->primary_search = true;
 			return array_slice($array, 1, count($array)-1);
 		}
-		
+
+		// TO DO:  $lastfilters has incorrect syntax, perhaps order is reversed now?
 		$array = parent::raw_search('ou=people,dc=berkeley,dc=edu', $lastfilters);
 		if(is_array($array) && count($array) > 1)
 		{
