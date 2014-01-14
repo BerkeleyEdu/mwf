@@ -88,7 +88,10 @@ Config::set('frontpage', 'menu',
               'url'=>'http://mobile.lib.berkeley.edu/'), 	  	  	 		
 		array('name'=>'Athletics',
               'id'=>'sports',
-              'url'=>'http://m.calbears.com/')
+              'url'=>'http://m.calbears.com/'),
+		array('name'=>'CalCentral',
+              'id'=>'calcentral',
+              'url'=>'https://calcentral.berkeley.edu/')
 		  /* array('name'=>'Social Media',
               'id'=>'social',
               'url'=>'social')
