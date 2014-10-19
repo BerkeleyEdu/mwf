@@ -14,7 +14,7 @@
 		print '<script type="application/javascript" src="../assets/js.php"></script>';	
 	}
 	?>
-    <meta name="viewport" content="height=device-height,width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
     
 <script type="text/javascript" src="http://mobile.berkeley.edu/assets/min/js.php?basic=http%3A%2F%2F<?php echo $_SERVER['SERVER_NAME'];?>%2Fassets%2Fjs%2Fvalidate.contactForm.js"></script> 
 

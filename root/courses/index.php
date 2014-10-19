@@ -19,7 +19,7 @@ include(dirname(__FILE__).'/header.php');
 		
 		<div class="menu-full menu-detailed menu-padded">
          <ol>
-		 <li><a href="http://www.google.com/gwt/x?u=http%3A%2F%2Fadmissions.berkeley.edu&btnGo=Go&source=wax&ie=UTF-8&oe=UTF-8">Admissions</a></li>
+		 <li><a href="http://admissions.berkeley.edu">Admissions</a></li>
          <li><a href="http://registrar.berkeley.edu">Registrar</a></li>
 </ol>
     	</div>
