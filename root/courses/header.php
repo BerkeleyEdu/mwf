@@ -16,7 +16,7 @@ require_once('../assets/config.php');
 		print '<script type="application/javascript" src="../assets/js.php"></script>';	
 	}
 	?>
-    <meta name="viewport" content="height=device-height,width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
 
 </head>
 
