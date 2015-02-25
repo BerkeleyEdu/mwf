@@ -17,6 +17,7 @@ class UCLA_Directory extends LDAP_Directory
 	
 	public function search($string)
 	{	
+		
 		// Clean up name.		
 		$name = htmlspecialchars($string);
 		$comma = false;
@@ -32,6 +33,21 @@ class UCLA_Directory extends LDAP_Directory
 		//$confidential = "(!(berkeleyEduConfidentialFlag=true))";
 		$test = "(!(berkeleyEduTestIDFlag=true))";							
 		$expiredPeopleFilter = "(!(berkeleyEduExpDate=*))";
+		$affliliations = "(|
+							(berkeleyeduaffiliations=EMPLOYEE-TYPE-*)
+							(berkeleyeduaffiliations=STUDENT-TYPE-*)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-CONSULTANT)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-LBLOP STAFF)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-VISITING SCHOLAR)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-VOLUNTEER)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-HHMI RESEARCHER)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-VISITING STU RESEARCHER)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-LBL/DOE POSTDOC)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-TEMP AGENCY)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-COMMITTEE MEMBER)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-STAFF OF UC/OP/AFFILIATED ORGS)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-INDEPENDENT CONTRACTOR)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-CONCURR ENROLL))";
 		
 		if ($comma) {
 			if (count($words) == 3) //combine first and middle
@@ -51,7 +67,7 @@ class UCLA_Directory extends LDAP_Directory
 		{
 			// Search for email
 			$email = $name;
-			$primaryfilter = "(&(mail=$email)$expiredPeopleFilter$test)";
+			$primaryfilter = "(&(mail=$email)$expiredPeopleFilter$test$affliliations)";
 		} 
 		elseif (is_numeric(str_replace('-', '', $name)))
 		{
@@ -64,23 +80,23 @@ class UCLA_Directory extends LDAP_Directory
 			{
 				$phone = '+1 510 ' . $name;
 			}
-			$primaryfilter .= "(&(telephoneNumber=$phone)$expiredPeopleFilter$test)";
+			$primaryfilter .= "(&(telephoneNumber=$phone)$expiredPeopleFilter$test$affliliations)";
 		}
 		else
 		{
 			// Search for name
-			//$primaryfilter = "(&(cn=$name)$expiredPeopleFilter$test)";
-			//$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test)";
+			//$primaryfilter = "(&(cn=$name)$expiredPeopleFilter$test$affliliations)";
+			//$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test$affliliations)";
 			// Search for name, simple
 			if (count($words) > 1) {
 				if ($comma)  {
 					// swap names
-					$primaryfilter = "(&(givenName=$words[1] *)(sn=$words[0])$expiredPeopleFilter$test)";	
+					$primaryfilter = "(&(givenName=$words[1] *)(sn=$words[0])$expiredPeopleFilter$test$affliliations)";	
 				} else {
-					$primaryfilter = "(&(givenName=$words[0] *)(sn=$words[1])$expiredPeopleFilter$test)";
+					$primaryfilter = "(&(givenName=$words[0] *)(sn=$words[1])$expiredPeopleFilter$test$affliliations)";
 				}
 			} else {
-				$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test)";
+				$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test$affliliations)";
 			}
 			
 		}
@@ -102,12 +118,12 @@ class UCLA_Directory extends LDAP_Directory
 		}
 		
 		$filters = '(|';
-		$lastfilters = "(&$expiredPeopleFilter$test";	
+		$lastfilters = "(&$expiredPeopleFilter$test$affliliations";	
 		$lastfilters .= '(|';
 		for($i = 0; $i < count($words); $i++)
 		{
 			$filters .= '(&';
-			$filters .= "$expiredPeopleFilter$test";	
+			$filters .= "$expiredPeopleFilter$test$affliliations";	
 			$filters .= '(sn=' . $words[$i] . ')';
 			$filters .= '(|';
 			for($j = 0; $j < count($words); $j++)
@@ -138,7 +154,7 @@ class UCLA_Directory extends LDAP_Directory
 			$this->primary_search = false;
 			return array_slice($array, 1, count($array)-1);
 		}
-		
+	
 		$this->primary_search = false;
 		return array();
 	}
@@ -147,7 +163,7 @@ class UCLA_Directory extends LDAP_Directory
 	{
 		$filters = '(uid='.$string.')';
 		
-		$array = parent::raw_search('ou=people,dc=berkeley,dc=edu', $filters);
+		$array = parent::raw_search('ou=people,dc=berkeley,dc=edu', $filters);				
 		if(is_array($array))
 		{
 			$array = array_slice($array, 1, count($array)-1);
