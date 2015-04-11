@@ -50,15 +50,21 @@ class UCLA_Directory extends LDAP_Directory
 							(berkeleyeduaffiliations=AFFILIATE-TYPE-CONCURR ENROLL))";
 		
 		if ($comma) {
-			if (count($words) == 3) //combine first and middle
-			{
-				$words[1] = $words[1] .' ' . $words[2];
-			}
+				if (count($words) == 3) //combine first and middle
+		{
+			$words[1] = $words[1] .' ' . $words[2];
+		}
 		} else {
-			if (count($words) == 3) //combine first and middle, move last
+			if (count($words) == 3) //combine first and middle, middle and last, move last
 			{
 				$words[0] = $words[0] .' ' . $words[1];
+				$words[3] = $words[1] .' ' . $words[2];
 				$words[1] = $words[2];
+			} else { 
+				if (count($words) == 2) //combine
+				{
+					$words[2] = $words[0] .' ' . $words[1];
+				}
 			}
 		}
 		
