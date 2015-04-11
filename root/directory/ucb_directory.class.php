@@ -47,6 +47,7 @@ class UCLA_Directory extends LDAP_Directory
 							(berkeleyeduaffiliations=AFFILIATE-TYPE-COMMITTEE MEMBER)
 							(berkeleyeduaffiliations=AFFILIATE-TYPE-STAFF OF UC/OP/AFFILIATED ORGS)
 							(berkeleyeduaffiliations=AFFILIATE-TYPE-INDEPENDENT CONTRACTOR)
+							(berkeleyeduaffiliations=AFFILIATE-TYPE-TEMPORARY AGENCY STAFF)
 							(berkeleyeduaffiliations=AFFILIATE-TYPE-CONCURR ENROLL))";
 		
 		if ($comma) {

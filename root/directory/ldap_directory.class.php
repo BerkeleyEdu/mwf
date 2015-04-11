@@ -40,7 +40,8 @@ class LDAP_Directory
 	{
 		$this->_server = $server;
 		$this->_conn = @ldap_connect($server);
-		$this->_conn_status = ldap_bind($this->_conn);
+		$this->_conn_status = ldap_bind($this->_conn)
+			or header('Location: /directory/unavailable.php');	
 		return $this->_conn_status;
 	}
 	
