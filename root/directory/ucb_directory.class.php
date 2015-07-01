@@ -21,7 +21,7 @@ class UCLA_Directory extends LDAP_Directory
 		// Clean up name.		
 		$name = htmlspecialchars($string);
 		$comma = false;
-		if (strpos($name,',') !== false)  {
+		if (strpos($name,',') != false)  {
 			$comma = true;
 		}
 		$name = str_replace('(', '\(', $name);
@@ -51,24 +51,28 @@ class UCLA_Directory extends LDAP_Directory
 							(berkeleyeduaffiliations=AFFILIATE-TYPE-CONCURR ENROLL))";
 		
 		if ($comma) {
-				if (count($words) == 3) //combine first and middle
-		{
-			$words[1] = $words[1] .' ' . $words[2];
-		}
-		} else {
-			if (count($words) == 3) //combine first and middle, middle and last, move last
+			if (count($words) == 3) //combine first and middle
 			{
+				$words[1] = $words[1] .' ' . $words[2];
+			}
+			if (count($words) == 4) //combine 3-word last name, move first  e.g, Sarah de la Vega
+			{
+				$words[0] = $words[0] .' ' . $words[1] .' ' . $words[2];
+				$words[1] = $words[3];
+			}
+		} else {
+			if (count($words) == 3) { //combine first and middle, middle and last, move last
 				$words[0] = $words[0] .' ' . $words[1];
 				$words[3] = $words[1] .' ' . $words[2];
 				$words[1] = $words[2];
-			} else { 
-				if (count($words) == 2) //combine
-				{
-					$words[2] = $words[0] .' ' . $words[1];
-				}
 			}
-		}
-		
+			if (count($words) == 2) { //combine 
+					$words[2] = $words[0] .' ' . $words[1];
+			}
+			if (count($words) == 4) { //combine 3-word last name  e.g, Sarah de la Vega
+					$words[1] = $words[1] .' ' . $words[2] .' ' . $words[3];
+			}
+		}	
 
 		if (strpos($name,'@'))
 		{
