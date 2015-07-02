@@ -146,7 +146,7 @@ class UCLA_Directory extends LDAP_Directory
 			}
 			$filters .= ')';
 			$filters .= ')';
-		$lastfilters .= '(givenName='.$words[$i].')(sn='.$words[$i].')';
+			$lastfilters .= '(givenName='.$words[$i].')(sn='.$words[$i].')';
 		}
 		$filters .= ')';
 		$lastfilters .= '))';
@@ -158,7 +158,26 @@ class UCLA_Directory extends LDAP_Directory
 			return array_slice($array, 1, count($array)-1);
 		}
 
-		// TO DO:  $lastfilters has incorrect syntax, perhaps order is reversed now?
+		// Get fresh array to try merged names  (finds 'de la Vega')
+		$words = explode(' ', $string); 
+		$mergedfilters = "(&$expiredPeopleFilter$affliliations";	
+		$mergedfilters .= '(|';
+		$givenName = '';
+		$sn = '';
+		for($i = 0; $i < count($words); $i++)
+		{
+			$givenName .= $words[$i]. ' ';
+			$sn .= $words[$i]. ' ';
+		}
+		$mergedfilters .= '(givenName='.$givenName.')(sn='.$sn.')))';
+		$array = parent::raw_search('ou=people,dc=berkeley,dc=edu', $mergedfilters);
+		if(is_array($array) && count($array) > 1)
+		{
+			$this->primary_search = true;
+			return array_slice($array, 1, count($array)-1);
+		}
+		
+		// Last filter  (finds 'Andrea Green Rush')
 		$array = parent::raw_search('ou=people,dc=berkeley,dc=edu', $lastfilters);
 		if(is_array($array) && count($array) > 1)
 		{
