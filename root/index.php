@@ -169,7 +169,8 @@ if (Classification::is_full() )
 		break;
 	}	
 	$_GET['name'] = 'Top News';
-	$_GET['path'] =	'http://newscenter.berkeley.edu/category/news/feed/';				
+	//$_GET['path'] =	'http://newscenter.berkeley.edu/category/news/feed/';
+	$_GET['path'] =	'http://news.berkeley.edu/feed/';					
 	$feed = Feed::build_page_from_request();
 	$feed_items = $feed->get_items();
 	preg_match_all('/<img[^>]+>/i',$feed_items[0]->get_description(), $result); 
