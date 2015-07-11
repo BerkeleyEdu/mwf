@@ -36,8 +36,6 @@ $salt = Config::get('news', 'salt');
                 foreach($feed_set as $feed)
                     echo '<li><a href="'.$feed->get_page($salt).'">'.$feed->get_name().'</a></li>';
                 ?>
-				<li><a href="http://m.youtube.com/view_playlist?gl=US&hl=en&client=mv-google&p=4DD1399BBF93AFBC">YouTube videos</a></li>
-
             </ol>
         </div>
 
