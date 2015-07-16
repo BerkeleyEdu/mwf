@@ -26,7 +26,8 @@ class UCLA_Directory extends LDAP_Directory
 		}
 		$name = str_replace('(', '\(', $name);
 		$name = str_replace(')', '\)', $name);
-		$string = str_replace(',', '', $string);
+		$string = str_replace(', ', ' ', $string); // comma followed by space
+		$string = str_replace(',', ' ', $string);  // comma no space
 		$words = explode(' ', $string);
 		//$departmental = "(!(berkeleyEduAffiliations=AFFILIATE-TYPE-DEPARTMENTAL))";	
 		$departmental = "";
