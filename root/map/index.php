@@ -16,13 +16,9 @@ include(dirname(__FILE__).'/header.php');
              <li><a href="libraries.php">Libraries</a></li>
              <li><a href="museums.php">Museums</a></li>
              <li><a href="nearby.php">Nearby</a></li>
-             <li><a href="food.php">On-Campus Dining</a></li>
              <li><a href="outdoor.php">Outdoor</a></li>
-             <?php
-			 	echo '<li class="only-full"><a href="parking.php">Parking</a></li>';
-			 ?>
-             <li><a href="sports_fac.php">Sports Facilities</a></li>
-             <li class="menu-last"><a href="housing.php">Student Housing</a></li>             
+             <li><a href="http://pt.berkeley.edu/maps">Parking</a></li>
+             <li class="menu-last"><a href="sports_fac.php">Sports Facilities</a></li>           
         </ol>
 	</div>
 
