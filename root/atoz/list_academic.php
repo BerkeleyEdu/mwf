@@ -3,7 +3,7 @@
 require_once(dirname(dirname(__FILE__)).'/assets/config.php');
 include(dirname(__FILE__).'/header.php');
 $letter = strtoupper($_GET['atoz']);
-$atoz_link = 'http://berkeley.edu/academics/dept/' . $_GET['atoz'] .'.txt';
+$atoz_link = 'http://www.berkeley.edu/academics/dept/' . $_GET['atoz'] .'.txt';
 ?>
 
 

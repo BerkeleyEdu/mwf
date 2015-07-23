@@ -13,7 +13,11 @@ if(isset($_POST['search'])){
     {
             $search_results[$result['uid'][0]] = $result['cn'][0];
     }
-    natcasesort($search_results);
+	
+	if (count($search_results) < 51)
+	{
+    	natcasesort($search_results);
+	}
 
 	$_SESSION['lastsearch'] = $_POST['search'];
 }else if(isset($_SESSION['lastsearch'])){
@@ -22,13 +26,17 @@ if(isset($_POST['search'])){
     {
             $search_results[$result['uid'][0]] = $result['cn'][0];
     }
-    natcasesort($search_results);
+	if (count($search_results) < 51)
+	{
+   		 natcasesort($search_results);
+	}
 }else{
 	header('Location: index.php');
 }
 
 $zero_results = (count($search_results) == 0);
-$valid_results = (count($search_results) < 249 && count($search_results) > 0);
+//$valid_results = (count($search_results) < 249 && count($search_results) > 0);
+$valid_results = (count($search_results) < 51 && count($search_results) > 0);
 
 ?><!DOCTYPE html>
 
@@ -57,16 +65,32 @@ $valid_results = (count($search_results) < 249 && count($search_results) > 0);
     <?php include('inc/search.php'); ?>
 
     <!-- RESULT LIST -->
-    <?php if($valid_results){ ?>
-    <div class="menu-full menu-detailed menu-padded">
-
+    <?php 
+	//if($valid_results){ 
+	if(!$zero_results){ 
+	?>
+    
+    <?php
+			if(!$valid_results){ 
+			 echo '<div class="content-full content-padded"><div class="content-last"><em>Results are limited to the first 50 people matching <strong>'. $value .'</strong>.<br/> Try advanced search on <strong><a href="http://www.berkeley.edu/directory">full site</a></strong>.</em></div></div>';
+			}
+			
+		?>
+    <div class="menu-full menu-detailed menu-padded">       
         <h1 class="menu-first">Search Results</h1>
         <ol>
-            <?php foreach($search_results as $id=>$name){ ?>
-            <li><a href="result.php?u=<?php echo $id; ?>">
-                <?php echo ucwords(strtolower($name)); ?>
-                </a></li>
-            <?php } ?>
+            <?php
+			$count = 0;
+            foreach($search_results as $id=>$name)
+			{ 
+			    if ($count < 50)
+				{
+					echo '<li><a href="result.php?u='.$id .'">';
+					echo ucwords(strtolower($name)).'</a></li>';
+				}
+				$count++;
+			}
+		 ?>
         </ol>
     </div>
     <?php }else{ ?>
@@ -77,7 +101,7 @@ $valid_results = (count($search_results) < 249 && count($search_results) > 0);
     	<?php if($zero_results){ ?>
         <p class="content-last"><em>No matches to your search. Please try again.</em></p>
         <?php }else{ ?>
-        <p class="content-last"><em>Results exceeded 250 records. Please try again.</em></p>
+        <p class="content-last"><em>Results exceeded 50 records. Please try again.</em></p>
         <?php } ?>
 
     </div>

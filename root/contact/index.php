@@ -7,6 +7,15 @@ require_once(dirname(__FILE__).'/util.php');
 	if($_POST['action'] == "sendContactForm") 
 	{
 		$problem = FALSE;
+		
+		// Google captcha
+		// Google captcha
+		if (!validateCaptcha($_POST['g-recaptcha-response'],$description))
+		{
+			$problem = TRUE;
+			$problem_message .=  $description;;			
+		}	
+
 		if ($_POST['full_name'] == '')
 		{
 			$problem = TRUE;
@@ -108,6 +117,9 @@ require_once(dirname(__FILE__).'/util.php');
                 <label for="question">Comments</label><br />
                 <textarea name="question" cols="30" rows="10" id="question" class="input_text"><?php echo $_POST["question"]; ?></textarea>
             </div>
+            
+            <script src='https://www.google.com/recaptcha/api.js'></script>
+            <div class="g-recaptcha" data-sitekey="6Lc3OwoTAAAAAP-3X2MtuCPOGd1lDqPZgIliponA"></div>
             
             <div class="field"> 
                  <span class="formSpacer"><input id="submit-button" type="submit" class="submit_inquiry" value="Submit Comments"></span>
