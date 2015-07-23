@@ -6,8 +6,7 @@ class UCLA_Directory extends LDAP_Directory
 {
 	public function __construct()
 	{
-	//	parent::__construct('ldap.berkeley.edu');
-		parent::__construct('nds.berkeley.edu');
+	 	parent::__construct('ldap.berkeley.edu');
 	}
 	
 	public function __get($key)
@@ -31,7 +30,7 @@ class UCLA_Directory extends LDAP_Directory
 		$words = explode(' ', $string);
 		//$departmental = "(!(berkeleyEduAffiliations=AFFILIATE-TYPE-DEPARTMENTAL))";	
 		$departmental = "";
-		//$confidential = "(!(berkeleyEduConfidentialFlag=true))";
+		$confidential = "(!(berkeleyEduConfidentialFlag=true))";
 		$test = "(!(berkeleyEduTestIDFlag=true))";							
 		$expiredPeopleFilter = "(!(berkeleyEduExpDate=*))";
 		$affliliations = "(|
@@ -79,7 +78,7 @@ class UCLA_Directory extends LDAP_Directory
 		{
 			// Search for email
 			$email = $name;
-			$primaryfilter = "(&(mail=$email)$expiredPeopleFilter$test$affliliations)";
+			$primaryfilter = "(&(mail=$email)$expiredPeopleFilter$test$confidential$affliliations)";
 		} 
 		elseif (is_numeric(str_replace('-', '', $name)))
 		{
@@ -92,23 +91,23 @@ class UCLA_Directory extends LDAP_Directory
 			{
 				$phone = '+1 510 ' . $name;
 			}
-			$primaryfilter .= "(&(telephoneNumber=$phone)$expiredPeopleFilter$test$affliliations)";
+			$primaryfilter .= "(&(telephoneNumber=$phone)$expiredPeopleFilter$test$confidential$affliliations)";
 		}
 		else
 		{
 			// Search for name
-			//$primaryfilter = "(&(cn=$name)$expiredPeopleFilter$test$affliliations)";
-			//$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test$affliliations)";
+			//$primaryfilter = "(&(cn=$name)$expiredPeopleFilter$test$confidential$affliliations)";
+			//$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test$confidential$affliliations)";
 			// Search for name, simple
 			if (count($words) > 1) {
 				if ($comma)  {
 					// swap names
-					$primaryfilter = "(&(givenName=$words[1] *)(sn=$words[0])$expiredPeopleFilter$test$affliliations)";	
+					$primaryfilter = "(&(givenName=$words[1] *)(sn=$words[0])$expiredPeopleFilter$test$confidential$affliliations)";	
 				} else {
-					$primaryfilter = "(&(givenName=$words[0] *)(sn=$words[1])$expiredPeopleFilter$test$affliliations)";
+					$primaryfilter = "(&(givenName=$words[0] *)(sn=$words[1])$expiredPeopleFilter$test$confidential$affliliations)";
 				}
 			} else {
-				$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test$affliliations)";
+				$primaryfilter = "(&(|(givenName=$name)(sn=$name))$expiredPeopleFilter$test$confidential$affliliations)";
 			}
 			
 		}
@@ -130,12 +129,12 @@ class UCLA_Directory extends LDAP_Directory
 		}
 		
 		$filters = '(|';
-		$lastfilters = "(&$expiredPeopleFilter$test$affliliations";	
+		$lastfilters = "(&$expiredPeopleFilter$test$confidential$affliliations";	
 		$lastfilters .= '(|';
 		for($i = 0; $i < count($words); $i++)
 		{
 			$filters .= '(&';
-			$filters .= "$expiredPeopleFilter$test$affliliations";	
+			$filters .= "$expiredPeopleFilter$test$confidential$affliliations";	
 			$filters .= '(sn=' . $words[$i] . ')';
 			$filters .= '(|';
 			for($j = 0; $j < count($words); $j++)
@@ -161,7 +160,7 @@ class UCLA_Directory extends LDAP_Directory
 
 		// Get fresh array to try merged names  (finds 'de la Vega')
 		$words = explode(' ', $string); 
-		$mergedfilters = "(&$expiredPeopleFilter$affliliations";	
+		$mergedfilters = "(&$expiredPeopleFilter$test$confidential$affliliations";	
 		$mergedfilters .= '(|';
 		$givenName = '';
 		$sn = '';
