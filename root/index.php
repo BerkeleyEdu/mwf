@@ -220,9 +220,9 @@ for($i = 0; $i < count($menu_items); $i++)
 	{
 		if ($menu_item['name'] == 'News' && $news_title != '')
 		{
-			$menu_item['name'] = 'Berkeley News<br/> <span class="feed_title">' . $news_title . '</span>';
-			//$menu_item['url'] = $news_link;
-			$menu_item['url'] = 'http://news.berkeley.edu/all-news/';
+			$menu_item['name'] = 'News<br/> <span class="feed_title">' . $news_title . '</span>';
+			$menu_item['url'] = $news_link;
+			//$menu_item['url'] = 'http://news.berkeley.edu/all-news/';
 		
 		}
 		elseif ($menu_item['name'] == 'Events'  && $events_title != '')
