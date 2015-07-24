@@ -191,7 +191,9 @@ class UCLA_Directory extends LDAP_Directory
 	
 	public function user($string)
 	{
-		$filters = '(uid='.$string.')';
+		//$filters = '(uid='.$string.')';
+		$confidential = "(!(berkeleyEduConfidentialFlag=true))";
+		$filters = "(&(uid=$string)$confidential)";
 		
 		$array = parent::raw_search('ou=people,dc=berkeley,dc=edu', $filters);				
 		if(is_array($array))
