@@ -19,12 +19,9 @@ if(count($user) > 0){
 		echo $user['title'][0];
 		?></p><?php } ?>
         
-        <?php if(isset($user['berkeleyeduunitcalnetdeptname'][0]) && $user['berkeleyeduunitcalnetdeptname'][0] !=''){ ?>
-       		 <p><span class="label">Department</span> <?php echo $user['berkeleyeduunitcalnetdeptname'][0]; ?></p>
-		<?php } else { if(isset($user['berkeleyeduunithrdeptname'][0])){ ?>
-        	<p><span class="label">Department</span> <?php echo $user['berkeleyeduunithrdeptname'][0]; ?></p>
-        <?php }
-		} ?>
+        <?php if(isset($user['berkeleyeduunithrdeptname'][0])){ ?>
+        	<p><span class="label">Department</span> <?php echo $user['berkeleyeduunithrdeptname'][0]; }?></p>
+       
          
     </div>
     <?php } ?>

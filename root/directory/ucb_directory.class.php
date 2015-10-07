@@ -199,8 +199,15 @@ class UCLA_Directory extends LDAP_Directory
 		if(is_array($array))
 		{
 			$array = array_slice($array, 1, count($array)-1);
-			if(count($array) == 0)
+			
+			if(count($array) == 0) 
 				return array();
+			
+			// Get department name from department number
+			$filterdeptname = "(&(objectclass=*)(ou=".$array[0]['departmentnumber'][0]."))";		
+			$arraydeptname = parent::raw_search('ou=Org Units,dc=berkeley,dc=edu', $filterdeptname, array('description'));
+			$array[0]['berkeleyeduunithrdeptname'][0] = $arraydeptname[0]['description'][0];			
+		
 			return $array[0];
 		}
 		else
