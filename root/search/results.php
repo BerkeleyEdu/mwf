@@ -16,7 +16,7 @@ include(dirname(__FILE__).'/header.php');
 		  google.load('search', '1', {language : 'en'});
 		  function OnLoad()
 		  {
-			var customSearchControl = new google.search.CustomSearchControl('005819902514904969462:g_ef7-0cl6u');
+			var customSearchControl = new google.search.CustomSearchControl('017107206069633837017:jmsdg7rzbe4');
 			customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
 			customSearchControl.draw('cse');
 			customSearchControl.execute("<?php echo $_GET['q'];?>");
