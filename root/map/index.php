@@ -11,14 +11,8 @@ include(dirname(__FILE__).'/header.php');
             </div>
           <div class="menu-full menu-detailed menu-padded" >  
            <ol> 
-             <li class="menu-first"><a href="map_plain.php">Campus Map</a></li>            
-             <li><a href="locations.php">Buildings</a></li>            
-             <li><a href="libraries.php">Libraries</a></li>
-             <li><a href="museums.php">Museums</a></li>
-             <li><a href="nearby.php">Nearby</a></li>
-             <li><a href="outdoor.php">Outdoor</a></li>
-             <li><a href="http://pt.berkeley.edu/maps">Parking</a></li>
-             <li class="menu-last"><a href="sports_fac.php">Sports Facilities</a></li>           
+             <li class="menu-first"><a href="http://www.berkeley.edu/map">Campus Map</a></li>
+             <li><a href="http://pt.berkeley.edu/maps">Parking</a></li>          
         </ol>
 	</div>
 

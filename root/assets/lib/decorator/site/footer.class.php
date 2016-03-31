@@ -28,13 +28,16 @@ class Footer_Site_Decorator extends Tag_HTML_Decorator {
    // private $_full_url = 'http://www.berkeley.edu/?ovrrdr=1';
 	private $_full_url = 'http://www.berkeley.edu';
     private $_powered_by = false;
-	private $_search_url = '/search';
+	//private $_search_url = '/search';
+	private $_search_url = 'http://www.berkeley.edu/search';
 	private $_search_title = 'Search';
-	private $_atoz_url = '/atoz';
+	//private $_atoz_url = '/atoz';
+	private $_atoz_url = 'http://www.berkeley.edu/atoz';
 	private $_atoz_title = 'A-Z';
 	//private $_about_url = '/about';
 	//private $_about_title = 'About';
-	private $_contact_url = '/contact';
+	//private $_contact_url = '/contact';
+	private $_contact_url = 'http://www.berkeley.edu/contact';
 	private $_contact_title = 'Contact';
 
     public function __construct() {
