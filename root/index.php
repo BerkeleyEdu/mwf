@@ -135,13 +135,9 @@ $pos = strpos(User_Agent::get_user_agent(),'BlackBerry');
 else
 {
 ?> 
-    <form action="http://berkeley.edu/cgi-bin/news/gatewaysearchfunction.pl" method="get" name="searchform" >
-		<input type="text" id="search_text" name="search_text" style='width:73%; max-width:300px' placeholder="Search the Berkeley Web"/>
+    <form action="http://www.berkeley.edu/search" method="get" name="searchform" >
+		<input   id="search_text"  type="text" aria-label="search term" value="" name="q" style='width:73%; max-width:300px' placeholder="Search the Berkeley Web"/>
           <input id="search-button" class="form-last" name="Submit" type="submit" value="Search"/>
-          <input type="hidden" name="display_type" value="mobile" />
-<noscript>
- <input type="hidden" name="noscript" value="yes" />
-</noscript>
       </form>
       
 <?php 

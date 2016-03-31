@@ -4,9 +4,7 @@
          <span class="footer-item-divider"></span>
 		 Search
          <span class="footer-item-divider"></span>
-        <a href="../atoz">A-Z</a>
-         <span class="footer-item-divider"></span>
-         <a href="../about">About</a>
+        <a href="http://www.berkeley.edu/atoz">A-Z</a>
          <span class="footer-item-divider"></span>
         <a href="../contact">Contact</a>
            </p>
