@@ -32,6 +32,8 @@
  * @link /config/global.php
  * @link assets/redirect/unset_override.php
  */
+ 
+ /* adding this comment to test git on new VM */
 
 /**
  * Require necessary libraries.
