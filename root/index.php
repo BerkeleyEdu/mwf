@@ -186,7 +186,8 @@ if (Classification::is_full() )
 		$image = '';
 	}
 	$events_title = $image . $simple_xml->Events->Event->EventTitle;	
-	$events_link = 'http://events.berkeley.edu/mobile/';
+	//$events_link = 'http://events.berkeley.edu/mobile/';
+	$events_link = 'http://events.berkeley.edu/';
 	$image_wrapper = true;	
 	
 	// Get Cal Day
