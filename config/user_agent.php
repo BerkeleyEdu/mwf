@@ -38,7 +38,8 @@ Config::set('user_agent', 'adapter', 'User_Agent_WURFL_Adapter');
  * 
  * @link /assets/lib/user_agent_wurfl_adapter.class.php
  */
-Config::set('user_agent', 'wurfl_config_path', '/var/mobile/wurfl/wurfl-config.xml');
+//Config::set('user_agent', 'wurfl_config_path', '/var/mobile/wurfl/wurfl-config.xml');
+Config::set('user_agent', 'wurfl_config_path', '/var/www/mobile/wurfl/wurfl-config.xml');
 
 /**
  * user_agent_adapter_wurlf_php_api_path
@@ -49,6 +50,7 @@ Config::set('user_agent', 'wurfl_config_path', '/var/mobile/wurfl/wurfl-config.x
  *
  * @link /assets/lib/user_agent_wurfl_adapter.class.php
  */
-Config::set('user_agent', 'wurfl_php_api_path', '/var/mobile/wurfl/api/WURFL');
+//Config::set('user_agent', 'wurfl_php_api_path', '/var/mobile/wurfl/api/WURFL');
+Config::set('user_agent', 'wurfl_php_api_path', '/var/www/mobile/wurfl/api/WURFL');
 
 ?>

@@ -25,4 +25,5 @@ require_once(dirname(dirname(__FILE__)).'/root/assets/lib/config.class.php');
  * not occur.
  */
 
-Config::set('image', 'cache_dir', '/var/mobile/cache/img/');
+//Config::set('image', 'cache_dir', '/var/mobile/cache/img/');
+Config::set('image', 'cache_dir', '/var/www/mobile/cache/img/');
