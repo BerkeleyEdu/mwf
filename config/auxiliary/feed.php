@@ -22,4 +22,5 @@ require_once(dirname(dirname(dirname(__FILE__))).'/root/assets/lib/config.class.
  * 
  * DO NOT INCLUDE A TRAILING SLASH
  */
-Config::set('auxiliary/feed', 'cache_path', '/var/mobile/cache/simplepie');
+//Config::set('auxiliary/feed', 'cache_path', '/var/mobile/cache/simplepie');
+Config::set('auxiliary/feed', 'cache_path', '/var/www/mobile/cache/simplepie');

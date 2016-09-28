@@ -20,7 +20,8 @@ Config::set('sports', 'header_image_sub', '../assets/img/berkeley-home.png');
 
 Config::set('sports', 'header_image_sub_alt', ' Berkeley');
 
-require_once('/var/mobile/salt');
+//require_once('/var/mobile/salt');
+require_once('/var/www/mobile/salt');
 Config::set('sports', 'salt', $salt);
 
 ?>
