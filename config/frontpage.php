@@ -92,7 +92,7 @@ Config::set('frontpage', 'menu',
               'url'=>'http://mobile.lib.berkeley.edu/'), 	  	  	 		
 		array('name'=>'Athletics',
               'id'=>'sports',
-              'url'=>'http://m.calbears.com/'),
+              'url'=>'http://calbears.com/'),
 		array('name'=>'CalCentral',
               'id'=>'calcentral',
               'url'=>'https://calcentral.berkeley.edu/')
