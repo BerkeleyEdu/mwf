@@ -173,7 +173,9 @@ if (Classification::is_full() )
 	$feed_items = $feed->get_items();
 	preg_match_all('/<img[^>]+>/i',$feed_items[0]->get_description(), $result); 
 	// remove extra space at end of image file path
-	$news_title= str_replace('%20"', '"', $result[0][0]).$feed_items[0]->get_title();	
+	//$news_title= str_replace('%20"', '"', $result[0][0]).$feed_items[0]->get_title();	
+	$result[0][0] = str_replace('img', 'img style="max-height:60px; max-width:60px; float:right; overflow: auto; margin-right: 5%;"', $result[0][0]);
+	$news_title= ($feed_items[0]->get_title().$result[0][0]);	
 	
 	// Get event
 	$today = date('Y-m-d');
